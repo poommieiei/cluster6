@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\importjson;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/import' , [importjson::class,'importpage']);
+Route::post('importjson' , [importjson::class, 'importjson']);
 
 Auth::routes();
 

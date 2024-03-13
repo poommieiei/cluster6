@@ -23,8 +23,9 @@ class importjson extends Controller
                     if ($data === null && json_last_error() !== JSON_ERROR_NONE) {
                         return back()->with('error', 'Error decoding JSON file.');
                     }
-                    
+
                     // Pass data to the view
+                    //dd($data);
                     return view('importview', ['jsonData' => $data]);
                 } catch (Exception $e) {
                     // Handle decoding errors gracefully
