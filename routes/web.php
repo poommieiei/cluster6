@@ -23,7 +23,7 @@ Route::get('/home', function () {
 });
 
 Route::get('/import' , [importjson::class,'importpage']);
-Route::post('importjson' , [importjson::class, 'importjson']);
+Route::post('importjson' , [importjson::class, 'importprocess']);
 
 Auth::routes();
 

@@ -10,12 +10,12 @@ class importjson extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function importpage(){
         return view('importview');
     }
 
-    public function importjson(Request $request){
+    public function importprocess(Request $request){
         if ($request->hasFile('json_file')) {
             $file = $request->file('json_file');
 
