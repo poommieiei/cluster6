@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class importjson extends Controller
+class Importjson extends Controller
 {
     public function importpage(){
         return view('importview');
