@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\importjson;
+use App\Http\Controllers\WorkspaceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,10 +18,7 @@ use App\Http\Controllers\importjson;
 //     return view('welcome');
 // });
 
-
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('/workspace' , [WorkspaceController::class,'indexworkspace']);
 
 Route::get('/import' , [importjson::class,'importpage']);
 Route::post('importjson' , [importjson::class, 'importjson']);
