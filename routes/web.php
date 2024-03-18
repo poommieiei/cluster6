@@ -22,7 +22,10 @@ use App\Http\Controllers\WorkspaceController;
 // Route::get('/home', function () {
 //     return view('home');
 // });
-Route::get('/Workspace', [WorkspaceController::class , 'indexworkspace']);
+
+Route::get('/viewinsert', [WorkspaceController::class , 'viewinsert']);
+Route::get('/workspace', [WorkspaceController::class , 'indexworkspace']);
+Route::post('/insertWrokspace', [WorkspaceController::class, 'insertworkspace']);
 
 Route::get('/import' , [Importjson::class,'importpage']);
 Route::post('importjson' , [Importjson::class, 'importjson']);
