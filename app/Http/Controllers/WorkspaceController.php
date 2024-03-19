@@ -13,9 +13,11 @@ class WorkspaceController extends Controller
     }
 
     public function indexworkspace(){
-        return view('workspacepage');
+        $workspaces = DB::table('workspace')->get();
+        dd(count($workspaces));
+        return view('workspacepage' , compact('$workspaces'));
     }
-    
+
     public function viewinsert(){
         return view('insertworkspace');
     }
