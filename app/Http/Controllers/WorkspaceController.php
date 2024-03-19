@@ -15,9 +15,11 @@ class WorkspaceController extends Controller
     public function indexworkspace(){
         return view('workspacepage');
     }
+    
     public function viewinsert(){
         return view('insertworkspace');
     }
+
     public function insertworkspace(Request $req){
         $req->validate(
             [

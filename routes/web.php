@@ -22,6 +22,7 @@ use App\Http\Controllers\WorkspaceController;
 // Route::get('/home', function () {
 //     return view('home');
 // });
+Route::get('/', [WorkspaceController::class, 'indexworkspace']);
 
 Route::get('/viewinsert', [WorkspaceController::class , 'viewinsert']);
 Route::get('/workspace', [WorkspaceController::class , 'indexworkspace']);
@@ -32,4 +33,4 @@ Route::post('importjson' , [Importjson::class, 'importjson']);
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
