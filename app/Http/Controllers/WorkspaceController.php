@@ -14,12 +14,12 @@ class WorkspaceController extends Controller
 
     public function indexworkspace(){
         $workspaces = DB::table('workspace')->get();
-        dd(count($workspaces));
-        return view('workspacepage' , compact('$workspaces'));
+        // dd($workspace);
+        return view('workspacepage.workspace', compact('workspaces'));
     }
 
     public function viewinsert(){
-        return view('insertworkspace');
+        return view('workspacepage.insertworkspacepage');
     }
 
     public function insertworkspace(Request $req){
@@ -33,7 +33,13 @@ class WorkspaceController extends Controller
         ];
         // dd($data);
         DB::table('workspace')->insert($data);
-        return view('/workspacepage');
+        return redirect('/workspace');
 
+    }
+
+    public function deleteworkspace ($id){
+        // dd($id);
+        DB::table('workspace')->where('id', $id)->delete();
+        return redirect('/workspace');
     }
 }
