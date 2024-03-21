@@ -26,7 +26,3 @@ Route::post('importjson' , [importjson::class, 'importjson']);
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/template', function () {
-    return view('layouts.template');
-});
