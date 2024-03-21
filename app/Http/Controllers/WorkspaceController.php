@@ -19,7 +19,7 @@ class WorkspaceController extends Controller
     }
 
     public function viewinsert(){
-        return view('workspacepage.insertworkspacepage');
+        return view('workspacepage.insertworkspace');
     }
 
     public function insertworkspace(Request $req){
