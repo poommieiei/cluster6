@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\importjson;
+use App\Http\Controllers\Importjson;
 use App\Http\Controllers\WorkspaceController;
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +18,24 @@ use App\Http\Controllers\WorkspaceController;
 //     return view('welcome');
 // });
 
-Route::get('/workspace' , [WorkspaceController::class,'indexworkspace']);
 
-Route::get('/import' , [importjson::class,'importpage']);
-Route::post('importjson' , [importjson::class, 'importjson']);
+// Route::get('/home', function () {
+//     return view('home');
+// });
+Route::get('/', [WorkspaceController::class, 'indexworkspace']);
+
+Route::get('/viewinsert', [WorkspaceController::class , 'viewinsert']);
+Route::get('/workspace', [WorkspaceController::class , 'indexworkspace']);
+Route::post('/insertWrokspace', [WorkspaceController::class, 'insertworkspace']);
+Route::get('/deleteworkspace/{id}', [WorkspaceController::class, 'deleteworkspace'])->name('deleteworkspace');
+
+Route::get('/import' , [Importjson::class,'importpage']);
+Route::post('importjson' , [Importjson::class, 'importjson']);
+
+Route::get('/template' , function(){
+    return  view('layouts.template');
+});
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
