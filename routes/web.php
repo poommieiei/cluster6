@@ -33,7 +33,7 @@ Route::get('/import' , [Importjson::class,'importpage']);
 Route::post('importjson' , [Importjson::class, 'importjson']);
 
 Route::get('/template' , function(){
-    return  view('layouts.template');
+    return  view('layouts.layout');
 });
 
 Auth::routes();
