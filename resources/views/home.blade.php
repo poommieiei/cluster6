@@ -5,13 +5,19 @@
     <div class="row justify-content-center">
         <div class="col-md-8"> --}}
 
-    <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3"
-        style="height: 90px; font-size:30px; color:white;">Workspace
+   {{-- Workspace edit --}}
+    <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
+        style="height: 80px; font-size:20px; color:white;">Workspace
         <div class="ms-auto">
-            <i class="bi bi-pencil-square me-3"></i>
-            <i class="bi bi-trash"></i>
+            <a href="#" class="text-decoration-none text-white me-3">
+                <i class="bi bi-pencil-square"></i>
+            </a>
+            <a href="#" class="text-decoration-none text-white">
+                <i class="bi bi-trash"></i>
+            </a>
         </div>
     </div>
+
 
     <!-- ปุ่ม Create -->
     <div class="fixed-bottom d-flex justify-content-end mb-3">
