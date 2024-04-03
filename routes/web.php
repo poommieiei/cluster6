@@ -29,6 +29,7 @@ Route::get('/deleteworkspace/{id}', [WorkspaceController::class, 'deleteworkspac
 
 // Route ของ Collection (ทำได้เลย)
 Route::get('/collection' , [CollectionController::class , 'indexcollection']);
+Route::get('/emptyCollection' , [CollectionController::class , 'indexEmptyCollection']);
 Route::get('' , [CollectionController::class , 'deletecollection']);
 Route::get('' , [CollectionController::class , 'renamecollection']);
 Route::get('' , [CollectionController::class , 'importcollection']);
