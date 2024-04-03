@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class CollectionController extends Controller
 {
     public function indexcollection(){
-        return view('collection');
+        return view('collection.collection');
     }
 
     public function renamecollection(){
