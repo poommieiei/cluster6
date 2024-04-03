@@ -32,6 +32,9 @@ Route::get('' , [CollectionController::class , 'indexcollection']);
 Route::get('' , [CollectionController::class , 'deletecollection']);
 Route::get('' , [CollectionController::class , 'renamecollection']);
 Route::get('' , [CollectionController::class , 'importcollection']);
+Route::get('/', function()  {
+    return view('layouts.layout');
+});
 
 
 // Route ของ Table (ยังไม่ได้ทำ)
