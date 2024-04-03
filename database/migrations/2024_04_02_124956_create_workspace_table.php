@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('workspace', function (Blueprint $table) {
             $table->id();
             $table->string('workspace_name');
+            $table->string('owner');
             $table->timestamps();
         });
     }
