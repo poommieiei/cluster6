@@ -5,4 +5,5 @@
     <h2>Press "Import" to import new collection</h2>
 </div>
 
+
 @endsection
