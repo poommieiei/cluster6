@@ -24,7 +24,9 @@ Route::get('/viewinsert', [WorkspaceController::class , 'viewinsert']);
 Route::get('/workspace', [WorkspaceController::class , 'indexworkspace']);
 Route::post('/insertWrokspace', [WorkspaceController::class, 'insertworkspace']);
 Route::get('/deleteworkspace/{id}', [WorkspaceController::class, 'deleteworkspace'])->name('deleteworkspace');
-
+Route::get('/account',function(){
+    return view('auth.account');
+});
 
 // Route ของ Collection (ยังไม่ได้ทำ)
 
