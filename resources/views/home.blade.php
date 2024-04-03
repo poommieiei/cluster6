@@ -10,7 +10,7 @@
         style="height: 80px; font-size:20px; color:white;">Workspace
         <div class="ms-auto">
             <a href="#" class="text-decoration-none text-white me-3">
-                <i class="bi bi-pencil-square"></i>
+                <i class="bi bi-pencil-square" onclick="openModal()"></i>
             </a>
             <a href="#" class="text-decoration-none text-white">
                 <i class="bi bi-trash"></i>
@@ -18,6 +18,43 @@
         </div>
     </div>
 
+<!--Rename workspace-->
+<div class="modal" id="rename" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #136885; color: #ffffff;">
+            <div class="modal-header" style="background-color: #073B4C; color: #ffffff;">
+                <b class="logo-icon me-2" style="display: block; margin-bottom: 5px;">
+                    <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage" class="light-logo"
+                        width="20" style="display: block;" />
+                </b>
+                <h5 class="modal-title">Rename Workspace</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- กรอกชื่อ Workspace -->
+                <div class="mb-3">
+                    <label for="workspaceName" class="form-label">New Workspace name</label>
+                    <input type="text" class="form-control" id="rename" placeholder="Enter workspace name"
+                        style="background-color: #0C4F65; color: #ffffff;">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="createWorkspaceBtn"
+                    style="background-color: #06D6A0; color: #000000;">Create</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    style="background-color: #808080; color: #ffffff;">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function openModal() {
+        // Get the modal element by its ID
+        var modal = document.getElementById('rename');
+        // Show the modal
+        modal.style.display = 'block';
+    }
+</script>
 
     <!-- ปุ่ม Create -->
     <div class="fixed-bottom d-flex justify-content-end mb-3">
@@ -62,7 +99,7 @@
         var btn = document.getElementById('openModal');
         // Get the create button inside the modal
         var createBtn = document.getElementById('createWorkspaceBtn');
-        // When the user clicks the button, open the modal 
+        // When the user clicks the button, open the modal
         btn.onclick = function() {
             var myModal = new bootstrap.Modal(modal);
             myModal.show();
@@ -88,7 +125,7 @@
 
     {{--            <div class="card">
                 <div class="card-header">{{ __('Workspace') }}</div>
-                
+
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
