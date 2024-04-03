@@ -30,7 +30,8 @@ Route::get('/account',function(){
 });
 
 // Route ของ Collection (ทำได้เลย)
-Route::get('' , [CollectionController::class , 'indexcollection']);
+Route::get('/collection' , [CollectionController::class , 'indexcollection']);
+Route::get('/emptyCollection' , [CollectionController::class , 'indexEmptyCollection']);
 Route::get('' , [CollectionController::class , 'deletecollection']);
 Route::get('' , [CollectionController::class , 'renamecollection']);
 Route::get('' , [CollectionController::class , 'importcollection']);
