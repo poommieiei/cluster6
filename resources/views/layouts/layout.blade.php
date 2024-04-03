@@ -20,7 +20,7 @@
     <link href="{{ url('assets/dist/css/style.min.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -37,7 +37,7 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
-<body>
+<body style="background-color: #073B4C;">
 
     <div class="preloader">
         <div class="lds-ripple">
@@ -51,19 +51,18 @@
 
         <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <div class="navbar-header" data-logobg="skin5">
-
-                    <a class="navbar-brand" href="index.html">
+                <div class="navbar-header" data-logobg="skin5" style="background-color: #0E566E;">
+                    <a class="navbar-brand" href="index.html" style="height: 65px">
                         <!-- logo program -->
-                        <b class="logo-icon ps-2">
-                            <img src="images/LOGO API.png" alt="homepage" class="light-logo"
-                                width="25" />
+                        <b class="logo-icon" style="display: block; margin-bottom: 10px;">
+                            <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage" class="light-logo"
+                                width="35" style="display: block;" />
                         </b>
 
-                        <span class="logo-text ms-2" style="font-family: 'Inter', sans-serif; font-weight: bold; font-size: 20px;">
+
+                        <span class="logo-text ms-2" style="font-family: 'Inter', sans-serif; font-weight: bold; font-size: 24px;">
                             SPEC
                         </span>
-
                     </a>
 
                     <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
@@ -77,26 +76,17 @@
                             <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
                                 data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a>
                         </li>
-
-                        <li class="nav-item search-box">
-                            <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i
-                                    class="mdi mdi-magnify fs-4"></i></a>
-                            <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter" />
-                                <a class="srh-btn"><i class="mdi mdi-window-close"></i></a>
-                            </form>
-                        </li>
                     </ul>
                 </div>
             </nav>
         </header>
 
-        <aside class="left-sidebar" data-sidebarbg="skin5">
+        <aside class="left-sidebar" style="background-color: #0E566E;">
             <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
+            <div class="scroll-sidebar" style="background-color: #0E566E;" >
                 <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav" class="pt-4">
+                <nav class="sidebar-nav" >
+                    <ul id="sidebarnav" class="pt-4" style="background-color: #0E566E;">
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html"
                                 aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
@@ -107,7 +97,11 @@
                                 aria-expanded="false"><i class="fa fa-user" style="font-size:20px"></i>
                                 <span class="hide-menu"  style="font-size:20px">Account</span></a>
                         </li>
-
+                        <li class="sidebar-item" style="position: absolute; bottom: 0px;">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html"
+                                aria-expanded="false"><i class="fa fa-sign-out"></i>
+                                <span class="hide-menu"  style="font-size:20px">Sign out</span></a>
+                        </li>
                     </ul>
                 </nav>
 
@@ -115,26 +109,17 @@
 
         </aside>
 
-        <div class="page-wrapper">
-
+        <div class="page-wrapper" style="background-color: #073B4C;">
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
                         <div class="ms-auto text-end">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">
-                                        Library
-                                    </li>
-                                </ol>
-                            </nav>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="container-fluid">
+            <div class="container-fluid" style="background-color: #073B4C;">
 
                 @yield('content')
             </div>
