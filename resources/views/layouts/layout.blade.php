@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -83,32 +84,33 @@
 
         <aside class="left-sidebar" style="background-color: #0E566E;">
             <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
+            <div class="scroll-sidebar" style="background-color: #0E566E;" >
                 <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
+                <nav class="sidebar-nav" >
                     <ul id="sidebarnav" class="pt-4" style="background-color: #0E566E;">
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/" aria-expanded="false">
-                                <i class="mdi mdi-view-dashboard"></i>
-                                <span class="hide-menu" style="font-size:20px">Workspace</span>
-                            </a>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/"
+                                aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                    class="hide-menu" style="font-size:20px">Workspace</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/account" aria-expanded="false">
-                                <i class="fa fa-user" style="font-size:20px"></i>
-                                <span class="hide-menu" style="font-size:20px">Account</span>
-                            </a>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html"
+                                aria-expanded="false"><i class="fa fa-user" style="font-size:20px"></i>
+                                <span class="hide-menu"  style="font-size:20px">Account</span></a>
                         </li>
                         <li class="sidebar-item" style="position: absolute; bottom: 15px;">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();" aria-expanded="false">
-                                <i class="fa fa-sign-out"></i>
-                                <span class="hide-menu" style="font-size:20px">Sign out</span>
+                            <a class="sidebar-link waves-effect sidebar-link" onclick="event.preventDefault();document.getElementById('logout-form').submit();"
+                                aria-expanded="false"><i class="fa fa-sign-out"></i>
+                                <span class="hide-menu"  style="font-size:20px">Sign out</span>
                             </a>
                         </li>
                     </ul>
                 </nav>
+
             </div>
+
         </aside>
+
         <div class="page-wrapper" style="background-color: #073B4C;">
             <div class="page-breadcrumb">
                 <div class="row">
