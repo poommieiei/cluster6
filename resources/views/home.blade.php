@@ -34,7 +34,7 @@
                             width="20" style="display: block;" />
                     </b>
                     <h5 class="modal-title">New Workspace</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <!-- กรอกชื่อ Workspace -->
@@ -79,6 +79,12 @@
             myModal.hide();
         }
     </script>
+    <!-- CSS -->
+    <style>
+        #workspaceName::placeholder {
+            color: #f5f5f5; /** สี placeholder ของ Modal Create Workspace **/
+        }
+    </style>
 
     {{--            <div class="card">
                 <div class="card-header">{{ __('Workspace') }}</div>
