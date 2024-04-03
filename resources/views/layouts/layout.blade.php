@@ -89,7 +89,7 @@
                 <nav class="sidebar-nav" >
                     <ul id="sidebarnav" class="pt-4" style="background-color: #0E566E;">
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/"
                                 aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu" style="font-size:20px">Workspace</span></a>
                         </li>
@@ -98,10 +98,11 @@
                                 aria-expanded="false"><i class="fa fa-user" style="font-size:20px"></i>
                                 <span class="hide-menu"  style="font-size:20px">Account</span></a>
                         </li>
-                        <li class="sidebar-item" style="position: absolute; bottom: 0px;">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html"
+                        <li class="sidebar-item" style="position: absolute; bottom: 15px;">
+                            <a class="sidebar-link waves-effect sidebar-link" onclick="event.preventDefault();document.getElementById('logout-form').submit();"
                                 aria-expanded="false"><i class="fa fa-sign-out"></i>
-                                <span class="hide-menu"  style="font-size:20px">Sign out</span></a>
+                                <span class="hide-menu"  style="font-size:20px">Sign out</span>
+                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -129,6 +130,10 @@
 
     </div>
 
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+    </form>
     <script src="{{ url('assets/assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{ url('assets/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
