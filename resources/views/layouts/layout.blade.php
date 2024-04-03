@@ -101,7 +101,7 @@
                                 <span class="hide-menu"  style="font-size:20px">Account</span></a>
                         </li>
                         <li class="sidebar-item" style="position: absolute; bottom: 15px;">
-                            <a class="sidebar-link sidebar-link" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();" aria-expanded="false">
                                 <i class="fa fa-sign-out"></i>
                                 <span class="hide-menu" style="font-size:20px">Sign out</span>
                             </a>
