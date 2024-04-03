@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('status');
 
             $table->unsignedBigInteger('method_id');
-            $table->foreign('method_id')->references('id')->on('methods');
+            $table->foreign('method_id')->references('id')->on('methods')->onDelete('CASCADE');
 
             $table->timestamps();
         });

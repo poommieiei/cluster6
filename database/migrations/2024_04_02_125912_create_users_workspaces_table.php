@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('users_workspaces', function (Blueprint $table) {
             $table->id();
 
-            
+
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('workspace_id');
 
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('workspace_id')->references('id')->on('workspace');
+            $table->foreign('workspace_id')->references('id')->on('workspace')->onDelete('CASCADE');
 
             $table->timestamps();
         });

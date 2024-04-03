@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('collection_name');
 
             $table->unsignedBigInteger('workspace_id');
-
-            $table->foreign('workspace_id')->references('id')->on('workspace');
+            $table->foreign('workspace_id')->references('id')->on('workspace')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

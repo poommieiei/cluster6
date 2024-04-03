@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('method_route');
 
             $table->unsignedBigInteger('collection_id');
-            $table->foreign('collection_id')->references('id')->on('collection');
+            $table->foreign('collection_id')->references('id')->on('collection')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

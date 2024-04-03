@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('description');
 
             $table->unsignedBigInteger('response_status_id');
-            $table->foreign('response_status_id')->references('id')->on('response_status')->onDelete();
+            $table->foreign('response_status_id')->references('id')->on('response_status')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
