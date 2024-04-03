@@ -3,6 +3,7 @@
 use App\Http\Controllers\CollectionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Importjson;
+use App\Http\Controllers\TableController;
 use App\Http\Controllers\WorkspaceController;
 use PHPUnit\TestRunner\TestResult\Collector;
 
@@ -35,3 +36,6 @@ Route::get('' , [CollectionController::class , 'importcollection']);
 
 
 // Route ของ Table (ยังไม่ได้ทำ)
+Route::get('' , [TableController::class , 'indexTable']);
+Route::get('' , [TableController::class , 'SaveTable']);
+Route::get('' , [TableController::class , 'ExportTable']);
