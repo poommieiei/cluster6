@@ -52,61 +52,70 @@
 
         <header class="topbar" data-navbarbg="skin5">
             <div class="navbar top-navbar navbar-expand-md navbar-dark" style="background-color: #0E566E;">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <div class="navbar-header" data-logobg="skin5" style="background-color: #136885;">
-                    <a class="navbar-brand" href="/" style="height: 65px">
-                        <!-- logo program -->
-                        <b class="logo-icon" style="display: block; margin-bottom: 10px;">
-                            <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage" class="light-logo"
-                                width="35" style="display: block;" />
-                        </b>
-                        <span class="logo-text ms-2" style="font-family: 'Inter', sans-serif; font-weight: bold; font-size: 30px;">
-                            S P E C
-                        </span>
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse" style="background-color: #0E566E;">
-                    <ul class="navbar-nav float-start me-auto">
-                        <li class="nav-item d-none d-lg-block">
-                            <div style="background-color: #0E566E;">
-                            <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
-                                data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+                <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                    <div class="navbar-header" data-logobg="skin5" style="background-color: #136885;">
+                        <a class="navbar-brand" href="/" style="height: 65px">
+                            <!-- logo program -->
+                            <b class="logo-icon" style="display: block; margin-bottom: 10px;">
+                                <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage"
+                                    class="light-logo" width="35" style="display: block;" />
+                            </b>
+                            <span class="logo-text ms-2"
+                                style="font-family: 'Inter', sans-serif; font-weight: bold; font-size: 30px;">
+                                S P E C
+                            </span>
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse" style="background-color: #0E566E;">
+                        <ul class="navbar-nav float-start me-auto">
+                            <li class="nav-item d-none d-lg-block">
+                                <div style="background-color: #0E566E;">
+                                    <a class="nav-link sidebartoggler waves-effect waves-light"
+                                        href="javascript:void(0)" data-sidebartype="mini-sidebar"><i
+                                            class="mdi mdi-menu font-24"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </header>
 
         <aside class="left-sidebar" style="background-color: #136885;">
             <!-- Sidebar scroll-->
-            <div class="scroll-sidebar" style="background-color: #136885;" >
+            <div class="scroll-sidebar" style="background-color: #136885;">
                 <!-- Sidebar navigation-->
-                <nav class="sidebar-nav" >
+                <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/"
-                                aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                    class="hide-menu" style="font-size:20px">Workspace</span></a>
+                                aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu"
+                                    style="font-size:20px">Workspace</span></a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/account"
                                 aria-expanded="false"><i class="fa fa-user" style="font-size:20px"></i>
-                                <span class="hide-menu"  style="font-size:20px">Account</span></a>
+                                <span class="hide-menu" style="font-size:20px">Account</span></a>
                         </li>
-                        <li class="sidebar-item" style="position: absolute; bottom: 15px;">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();" aria-expanded="false">
-                                <i class="fa fa-sign-out"></i>
-                                <span class="hide-menu" style="font-size:20px">Sign out</span>
-                            </a>
-                        </li>
+                        </head>
+
+                        <body>
+
+                            <li class="sidebar-item" style="position: absolute; bottom: 15px;">
+                                <a class="sidebar-link sidebar-link" href="#"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();"
+                                    aria-expanded="false">
+                                    <i class="fa fa-sign-out"></i>
+                                    <span class="hide-menu" style="font-size:20px">Sign out</span>
+                                </a>
+                            </li>
+
                     </ul>
                 </nav>
 
             </div>
-
         </aside>
+
 
         <div class="page-wrapper" style="background-color: #073B4C;">
 
@@ -117,7 +126,6 @@
             </div>
 
         </div>
-
     </div>
 
 

@@ -19,6 +19,65 @@
             </a>
         </div>
     </div>
+    <!--Rename workspace-->
+    <div class="modal" id="rename" tabindex="-1">
+        <form id="renameForm" action="/rename" method="POST">
+            <div class="modal-dialog">
+                <div class="modal-content" style="background-color: #136885; color: #ffffff;">
+                    <div class="modal-header" style="background-color: #073B4C; color: #ffffff;">
+                        <b class="logo-icon me-2" style="display: block; margin-bottom: 5px;">
+                            <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage"
+                                class="light-logo" width="20" style="display: block;" />
+                        </b>
+                        <h5 class="modal-title">Rename Workspace</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Enter the new workspace name -->
+                        <div class="mb-3">
+                            <label for="workspaceName" class="form-label">New Workspace name</label>
+                            <input type="text" class="form-control" id="workspaceName" name="workspaceName"
+                                placeholder="Enter workspace name" style="background-color: #0C4F65; color:#ffffff">
+                            <style>
+                                ::placeholder {
+                                    color: #ffffff
+                                }
+                            </style>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Change the input type to button -->
+                        <button type="button" class="btn btn-primary" id="submitWorkspaceBtn"
+                            style="background-color: #06D6A0; color: #000000;">Reset</button>
+                        <!-- Use data-bs-dismiss="modal" to close the modal -->
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            style="background-color: #808080; color: #ffffff;">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('submitWorkspaceBtn').addEventListener('click', function() {
+            // Perform form submission here
+            document.getElementById('renameForm').submit();
+        });
+
+        // Function to show the modal
+        function openModal() {
+            var modal = new bootstrap.Modal(document.getElementById('rename'));
+            modal.show();
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            var modal = new bootstrap.Modal(document.getElementById('rename'));
+            modal.hide();
+        }
+    </script>
+
 
     {{-- -------------------------------------------------------------------------------------------------------------------- --}}
     <!-- ปุ่ม Create -->
