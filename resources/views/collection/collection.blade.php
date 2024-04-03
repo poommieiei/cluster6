@@ -1,4 +1,4 @@
-@extends('collection.layoutCollection')
+@extends('layouts.layout')
 @section('content')
 
 <div class="border border-white d-flex border-2 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5" style="height: 80px; font-size:20px; color:white;">
