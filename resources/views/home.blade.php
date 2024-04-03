@@ -18,39 +18,55 @@
         <a href="#" id="openModal" class="btn btn-primary btn-lg"
             style="margin-right: 20px; background-color: #268EB0; color: #ffffff; width: 130px;">{{ __('Create') }}</a>
     </div>
-    <!-- Modal -->
+    <!-- Modal สร้าง Workspace -->
     <div class="modal" id="myModal" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
+            <div class="modal-content" style="background-color: #136885; color: #ffffff;">
+                <div class="modal-header" style="background-color: #073B4C; color: #ffffff;">
                     <h5 class="modal-title">New Workspace</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Modal body text goes here.</p>
+                    <!-- กรอกชื่อ Workspace -->
+                    <div class="mb-3">
+                        <label for="workspaceName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="workspaceName" placeholder="Enter workspace name"
+                            style="background-color: #0C4F65; color: #ffffff;">
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" id="createWorkspaceBtn"
+                        style="background-color: #06D6A0; color: #000000;">Create</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        style="background-color: #808080; color: #ffffff;">Cancel</button>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
         // Get the modal
         var modal = document.getElementById('myModal');
-
         // Get the button that opens the modal
         var btn = document.getElementById('openModal');
-
+        // Get the create button inside the modal
+        var createBtn = document.getElementById('createWorkspaceBtn');
         // When the user clicks the button, open the modal 
         btn.onclick = function() {
             var myModal = new bootstrap.Modal(modal);
             myModal.show();
+        }
+        // When the user clicks the create button, handle the creation logic
+        createBtn.onclick = function() {
+            var workspaceName = document.getElementById('workspaceName').value;
+            alert('Workspace created successfully! Workspace Name: ' + workspaceName);
+            closeModal();
+        }
+        // Function to close the modal
+        function closeModal() {
+            var myModal = new bootstrap.Modal(modal);
+            myModal.hide();
         }
     </script>
 
