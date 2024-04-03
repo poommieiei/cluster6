@@ -82,7 +82,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" id="createWorkspaceBtn"
-                    style="background-color: #EF476F; color: #000000;">Delete</button>
+                    style="background-color: #EF476F; color: #ffffff;">Delete</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                     style="background-color: #4A8BA1; color: #ffffff;">Cancel</button>
             </div>
