@@ -57,36 +57,26 @@
     </div>
 </div>
 <script>
-        // เลือกไอคอน bi-pencil-square
-        var pencilIcon = document.querySelector('.bi.bi-pencil-square');
+    // เลือกไอคอน bi-pencil-square
+    var pencilIcon = document.querySelector('.bi.bi-pencil-square');
 
-        // เพิ่มการฟังก์ชันเมื่อคลิกที่ไอคอน
-        pencilIcon.addEventListener('click', function() {
-        // หา Modal
-        var modal = document.getElementById('myModal');
-
-        // แสดง Modal
-        modal.style.display = 'block';
+    // เพิ่มการฟังก์ชันเมื่อคลิกที่ไอคอน
+    pencilIcon.addEventListener('click', function() {
+        // เปิด Modal โดยใช้ Bootstrap JavaScript
+        var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+        myModal.show();
     });
-        // เลือกปุ่มปิด
-        var closeModalButton = document.querySelector('.modal .close');
 
-        // เพิ่มการฟังก์ชันเมื่อคลิกที่ปุ่มปิด
-        closeModalButton.addEventListener('click', function() {
-        // หา Modal
-        var modal = document.getElementById('myModal');
-
-        // ปิด Modal
-        modal.style.display = 'none';
-    });
-        // เลือกปุ่มปิด (สำหรับปิดด้วยการคลิกภายนอก Modal)
-        var modal = document.getElementById('myModal');
-        window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
+    // เลือกปุ่มปิด (สำหรับปิดด้วยการคลิกภายนอก Modal)
+    var modal = document.getElementById('myModal');
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            // ปิด Modal โดยใช้ Bootstrap JavaScript
+            var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+            myModal.hide();
         }
-    }
-    </script>
+    });
+</script>
 </body>
 </html>
 
