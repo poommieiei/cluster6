@@ -4,8 +4,7 @@
     {{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8"> --}}
-    
-    <!-- Workspace -->
+
     <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3"
         style="height: 90px; font-size:30px; color:white;">Workspace
         <div class="ms-auto">
