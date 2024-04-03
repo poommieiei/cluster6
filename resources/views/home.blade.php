@@ -12,7 +12,7 @@
             <i class="bi bi-trash"></i>
         </div>
     </div>
-    
+
     <!-- ปุ่ม Create -->
     <div class="fixed-bottom d-flex justify-content-end mb-3">
         <a href="#" id="openModal" class="btn btn-primary btn-lg"
@@ -23,6 +23,10 @@
         <div class="modal-dialog">
             <div class="modal-content" style="background-color: #136885; color: #ffffff;">
                 <div class="modal-header" style="background-color: #073B4C; color: #ffffff;">
+                    <b class="logo-icon me-2" style="display: block; margin-bottom: 5px;">
+                        <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage" class="light-logo"
+                            width="20" style="display: block;" />
+                    </b>
                     <h5 class="modal-title">New Workspace</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
