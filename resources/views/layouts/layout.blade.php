@@ -60,8 +60,8 @@
                             <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage" class="light-logo"
                                 width="35" style="display: block;" />
                         </b>
-                        <span class="logo-text ms-2" style="font-family: 'Inter', sans-serif; font-weight: bold; font-size: 24px;">
-                            SPEC
+                        <span class="logo-text ms-2" style="font-family: 'Inter', sans-serif; font-weight: bold; font-size: 30px;">
+                            S P E C
                         </span>
                     </a>
                 </div>
