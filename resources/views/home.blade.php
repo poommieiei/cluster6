@@ -7,11 +7,12 @@
 
     <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3"
         style="height: 90px; font-size:30px; color:white;">Workspace
-        <div class="ms auto">
-            <i class="fas fa-edit mr-2"></i>
-            <i class="fas fa-trash-alt mr-2"></i>
+        <div class="ms-auto">
+            <i class="bi bi-pencil-square me-3"></i>
+            <i class="bi bi-trash"></i>
         </div>
     </div>
+    
     <!-- ปุ่ม Create -->
     <div class="fixed-bottom d-flex justify-content-end mb-3">
         <a href="#" id="openModal" class="btn btn-primary btn-lg"
