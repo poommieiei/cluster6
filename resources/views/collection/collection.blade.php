@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('collection.layoutCollection')
 @section('content')
 
 <!DOCTYPE html>
