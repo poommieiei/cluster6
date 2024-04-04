@@ -12,7 +12,7 @@ class TableController extends Controller
     }
     public function indexTable()
     {
-        return ;
+        return view("table.table");
     }
 
     public function SaveTable()
@@ -25,7 +25,7 @@ class TableController extends Controller
         return ;
     }
 
-    
+
 
 
 }
