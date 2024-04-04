@@ -22,7 +22,7 @@
         <form id="renameForm" action="/rename" method="POST">
             <div class="modal-dialog">
                 <div class="modal-content" style="background-color: #136885; color: #ffffff;">
-                    <div class="modal-header" style="background-color: #073B4C; color: #ffffff;">
+                    <div class="modal-header" style="background-color: #073B4C; color: #ffffff; border-color:#136885;">
                         <b class="logo-icon me-2" style="display: block; margin-bottom: 5px;">
                             <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage"
                                 class="light-logo" width="20" style="display: block;" />
@@ -36,10 +36,10 @@
                         <div class="mb-3">
                             <label for="workspaceName" class="form-label">New Workspace name</label>
                             <input type="text" class="form-control" id="workspaceName" name="workspaceName"
-                                placeholder="Enter workspace name" style="background-color: #0C4F65; color:#ffffff">
+                                placeholder="Enter workspace name" style="background-color: #0C4F65; color:#ffffff;">
                         </div>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer" style="border-color:#136885;">
                         <!-- Change the input type to button -->
                         <button type="button" class="btn" id="submitWorkspaceBtn"
                             style="background-color: #06D6A0; color: #000000;">Reset</button>
@@ -79,7 +79,7 @@
     <div class="modal" id="createWorkspaceModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content" style="background-color: #136885; color: #ffffff;">
-                <div class="modal-header" style="background-color: #073B4C; color: #ffffff;">
+                <div class="modal-header" style="background-color: #073B4C; color: #ffffff; border-color:#136885;">
                     <b class="logo-icon me-2" style="display: block; margin-bottom: 5px;">
                         <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage" class="light-logo"
                             width="20" style="display: block;" />
@@ -96,7 +96,7 @@
                             style="background-color: #0C4F65; color: #ffffff;">
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer" style="border-color:#136885;">
                     <button type="button" class="btn" id="createWorkspaceBtn"
                         style="background-color: #06D6A0; color: #000000;">Create</button>
                     <button type="button" class="btn" data-bs-dismiss="modal"
