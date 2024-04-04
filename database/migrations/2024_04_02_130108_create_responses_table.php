@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('key');
             $table->string('datatype');
             $table->string('example_data');
-            $table->string('description');
+            $table->string('description')->nullable();
 
             $table->unsignedBigInteger('response_status_id');
             $table->foreign('response_status_id')->references('id')->on('response_status')->onDelete('CASCADE');
