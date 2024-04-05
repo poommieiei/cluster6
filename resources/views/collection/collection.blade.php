@@ -28,17 +28,19 @@
             <i class="bi bi-trash"></i>
         </div>
     </div>
-    <div>
-        <button type="button" class="btn btn-primary" style="position: fixed; bottom: 10px; right: 10px;">
-            <i class="fas fa-download"></i> Import
-        </button>
+    <div class="fixed-bottom d-flex justify-content-end mb-3 me-3">
+        <a href="#" id="import" class="btn btn-lg btn-icon"
+            style="margin-right: 20px; background-color:#268EB0; color:#ffffff; width: 130px;">
+            <i class="fas fa-download mr-2 me-3"></i>
+            Import
+        </a>
     </div>
 
     <!-- Rename Collection -->
     <div class="modal" id="reCollecModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content" style="background-color: #136885; color: #ffffff;">
-                <div class="modal-header" style="background-color: #073B4C; color: #ffffff;">
+                <div class="modal-header" style="background-color: #073B4C; color: #ffffff; border-color:#136885;">
                     <b class="logo-icon" style="display: block; margin-bottom: 5px;">
                         <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage" class="light-logo"
                             width="20" style="display: block;" />
@@ -51,14 +53,14 @@
                     <!-- กรอกชื่อ Collection -->
                     <div class="mb-3">
                         <label for="collectionName" class="form-label">New collection name</label>
-                        <input type="text" class="form-control" id="collectionName"
+                        <input type="text" class="form-control" id="collectionName" value="myCollection"
                             style="background-color: #0C4F65; color: #ffffff;">
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="resetBtn"
+                <div class="modal-footer" style="border-color:#136885;">
+                    <button type="button" class="btn" id="resetBtn"
                         style="background-color: #06D6A0; color: #000000;">Reset</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    <button type="button" class="btn" data-bs-dismiss="modal"
                         style="background-color: #808080; color: #ffffff;">Cancel</button>
                 </div>
             </div>
@@ -90,7 +92,7 @@
     <div class="modal" id="delCollecModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content" style="background-color: #136885; color: #ffffff;">
-                <div class="modal-header" style="background-color: #073B4C; color: #ffffff;">
+                <div class="modal-header" style="background-color: #073B4C; color: #ffffff; border-color:#136885;">
                     <b class="logo-icon" style="display: block; margin-bottom: 7px;">
                         <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage" class="light-logo"
                             width="20" style="display: block;" />
@@ -103,14 +105,15 @@
                     <!-- ชื่อ Collection -->
                     <div class="mb-3">
                         <label for="collectionName" class="form-label">Are you sure you want to delete ?</label>
-                        <span id="collectionName" class="form-control" style="background-color: #0C4F65; color: #ffffff;"></span>
+                        <span id="collectionName" class="form-control"
+                            style="background-color: #0C4F65; color: #ffffff;">myCollection</span>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="delCollecBtn"
+                <div class="modal-footer" style="border-color:#136885;">
+                    <button type="button" class="btn" id="delCollecBtn"
                         style="background-color: #EF476F; color: #ffffff;">Delete</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                        style="background-color: #4A8BA1; color: #ffffff;">Cancel</button>
+                    <button type="button" class="btn" data-bs-dismiss="modal"
+                        style="background-color: #808080; color: #ffffff;">Cancel</button>
                 </div>
             </div>
         </div>
@@ -136,4 +139,10 @@
             }
         });
     </script>
+    <style>
+        .btn-icon {
+            display: inline-flex;
+            align-items: center;
+        }
+    </style>
 @endsection
