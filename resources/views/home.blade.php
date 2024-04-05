@@ -7,18 +7,18 @@
         style="height: 80px; font-size:20px; color:white;">Workspace
         <div class="ms-auto">
             {{-- Edit --}}
-            <a href="#" class="text-decoration-none text-white me-3">
-                <i class="bi bi-pencil-square" onclick="openModal()"></i>
+            <a href="#" class="text-decoration-none text-white me-3"  onclick="openRenameModal()">
+                <i class="bi bi-pencil-square"></i>
             </a>
             {{-- Delete --}}
-            <a href="#" class="text-decoration-none text-white">
-                <i class="bi bi-trash" onclick="openModal()"></i>
+            <a href="#" class="text-decoration-none text-white" onclick="openDeleteModal()">
+                <i class="bi bi-trash" ></i>
             </a>
         </div>
     </div>
 
     {{-- Delete workspace --}}
-    <div class="modal" id="delete" tabindex="-1">
+    <div class="modal" id="DeleteModal" tabindex="-1">
         <form id="deleteForm" action="/delete" method="POST">
             <div class="modal-dialog">
                 <div class="modal-content" style="background-color: #136885; color: #ffffff;">
@@ -34,15 +34,15 @@
                     <div class="modal-body">
                         <!-- Are you sure you want to delete ? -->
                         <div class="mb-3">
-                            <label for="workspaceName" class="form-label">Are you sure you want to delete ?</label>
-                            <input type="text" class="form-control" id="workspaceName" name="workspaceName"
-                                placeholder="Enter workspace name" style="background-color: #0C4F65; color:#ffffff;">
+                            <label for="areyousure" class="form-label">Are you sure you want to delete ?</label>
+                            <div class="form-control" id="areyousure" name="areyousure" value= "Workspace 1"
+                                style="background-color: #0C4F65; color:#ffffff; border-color:#ffffff">Workspace 1</span>
                         </div>
                     </div>
                     <div class="modal-footer" style="border-color:#136885;">
-                        <!-- Change the input type to button -->
-                        <button type="button" class="btn" id="submitWorkspaceBtn"
-                            style="background-color: #06D6A0; color: #000000;">Reset</button>
+                        <!-- button delete-->
+                        <button type="button" class="btn" id="submitDeleteWorkspaceBtn"
+                            style="background-color: #EF476F; color: #ffffff;">Delete</button>
                         <!-- Use data-bs-dismiss="modal" to close the modal -->
                         <button type="button" class="btn" data-bs-dismiss="modal"
                             style="background-color: #808080; color: #ffffff;">Cancel</button>
@@ -52,26 +52,26 @@
         </form>
     </div>
     <script>
-        document.getElementById('submitWorkspaceBtn').addEventListener('click', function() {
+        document.getElementById('submitDeleteWorkspaceBtn').addEventListener('click', function() {
             // Perform form submission here
-            document.getElementById('renameForm').submit();
+            document.getElementById('deleteForm').submit();
         });
 
         // Function to show the modal
-        function openModal() {
-            var modal = new bootstrap.Modal(document.getElementById('rename'));
+        function openDeleteModal() {
+            var modal = new bootstrap.Modal(document.getElementById('DeleteModal'));
             modal.show();
         }
 
         // Function to close the modal
-        function closeModal() {
-            var modal = new bootstrap.Modal(document.getElementById('rename'));
+        function closeDeleteModal() {
+            var modal = new bootstrap.Modal(document.getElementById('DeleteModal'));
             modal.hide();
         }
     </script>
 {{---------------------------------------------------------------------------------------------------------------------------}}
     <!--Rename workspace-->
-    <div class="modal" id="rename" tabindex="-1">
+    <div class="modal" id="RenameModal" tabindex="-1">
         <form id="renameForm" action="/rename" method="POST">    <!--Route /rename-->
             <div class="modal-dialog">
                 <div class="modal-content" style="background-color: #136885; color: #ffffff;">
@@ -111,14 +111,14 @@
         });
 
         // Function to show the modal
-        function openModal() {
-            var modal = new bootstrap.Modal(document.getElementById('rename'));
+        function openRenameModal() {
+            var modal = new bootstrap.Modal(document.getElementById('RenameModal'));
             modal.show();
         }
 
         // Function to close the modal
-        function closeModal() {
-            var modal = new bootstrap.Modal(document.getElementById('rename'));
+        function closeRenameModal() {
+            var modal = new bootstrap.Modal(document.getElementById('RenameModal'));
             modal.hide();
         }
     </script>
