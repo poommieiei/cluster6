@@ -1,7 +1,6 @@
 @extends('layouts.layout')
 @section('title', 'API Documentation & Design Tools')
 @section('content')
-
     {{-- Workspace --}}
     @foreach ($workspaces as $workspace)
         <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
@@ -93,7 +92,7 @@
 
     <!-- ปุ่ม Create -->
     <div class="fixed-bottom d-flex justify-content-end mb-3">
-        <a href="#" id="create" class="btn btn-lg"
+        <a id="create" class="btn btn-lg"
             style="margin-right: 20px; background-color: #268EB0; color: #ffffff; width: 130px;">{{ __('Create') }}</a>
     </div>
     <!-- Modal Create Workspace -->
@@ -109,7 +108,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <form action="/insertWrokspace/ {{ Auth::user()->id}}" method="POST">
+                <form action="/insertWorkspace/ {{ Auth::user()->id}}" method="POST">
                     @csrf
                     <div class="modal-body">
                         <!-- กรอกชื่อ Workspace -->

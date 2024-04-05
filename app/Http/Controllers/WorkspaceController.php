@@ -27,7 +27,7 @@ class WorkspaceController extends Controller
     public function insertworkspace(Request $req , int $id){
 
         $user = User::findOrFail($id);
-        
+        // dd($user);
         $req->validate(
             [
                 'workspace'=>'required | max:40'
