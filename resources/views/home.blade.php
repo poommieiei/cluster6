@@ -72,7 +72,7 @@
 {{---------------------------------------------------------------------------------------------------------------------------}}
     <!--Rename workspace-->
     <div class="modal" id="rename" tabindex="-1">
-        <form id="renameForm" action="/rename" method="POST">
+        <form id="renameForm" action="/rename" method="POST">    <!--Route /rename-->
             <div class="modal-dialog">
                 <div class="modal-content" style="background-color: #136885; color: #ffffff;">
                     <div class="modal-header" style="background-color: #073B4C; color: #ffffff; border-color:#136885;">
