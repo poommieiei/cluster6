@@ -59,26 +59,45 @@
                             <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage" class="light-logo"
                                 width="35" style="display: block;" />
                         </b>
-
-
                         <span class="logo-text ms-2" style="font-family: 'Inter', sans-serif; font-weight: bold; font-size: 24px;">
                             SPEC
                         </span>
                     </a>
-
                     <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
                             class="ti-menu ti-close"></i></a>
                 </div>
-
-                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-
+                    {{-- Collection list --}}
                     <ul class="navbar-nav float-start me-auto">
                         <li class="nav-item d-none d-lg-block">
                             <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
                                 data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="d-none d-md-block" style="font-size:18px; color:ghostwhite">Collection<i class="fa fa-angle-down"></i></span>
+                                <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Collection1</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </div>
+                    <ul class="navbar-nav float-start me-auto">
+                        <h6 style="font-size: 22px; color:ghostwhite"><center>ชื่อ Collection</h6>
+                    </ul>
+                    {{-- Invite member --}}
+                    <ul class="navbar-nav float-end">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user font-24"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                            </ul>
+                        </li>
+                    </ul>
             </nav>
         </header>
 
@@ -88,26 +107,17 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav" >
                     <ul id="sidebarnav" class="pt-4" style="background-color: #0E566E;">
+                        {{-- Method list --}}
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html"
-                                aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                    class="hide-menu" style="font-size:20px">Workspace</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html"
-                                aria-expanded="false"><i class="fa fa-user" style="font-size:20px"></i>
-                                <span class="hide-menu"  style="font-size:20px">Account</span></a>
-                        </li>
-                        <li class="sidebar-item" style="position: absolute; bottom: 0px;">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html"
-                                aria-expanded="false"><i class="fa fa-sign-out"></i>
-                                <span class="hide-menu"  style="font-size:20px">Sign out</span></a>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false">
+                                <i class="hide-menu" style="font-size:20px; color: #54FD46">GET
+                                    <span style="font-size:20px; color:ghostwhite">Service Name</span>
+                                </i>
+                            </a>
                         </li>
                     </ul>
                 </nav>
-
             </div>
-
         </aside>
 
         <div class="page-wrapper" style="background-color: #073B4C;">
