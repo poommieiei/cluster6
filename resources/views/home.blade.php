@@ -35,7 +35,7 @@
                         <!-- Are you sure you want to delete ? -->
                         <div class="mb-3">
                             <label for="areyousure" class="form-label">Are you sure you want to delete ?</label>
-                            <div class="form-control" id="areyousure" name="areyousure" value= "Workspace 1"
+                            <span class="form-control" id="areyousure" name="areyousure" value= "Workspace 1"
                                 style="background-color: #0C4F65; color:#ffffff; border-color:#ffffff">Workspace 1</span>
                         </div>
                     </div>
