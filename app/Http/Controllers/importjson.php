@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Error;
 use Exception;
 use Illuminate\Http\Request;
+use PHPUnit\Event\Test\Errored;
 
 class Importjson extends Controller
 {
@@ -17,19 +19,43 @@ class Importjson extends Controller
 
             if ($file->getClientOriginalExtension() === 'json') {
                 try {
-                    // Read and decode JSON
+
                     $data = json_decode(file_get_contents($file->path()), true);
 
-                    // Check if decoding was successful
                     if ($data === null && json_last_error() !== JSON_ERROR_NONE) {
                         return back()->with('error', 'Error decoding JSON file.');
                     }
 
-                    // Pass data to the view
-                    //dd($data);
-                    return view('importview', ['jsonData' => $data]);
+                    $info = $data['info']['name']; // *
+                    $item = $data['item'];
+
+                    if(array_key_exists('variable' , $data)){
+                        $variable = $data['variable'];
+                        dd($info , $item , $variable);
+                    }
+                    dd($info , $item );
+
+
+                    // dd( count($data));
+
+                    //ค้นหา ชื่อ รีเควสใน collection
+
+                    // foreach($data['item'] as $index){
+                    //     print_r([$index,'name']);
+                    // }
+                    // for( $index = 0 ; $index < count($data) ; $index++){
+                    //     print_r($data['item'][$index]);
+                    //     print_r('<br>');
+                    // }
+
+                    // if($data['variable'][0]){
+                    //     print_r($data['variable'][0]);
+                    // }
+
+                    // return view('importview', ['jsonData' => $data]);
+
+
                 } catch (Exception $e) {
-                    // Handle decoding errors gracefully
                     return back()->with('error', 'Error processing JSON file.');
                 }
             } else {

@@ -15,7 +15,12 @@ use PHPUnit\TestRunner\TestResult\Collector;
         return  view('layouts.layout');
     });
 */
+Route::get('/import' , [Importjson::class,'importpage']);
+Route::post('importjson' , [Importjson::class, 'importjson']);
 
+Route::get('/template' , function(){
+    return  view('layouts.layout');
+});
 
 //ห้ามลบ
 Auth::routes();
