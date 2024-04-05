@@ -15,7 +15,7 @@ class WorkspaceController extends Controller
     public function indexworkspace(){
         $workspaces = DB::table('workspace')->get();
         // dd($workspace);
-        return view('workspacepage.workspace', compact('workspaces'));
+        return view('home', compact('workspaces'));
     }
 
     public function viewinsert(){
