@@ -12,7 +12,8 @@ class Workspace extends Model
     protected $table = 'workspace';
 
     protected $fillable = [
-        'workspace_name'
+        'workspace_name',
+        'owner'
     ];
 
     public function collection()

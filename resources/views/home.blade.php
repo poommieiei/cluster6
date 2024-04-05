@@ -3,19 +3,21 @@
 @section('content')
 
     {{-- Workspace --}}
-    <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
-        style="height: 80px; font-size:20px; color:white;">Workspace
-        <div class="ms-auto">
-            {{-- Edit --}}
-            <a href="#" class="text-decoration-none text-white me-3"  onclick="openRenameModal()">
-                <i class="bi bi-pencil-square"></i>
-            </a>
-            {{-- Delete --}}
-            <a href="#" class="text-decoration-none text-white" onclick="openDeleteModal()">
-                <i class="bi bi-trash" ></i>
-            </a>
+    @foreach ($workspaces as $workspace)
+        <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
+            style="height: 80px; font-size:20px; color:white;">{{ $workspace->workspace_name}}
+            <div class="ms-auto">
+                {{-- Edit --}}
+                <a href="#" class="text-decoration-none text-white me-3" onclick="openRenameModal()">
+                    <i class="bi bi-pencil-square"></i>
+                </a>
+                {{-- Delete --}}
+                <a href="#" class="text-decoration-none text-white" onclick="openDeleteModal()">
+                    <i class="bi bi-trash"></i>
+                </a>
+            </div>
         </div>
-    </div>
+    @endforeach
 
     {{-- Delete workspace --}}
     <div class="modal" id="DeleteModal" tabindex="-1">
@@ -52,10 +54,10 @@
         </form>
     </div>
 
-{{---------------------------------------------------------------------------------------------------------------------------}}
+    {{-- ----------------------------------------------------------------------------------------------------------------------- --}}
     <!--Rename workspace-->
     <div class="modal" id="RenameModal" tabindex="-1">
-        <form id="renameForm" action="/rename" method="POST">    <!--Route /rename-->
+        <form id="renameForm" action="/rename" method="POST"> <!--Route /rename-->
             <div class="modal-dialog">
                 <div class="modal-content" style="background-color: #136885; color: #ffffff;">
                     <div class="modal-header" style="background-color: #073B4C; color: #ffffff; border-color:#136885;">
@@ -107,20 +109,24 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <!-- กรอกชื่อ Workspace -->
-                    <div class="mb-3">
-                        <label for="workspaceName" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="workspaceName" placeholder="Enter workspace name"
-                            style="background-color: #0C4F65; color: #ffffff;">
+                <form action="/insertWrokspace/ {{ Auth::user()->id}}" method="POST">
+                    @csrf
+                    <div class="modal-body">
+                        <!-- กรอกชื่อ Workspace -->
+                        <div class="mb-3">
+                            <label for="workspaceName" class="form-label">Name</label>
+                            <input type="text" name="workspace" class="form-control" id="workspaceName"
+                                placeholder="Enter workspace name" style="background-color: #0C4F65; color: #ffffff;">
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer" style="border-color:#136885;">
-                    <button type="button" class="btn" id="createWorkspaceBtn"
-                        style="background-color: #06D6A0; color: #000000;">Create</button>
-                    <button type="button" class="btn" data-bs-dismiss="modal"
-                        style="background-color: #808080; color: #ffffff;">Cancel</button>
-                </div>
+                    <div class="modal-footer" style="border-color:#136885;">
+                        <button type="submit" class="btn" id="createWorkspaceBtn"
+                            style="background-color: #06D6A0; color: #000000;">Create</button>
+                        <button type="button" class="btn" data-bs-dismiss="modal"
+                            style="background-color: #808080; color: #ffffff;">Cancel</button>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
@@ -178,7 +184,7 @@
         // When the user clicks the create button, handle the creation logic
         createBtn.onclick = function() {
             var workspaceName = document.getElementById('workspaceName').value;
-            alert('Workspace created successfully! Workspace Name: ' + workspaceName);
+
             closeModal();
         }
         // Function to close the modal
