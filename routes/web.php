@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\CollectionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Importjson;
+use App\Http\Controllers\TableController;
 use App\Http\Controllers\WorkspaceController;
-
+use PHPUnit\TestRunner\TestResult\Collector;
 
 /*ห้ามลบ
     Route::get('/import' , [Importjson::class,'importpage']);
@@ -13,7 +15,12 @@ use App\Http\Controllers\WorkspaceController;
         return  view('layouts.layout');
     });
 */
+Route::get('/import' , [Importjson::class,'importpage']);
+Route::post('importjson' , [Importjson::class, 'importjson']);
 
+Route::get('/template' , function(){
+    return  view('layouts.layout');
+});
 
 //ห้ามลบ
 Auth::routes();
@@ -30,6 +37,14 @@ Route::get('/account',function(){ //show user info
 Route::post('rename/{id}', function ($id) { //rename workspace route
 });
 
-// Route ของ Collection (ยังไม่ได้ทำ)
+// Route ของ Collection (ทำได้เลย)
+Route::get('' , [CollectionController::class , 'indexcollection']);
+Route::get('' , [CollectionController::class , 'deletecollection']);
+Route::get('' , [CollectionController::class , 'renamecollection']);
+Route::get('' , [CollectionController::class , 'importcollection']);
+
 
 // Route ของ Table (ยังไม่ได้ทำ)
+Route::get('' , [TableController::class , 'indexTable']);
+Route::get('' , [TableController::class , 'SaveTable']);
+Route::get('' , [TableController::class , 'ExportTable']);

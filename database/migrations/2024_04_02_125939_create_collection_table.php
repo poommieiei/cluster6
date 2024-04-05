@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('collection', function (Blueprint $table) {
             $table->id();
+            $table->string('collection_name');
+
+            $table->unsignedBigInteger('workspace_id');
+            $table->foreign('workspace_id')->references('id')->on('workspace')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

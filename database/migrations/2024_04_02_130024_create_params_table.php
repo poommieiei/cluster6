@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('params', function (Blueprint $table) {
             $table->id();
+            $table->string('key');
+            $table->string('type');
+            $table->string('datatype');
+            $table->string('require');
+            $table->string('example_data');
+            $table->string('description');
+            $table->string('status');
+
+            $table->unsignedBigInteger('method_id');
+            $table->foreign('method_id')->references('id')->on('methods')->onDelete('CASCADE');
+
             $table->timestamps();
         });
     }

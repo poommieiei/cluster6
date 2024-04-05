@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('methods', function (Blueprint $table) {
             $table->id();
+            $table->string('method');
+            $table->string('method_route');
+
+            $table->unsignedBigInteger('collection_id');
+            $table->foreign('collection_id')->references('id')->on('collection')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

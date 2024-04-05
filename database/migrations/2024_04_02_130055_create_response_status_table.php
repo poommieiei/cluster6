@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('response_status', function (Blueprint $table) {
             $table->id();
+            $table->string('response_code');
+
+            $table->unsignedBigInteger('method_id');
+            $table->foreign('method_id')->references('id')->on('methods')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
