@@ -35,7 +35,7 @@
                         <!-- Are you sure you want to delete ? -->
                         <div class="mb-3">
                             <label for="areyousure" class="form-label">Are you sure you want to delete ?</label>
-                            <div class="form-control" id="areyousure" name="areyousure" value= "Workspace 1"
+                            <span class="form-control" id="areyousure" name="areyousure" value= "Workspace 1"
                                 style="background-color: #0C4F65; color:#ffffff; border-color:#ffffff">Workspace 1</span>
                         </div>
                     </div>
@@ -51,24 +51,7 @@
             </div>
         </form>
     </div>
-    <script>
-        document.getElementById('submitDeleteWorkspaceBtn').addEventListener('click', function() {
-            // Perform form submission here
-            document.getElementById('deleteForm').submit();
-        });
 
-        // Function to show the modal
-        function openDeleteModal() {
-            var modal = new bootstrap.Modal(document.getElementById('DeleteModal'));
-            modal.show();
-        }
-
-        // Function to close the modal
-        function closeDeleteModal() {
-            var modal = new bootstrap.Modal(document.getElementById('DeleteModal'));
-            modal.hide();
-        }
-    </script>
 {{---------------------------------------------------------------------------------------------------------------------------}}
     <!--Rename workspace-->
     <div class="modal" id="RenameModal" tabindex="-1">
@@ -104,24 +87,7 @@
             </div>
         </form>
     </div>
-    <script>
-        document.getElementById('submitWorkspaceBtn').addEventListener('click', function() {
-            // Perform form submission here
-            document.getElementById('renameForm').submit();
-        });
 
-        // Function to show the modal
-        function openRenameModal() {
-            var modal = new bootstrap.Modal(document.getElementById('RenameModal'));
-            modal.show();
-        }
-
-        // Function to close the modal
-        function closeRenameModal() {
-            var modal = new bootstrap.Modal(document.getElementById('RenameModal'));
-            modal.hide();
-        }
-    </script>
 
     <!-- ปุ่ม Create -->
     <div class="fixed-bottom d-flex justify-content-end mb-3">
@@ -158,6 +124,43 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('submitWorkspaceBtn').addEventListener('click', function() {
+            // Perform form submission here
+            document.getElementById('renameForm').submit();
+        });
+
+        // Function to show the modal
+        function openRenameModal() {
+            var modal = new bootstrap.Modal(document.getElementById('RenameModal'));
+            modal.show();
+        }
+
+        // Function to close the modal
+        function closeRenameModal() {
+            var modal = new bootstrap.Modal(document.getElementById('RenameModal'));
+            modal.hide();
+        }
+    </script>
+    <script>
+        document.getElementById('submitDeleteWorkspaceBtn').addEventListener('click', function() {
+            // Perform form submission here
+            document.getElementById('deleteForm').submit();
+        });
+
+        // Function to show the modal
+        function openDeleteModal() {
+            var modal = new bootstrap.Modal(document.getElementById('DeleteModal'));
+            modal.show();
+        }
+
+        // Function to close the modal
+        function closeDeleteModal() {
+            var modal = new bootstrap.Modal(document.getElementById('DeleteModal'));
+            modal.hide();
+        }
+    </script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
