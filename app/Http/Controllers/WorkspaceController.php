@@ -40,7 +40,7 @@ class WorkspaceController extends Controller
             'owner' => auth()->user()->id
         ]);
 
-        
+
         // DB::table('workspace')->insert($data);
         return redirect('/workspace');
 
