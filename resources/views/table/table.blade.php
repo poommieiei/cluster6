@@ -2,10 +2,10 @@
 @section('content')
 <div class="card-body" >
     {{-- Method UR --}}
-    <table class="table table-bordered" id="method" style="margin-left: 20px; width:1150px">
+    <table class="table table-bordered" id="method" style="margin-left: 35px; width:1150px">
         <thead>
             <br>
-            <h6 style="font-size:15px; color:white; margin-left: 20px; width:1150px">Method URL</h6>
+            <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Method URL</h6>
             <tr>
                 <th style="width: 9%; font-size:14px; color:white; background-color: #032A37"><center>Method URL</th>
                 <th style="font-size:14px; color:white; background-color: #032A37"><center>Route</th>
@@ -42,11 +42,11 @@
     </div>
 
     {{-- Headers --}}
-    <table class="table table-bordered" id="header" style="margin-left: 20px; width:1150px">
+    <table class="table table-bordered" id="header" style="margin-left: 35px; width:1150px">
         <input type="checkbox" id="checkHeader" name="checkHeader">
         <thead>
             <br>
-            <h6 style="font-size:15px; color:white; margin-left: 20px; width:1150px">Headers</h6>
+            <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Headers</h6>
             <tr>
                 <th style="width: 5%; font-size:14px; color:white; background-color: #032A37"><center>No</th>
                 <th style="width: 13%; font-size:14px; color:white; background-color: #032A37;"><center>Key</th>
@@ -74,11 +74,11 @@
     </table>
 
     {{-- Params --}}
-    <table class="table table-bordered" id="param" style="margin-left: 20px; width:1150px">
+    <table class="table table-bordered" id="param" style="margin-left: 35px; width:1150px">
         <input type="checkbox" id="checkParam" name="checkParam">
         <thead>
             <br>
-            <h6 style="font-size:15px; color:white; margin-left: 20px; width:1150px">Params</h6>
+            <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Params</h6>
             <tr>
                 <th style="width: 5%; font-size:14px; color:white; background-color: #032A37"><center>No</th>
                 <th style="width: 10%; font-size:14px; color:white; background-color: #032A37;"><center>Key</th>
@@ -110,11 +110,11 @@
     </table>
 
     {{-- Body --}}
-    <table class="table table-bordered" id="body" style="margin-left: 20px; width:1150px">
+    <table class="table table-bordered" id="body" style="margin-left: 35px; width:1150px">
         <input type="checkbox" id="checkBody" name="checkBody">
         <thead>
             <br>
-            <h6 style="font-size:15px; color:white; margin-left: 20px; width:1150px">Body</h6>
+            <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Body</h6>
             <tr>
                 <th style="width: 5%; font-size:14px; color:white; background-color: #032A37"><center>No</th>
                 <th style="width: 10%; font-size:14px; color:white; background-color: #032A37;"><center>Key</th>
@@ -144,10 +144,10 @@
         </table>
 
     {{-- Response --}}
-    <table class="table table-bordered" id="response" style="margin-left: 20px; width:100px">
+    <table class="table table-bordered" id="response" style="margin-left: 35px; width:100px">
         <thead>
             <br>
-            <h6 style="font-size:15px; color:white; margin-left: 20px; width:1150px">Response</h6>
+            <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Response</h6>
             <tr>
                 <th style="width: 9%; font-size:14px; color:white; background-color: #032A37"><center>Status Code</th>
             </tr>
