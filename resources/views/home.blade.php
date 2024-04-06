@@ -19,8 +19,8 @@
     @endforeach
 
     {{-- Delete workspace --}}
+    @foreach ($workspaces as $item)
     <div class="modal" id="DeleteModal" tabindex="-1">
-        <form id="deleteForm" action="/delete" method="POST">
             <div class="modal-dialog">
                 <div class="modal-content" style="background-color: #136885; color: #ffffff;">
                     <div class="modal-header" style="background-color: #073B4C; color: #ffffff; border-color:#136885;">
@@ -42,21 +42,21 @@
                     </div>
                     <div class="modal-footer" style="border-color:#136885;">
                         <!-- button delete-->
-                        <button type="button" class="btn" id="submitDeleteWorkspaceBtn"
-                            style="background-color: #EF476F; color: #ffffff;">Delete</button>
+                        <a href="{{ route('deleteworkspace', $item->id) }} " class="btn btn-danger" id="submitDeleteWorkspaceBtn"
+                            style="background-color: #EF476F; color: #ffffff;">Delete</a>
                         <!-- Use data-bs-dismiss="modal" to close the modal -->
                         <button type="button" class="btn" data-bs-dismiss="modal"
                             style="background-color: #808080; color: #ffffff;">Cancel</button>
                     </div>
                 </div>
             </div>
-        </form>
     </div>
-
+    @endforeach
     {{-- ----------------------------------------------------------------------------------------------------------------------- --}}
     <!--Rename workspace-->
+    @foreach ($workspaces as $item)
     <div class="modal" id="RenameModal" tabindex="-1">
-        <form id="renameForm" action="/rename" method="POST"> <!--Route /rename-->
+        <form id="renameForm" action="/rename/{{$item->id}}" method="POST"> <!--Route /rename-->
             <div class="modal-dialog">
                 <div class="modal-content" style="background-color: #136885; color: #ffffff;">
                     <div class="modal-header" style="background-color: #073B4C; color: #ffffff; border-color:#136885;">
@@ -73,7 +73,7 @@
                         <div class="mb-3">
                             <label for="workspaceName" class="form-label">New Workspace name</label>
                             <input type="text" class="form-control" id="workspaceName" name="workspaceName"
-                                placeholder="Enter workspace name" style="background-color: #0C4F65; color:#ffffff;">
+                                value="{{$item->workspace_name}}" style="background-color: #0C4F65; color:#ffffff;">
                         </div>
                     </div>
                     <div class="modal-footer" style="border-color:#136885;">
@@ -88,7 +88,8 @@
             </div>
         </form>
     </div>
-
+    @endforeach
+    {{-- ----------------------------------------------------------------------------------------------------------------------- --}}
 
     <!-- ปุ่ม Create -->
     <div class="fixed-bottom d-flex justify-content-end mb-3">

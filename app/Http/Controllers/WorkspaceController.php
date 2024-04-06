@@ -40,7 +40,7 @@ class WorkspaceController extends Controller
             'owner' => auth()->user()->id
         ]);
 
-        
+
         // DB::table('workspace')->insert($data);
         return redirect('/workspace');
 
@@ -51,4 +51,10 @@ class WorkspaceController extends Controller
         DB::table('workspace')->where('id', $id)->delete();
         return redirect('/workspace');
     }
+    public function renameworkspace(Request $req , $id){
+        dd($req , $id);
+        $workspace = DB::table('workspace')->where('id', $id)->get();
+        return view('workspacepage.renameworkspace', compact('workspace'));
+    }
+
 }
