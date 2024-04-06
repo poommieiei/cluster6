@@ -29,9 +29,13 @@ Auth::routes();
 Route::get('/', [WorkspaceController::class, 'indexworkspace']);
 Route::get('/viewinsert', [WorkspaceController::class , 'viewinsert']);
 Route::get('/workspace', [WorkspaceController::class , 'indexworkspace']);
-Route::post('/insertWrokspace', [WorkspaceController::class, 'insertworkspace']);
+Route::post('/insertWorkspace/{id}', [WorkspaceController::class, 'insertworkspace']);
 Route::get('/deleteworkspace/{id}', [WorkspaceController::class, 'deleteworkspace'])->name('deleteworkspace');
-
+Route::get('/account',function(){ //show user info
+    return view('auth.account');
+});
+Route::post('rename/{id}', function ($id) { //rename workspace route
+});
 
 // Route ของ Collection (ทำได้เลย)
 Route::get('' , [CollectionController::class , 'indexcollection']);
