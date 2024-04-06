@@ -88,7 +88,7 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/workspace"
                                 aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu"
                                     style="font-size:20px">Workspace</span></a>
                         </li>
