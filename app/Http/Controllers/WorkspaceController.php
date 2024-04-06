@@ -37,10 +37,10 @@ class WorkspaceController extends Controller
 
         $Model = Workspace::create([
             'workspace_name' => $workspace,
-            'owner'=> 'ไม่รู้'
+            'owner' => auth()->user()->id
         ]);
 
-        // dd($Model);
+        
         // DB::table('workspace')->insert($data);
         return redirect('/workspace');
 
