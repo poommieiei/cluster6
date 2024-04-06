@@ -35,8 +35,7 @@ Route::get('/deleteworkspace/{id}', [WorkspaceController::class, 'deleteworkspac
 Route::get('/account',function(){ //show user info
     return view('auth.account');
 });
-Route::post('rename/{id}', function ($id) { //rename workspace route
-});
+Route::post('rename/{id}', [WorkspaceController::class, 'renameworkspace']);
 
 // Route ของ Collection (ทำได้เลย)
 Route::get('' , [CollectionController::class , 'indexcollection']);

@@ -36,8 +36,8 @@
                         <!-- Are you sure you want to delete ? -->
                         <div class="mb-3">
                             <label for="areyousure" class="form-label">Are you sure you want to delete ?</label>
-                            <span class="form-control" id="areyousure" name="areyousure" value= "Workspace 1"
-                                style="background-color: #0C4F65; color:#ffffff; border-color:#ffffff">Workspace 1</span>
+                            <input type="text" class="form-control" id="workspaceName" name="workspaceName"
+                                value="{{$item->workspace_name}}" style="background-color: #0C4F65; color:#ffffff;">
                         </div>
                     </div>
                     <div class="modal-footer" style="border-color:#136885;">
@@ -56,7 +56,8 @@
     <!--Rename workspace-->
     @foreach ($workspaces as $item)
     <div class="modal" id="RenameModal" tabindex="-1">
-        <form id="renameForm" action="/rename/{{$item->id}}" method="POST"> <!--Route /rename-->
+        <form id="renameForm" action="/rename/{{$item->id}}" method="POST">
+            @csrf <!--Route /rename-->
             <div class="modal-dialog">
                 <div class="modal-content" style="background-color: #136885; color: #ffffff;">
                     <div class="modal-header" style="background-color: #073B4C; color: #ffffff; border-color:#136885;">
