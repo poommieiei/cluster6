@@ -12,22 +12,6 @@
             </a>
         </div>
     </div>
-    <div class="border border-white d-flex border-2 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
-        style="height: 80px; font-size:20px; color:white;">
-        Collection
-        <div class="ms-auto">
-            <i class="bi bi-pencil-square me-3"></i>
-            <i class="bi bi-trash"></i>
-        </div>
-    </div>
-    <div class="border border-white d-flex border-2 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
-        style="height: 80px; font-size:20px; color:white;">
-        Collection
-        <div class="ms-auto">
-            <i class="bi bi-pencil-square me-3"></i>
-            <i class="bi bi-trash"></i>
-        </div>
-    </div>
     <div class="fixed-bottom d-flex justify-content-end mb-3 me-3">
         <a href="#" id="import" class="btn btn-lg btn-icon"
             style="margin-right: 20px; background-color:#268EB0; color:#ffffff; width: 130px;">
