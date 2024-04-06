@@ -4,7 +4,7 @@
     {{-- Workspace --}}
     @foreach ($workspaces as $workspace)
         <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
-            style="height: 80px; font-size:20px; color:white;">{{ $workspace->workspace_name}}
+            style="height : 80px; font-size:20px; color:white;">{{ $workspace->workspace_name}}
             <div class="ms-auto">
                 {{-- Edit --}}
                 <a href="#" class="text-decoration-none text-white me-3" onclick="openRenameModal()">
