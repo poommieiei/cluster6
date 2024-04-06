@@ -1,4 +1,4 @@
-@extends('collection.layoutCollection')
+@extends('layouts.layout')
 @section('content')
 
 <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
