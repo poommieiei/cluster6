@@ -28,7 +28,7 @@ Auth::routes();
 // Route ของ Workspace (ทำได้เลยเพราะทำ Controller ให้แล้ว ชื่อ WorkspaceController)
 Route::get('/', [WorkspaceController::class, 'indexworkspace']);
 Route::get('/viewinsert', [WorkspaceController::class , 'viewinsert']);
-Route::get('/workspace', [WorkspaceController::class , 'indexworkspace']);
+Route::get('/workspace', [WorkspaceController::class , 'indexworkspace'])->name('workspace');
 Route::post('/insertWorkspace/{id}', [WorkspaceController::class, 'insertworkspace']);
 Route::get('/deleteworkspace/{id}', [WorkspaceController::class, 'deleteworkspace'])->name('deleteworkspace');
 Route::get('/account',function(){ //show user info
