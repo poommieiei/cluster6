@@ -49,7 +49,6 @@
 
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-
         <header class="topbar" data-navbarbg="skin5">
             <div class="navbar top-navbar navbar-expand-md navbar-dark" style="background-color: #0E566E;">
                 <nav class="navbar top-navbar navbar-expand-md navbar-dark">
@@ -77,6 +76,7 @@
                             </li>
                         </ul>
                     </div>
+                    <div style="width:1000px; font-size: 36px; color:white; font-weight:bold"><center>Workspace</center></div>
                 </nav>
             </div>
         </header>
