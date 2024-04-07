@@ -38,14 +38,14 @@ Route::get('/account',function(){ //show user info
 Route::post('rename/{id}', [WorkspaceController::class, 'renameworkspace']);
 
 // Route ของ Collection (ทำได้เลย)
-Route::get('' , [CollectionController::class , 'indexcollection']);
-Route::get('' , [CollectionController::class , 'deletecollection']);
-Route::get('' , [CollectionController::class , 'renamecollection']);
-Route::get('' , [CollectionController::class , 'importcollection']);
+// Route::get('' , [CollectionController::class , 'indexcollection']);
+// Route::get('' , [CollectionController::class , 'deletecollection']);
+// Route::get('' , [CollectionController::class , 'renamecollection']);
+// Route::get('' , [CollectionController::class , 'importcollection']);
 
 // Route ของ Collection (ยังไม่ได้ทำ)
 
 // Route ของ Table (ยังไม่ได้ทำ)
-Route::get('' , [TableController::class , 'indexTable']);
-Route::get('' , [TableController::class , 'SaveTable']);
-Route::get('' , [TableController::class , 'ExportTable']);
+// Route::get('' , [TableController::class , 'indexTable']);
+// Route::get('' , [TableController::class , 'SaveTable']);
+// Route::get('' , [TableController::class , 'ExportTable']);

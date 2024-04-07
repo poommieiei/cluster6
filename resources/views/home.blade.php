@@ -36,8 +36,8 @@
                         <!-- Are you sure you want to delete ? -->
                         <div class="mb-3">
                             <label for="areyousure" class="form-label">Are you sure you want to delete ?</label>
-                            <input type="text" class="form-control" id="workspaceName" name="workspaceName"
-                                value="{{$item->workspace_name}}" style="background-color: #0C4F65; color:#ffffff;">
+                            <label type="text" class="form-control" id="workspaceName" name="workspaceName"
+                                 style="background-color: #0C4F65; color:#ffffff;">{{$item->workspace_name}}</label>
                         </div>
                     </div>
                     <div class="modal-footer" style="border-color:#136885;">
