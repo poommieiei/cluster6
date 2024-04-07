@@ -10,8 +10,9 @@ class CollectionController extends Controller
         return view('collection.emptyCollection');
     }
 
-    public function indexcollection(){
-        return view('collection.collection');
+    public function indexcollection($id)
+    {
+        return view('collection.collection' , compact('id'));
     }
 
     public function renamecollection(){
@@ -22,8 +23,9 @@ class CollectionController extends Controller
         return ;
     }
 
-    public function importcollection(){
-        
+    public function importcollection()
+    {
+
         return ;
     }
 

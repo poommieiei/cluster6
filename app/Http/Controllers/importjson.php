@@ -6,6 +6,7 @@ use Error;
 use Exception;
 use Illuminate\Http\Request;
 use PHPUnit\Event\Test\Errored;
+use App\Models\Workspace;
 
 class Importjson extends Controller
 {
@@ -13,12 +14,15 @@ class Importjson extends Controller
         return view('importview');
     }
 
-    public function importjson(Request $request){
+    public function importjson(Request $request ){
+        $id = 24;
         if ($request->hasFile('json_file')) {
             $file = $request->file('json_file');
 
             if ($file->getClientOriginalExtension() === 'json') {
                 try {
+                    $workspace = Workspace::findOrFail($id)->first();
+                    dd($workspace);
 
                     $data = json_decode(file_get_contents($file->path()), true);
 
@@ -27,6 +31,7 @@ class Importjson extends Controller
                     }
 
                     $info = $data['info']['name']; // *
+
                     $item = $data['item'];
 
                     if(array_key_exists('variable' , $data)){
