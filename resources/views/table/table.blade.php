@@ -13,15 +13,18 @@
 }
 table {
     display: inline-block;
-  }
+}
+.checkbox{
+    display: inline-block;
+}
 </style>
 
 <div class="card-body">
     {{-- Method UR --}}
-    <table class="table table-bordered" id="method_table" style="margin-left: 35px; width:1150px; border:dimgray">
+    <table class="table table-bordered" id="method_table" style="margin-left: 30px; width:1150px; border:dimgray">
         <thead>
             <br>
-            <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Method URL</h6>
+            <h6 style="font-size:15px; color:white; margin-left: 30px; width:1150px">Method URL</h6>
             <tr>
                 <th style="width: 9%; font-size:14px; color:white; background-color: #032A37"><center>Method URL</th>
                 <th style="font-size:14px; color:white; background-color: #032A37"><center>Route</th>
@@ -46,7 +49,7 @@ table {
         </tbody>
     </table>
 
-<div style="margin-left: 20px; width:1150px">
+<div style="margin-left: 15px; width:1150px">
         &nbsp&nbsp&nbsp&nbsp
         <input type="checkbox" id="cb_header" name="header">
         <label for="header" style="font-size:14px; color:white">Headers &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
@@ -60,31 +63,30 @@ table {
 
 {{-- Headers --}}
 <div class="card-body" id="table-container-header" style="display: none">
-    <table class="table table-bordered" id="header_table" style="margin-left: 35px; width:1150px; border:dimgray">
-        <input type="checkbox" id="checkHeader" name="checkHeader">
+    <table class="table table-bordered" id="header_table" style="width:1150px; border:dimgray">
         <thead>
             <br>
             <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Headers</h6>
             <tr>
-                <th style="width: 5%; font-size:14px; color:white; background-color: #032A37"><center>No</th>
-                <th style="width: 13%; font-size:14px; color:white; background-color: #032A37;"><center>Key</th>
-                <th style="width: 13%; font-size:14px; color:white; background-color: #032A37"><center>Required</th>
-                <th style="width: 13%; font-size:14px; color:white; background-color: #032A37"><center>Example data</th>
-                <th style="font-size:14px; color:white; background-color: #032A37"><center>Description</th>
+                <th style="width: 50px; font-size:14px; color:white; background-color: #032A37"><center>No</th>
+                <th style="width: 100px; font-size:14px; color:white; background-color: #032A37;"><center>Key</th>
+                <th style="width: 100px; font-size:14px; color:white; background-color: #032A37"><center>Required</th>
+                <th style="width: 120px; font-size:14px; color:white; background-color: #032A37"><center>Example data</th>
+                <th style="width: 830px; font-size:14px; color:white; background-color: #032A37"><center>Description</th>
             </tr>
         </thead>
         <tbody id="my_tbody">
             <tr class="text-left">
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" id="no_body" style="background-color: #9DC8D6; width:40%; border: none" style="text-align: center;">
+                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
+                    <input type="text" id="no_body" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width:25px; border: none; text-align: center">
                     <script>
                         //ข้อมูล No ของ Body
                           var data_no_body = "1";
-                          document.getElementById("no_param").value = no_body;
+                          document.getElementById("no_body").value = data_no_body;
                     </script>
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" id="key_header" style="background-color: #9DC8D6; width:100%; border: none">
+                    <input type="text" id="key_header" style="background-color: #9DC8D6; width:130px; border: none">
                     <script>
                         //ข้อมูล Key ของ Header
                           var data_key_header = "daada";
@@ -100,7 +102,7 @@ table {
                     </select>
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" id="exampledata_header" style="background-color: #9DC8D6; width:100%; border: none">
+                    <input type="text" id="exampledata_header" style="background-color: #9DC8D6; width: 130px; border: none">
                     <script>
                         //ข้อมูล Example data ของ Header
                           var data_exampledata_header = "adwad";
@@ -108,9 +110,7 @@ table {
                     </script>
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <div class="mb-3">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" style="border:none; background:#9DC8D6"></textarea>
-                    </div>
+                    <textarea class="form-control" id="description_header" rows="1" style="font-size:14px; border:none; background:#9DC8D6; width:720px"></textarea>
                     <script>
                         //ข้อมูล Description ของ Header
                           var data_description_header = "awdawddddd";
@@ -119,30 +119,30 @@ table {
                 </th>
             </tr>
         </tbody>
+        <input type="checkbox" id="checkHeader" style="margin-left: 18px; margin-top: 80px">
     </table>
 </div>
 
 {{-- Params --}}
 <div class="card-body" id="table-container-param" style="display: none">
-    <table class="table table-bordered" id="param_table" style="margin-left: 35px; width:1150px; border:dimgray">
-        <input type="checkbox" id="checkParam" name="checkParam">
+    <table class="table table-bordered" id="param_table" style="width:1150px; border:dimgray">
         <thead>
             <br>
             <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Params</h6>
             <tr>
-                <th style="width: 5%; font-size:14px; color:white; background-color: #032A37"><center>No</th>
-                <th style="width: 10%; font-size:14px; color:white; background-color: #032A37;"><center>Key</th>
-                <th style="width: 10%; font-size:14px; color:white; background-color: #032A37;"><center>Param Type</th>
-                <th style="width: 10%; font-size:14px; color:white; background-color: #032A37;"><center>Data Type</th>
-                <th style="width: 10%; font-size:14px; color:white; background-color: #032A37"><center>Required</th>
-                <th style="width: 10%; font-size:14px; color:white; background-color: #032A37"><center>Example data</th>
-                <th style="font-size:14px; color:white; background-color: #032A37"><center>Description</th>
+                <th style="width: 40px; font-size:14px; color:white; background-color: #032A37"><center>No</th>
+                <th style="width: 120px; font-size:14px; color:white; background-color: #032A37;"><center>Key</th>
+                <th style="width: 120px; font-size:14px; color:white; background-color: #032A37;"><center>Param Type</th>
+                <th style="width: 120px; font-size:14px; color:white; background-color: #032A37;"><center>Data Type</th>
+                <th style="width: 120px; font-size:14px; color:white; background-color: #032A37"><center>Required</th>
+                <th style="width: 130px; font-size:14px; color:white; background-color: #032A37"><center>Example data</th>
+                <th style="width: 900x; font-size:14px; color:white; background-color: #032A37"><center>Description</th>
             </tr>
         </thead>
         <tbody id="my_tbody">
             <tr>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center;">
-                    <input type="text" id="no_param" style="background-color: #9DC8D6; width:40%; border: none" style="text-align: center;">
+                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
+                    <input type="text" id="no_param" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width: 25px; border: none; text-align: center">
                     <script>
                         //ข้อมูล No ของ Param
                           var data_no_param = "1";
@@ -150,7 +150,7 @@ table {
                     </script>
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" id="key_param" style="background-color: #9DC8D6; width:100%; border: none">
+                    <input type="text" id="key_param" style="background-color: #9DC8D6; width: 80px; border: none">
                     <script>
                         //ข้อมูล Key ของ Param
                           var data_key_param = "add";
@@ -191,7 +191,7 @@ table {
                     </script>
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" id="description_param" style="background-color: #9DC8D6; width:100%; border: none">
+                    <textarea class="form-control" id="description_param" rows="1" style="font-size:14px; border:none; background:#9DC8D6; width:530px"></textarea>
                     <script>
                         //ข้อมูล Description ของ Param
                           var data_description_param = "cccc";
@@ -200,33 +200,33 @@ table {
                 </th>
             </tr>
         </tbody>
+        <input type="checkbox" id="checkParam" style="margin-left: 18px; margin-top: 80px">
     </table>
 </div>
 
 {{-- Body --}}
 <div class="card-body" id="table-container-body" style="display: none">
-    <table class="table table-bordered" id="body" style="margin-left: 35px; width:1150px; border:dimgray">
-        <input type="checkbox" id="checkBody" name="checkBody">
+    <table class="table table-bordered" id="body" style="width:1150px; border:dimgray">
         <thead>
             <br>
             <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Body</h6>
             <tr>
-                <th style="width: 5%; font-size:14px; color:white; background-color: #032A37"><center>No</th>
-                <th style="width: 10%; font-size:14px; color:white; background-color: #032A37;"><center>Key</th>
-                <th style="width: 10%; font-size:14px; color:white; background-color: #032A37;"><center>Data Type</th>
-                <th style="width: 10%; font-size:14px; color:white; background-color: #032A37"><center>Required</th>
-                <th style="width: 10%; font-size:14px; color:white; background-color: #032A37"><center>Example data</th>
+                <th style="width: 50px; font-size:14px; color:white; background-color: #032A37"><center>No</th>
+                <th style="width: 130px; font-size:14px; color:white; background-color: #032A37;"><center>Key</th>
+                <th style="width: 130px; font-size:14px; color:white; background-color: #032A37;"><center>Data Type</th>
+                <th style="width: 130px; font-size:14px; color:white; background-color: #032A37"><center>Required</th>
+                <th style="width: 130px; font-size:14px; color:white; background-color: #032A37"><center>Example data</th>
                 <th style="font-size:14px; color:white; background-color: #032A37"><center>Description</th>
             </tr>
         </thead>
         <tbody id="my_tbody">
             <tr>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" id="no_body" style="background-color: #9DC8D6; width:40%; border: none" style="text-align: center;">
+                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
+                    <input type="text" id="no_body" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width: 15px; border: none; text-align: center">
                     <script>
-                        //ข้อมูล No ของ Body
+                        //ข้อมูล No ของ body
                           var data_no_body = "1";
-                          document.getElementById("no_param").value = no_body;
+                          document.getElementById("no_body").value = data_no_body;
                     </script>
                 </th>
                     <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
@@ -265,7 +265,7 @@ table {
                         </script>
                     </th>
                     <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                        <input type="text" id="description_body" style="background-color: #9DC8D6; width:100%; border: none">
+                        <textarea class="form-control" id="description_body" rows="1" style="font-size:14px; border:none; background:#9DC8D6; width:650px"></textarea>
                         <script>
                             //ข้อมูล Description ของ Body
                               var data_description_body = "dvvv";
@@ -274,12 +274,13 @@ table {
                     </th>
                 </tr>
             </tbody>
+            <input type="checkbox" id="checkParam" style="margin-left: 18px; margin-top: 80px">
         </table>
 </div>
 
 {{-- Response --}}
 <div class="card-body" id="table-container-response" style="display: none">
-    <table class="table table-bordered" id="response_table" style="margin-left: 35px; width:100px">
+    <table class="table table-bordered" id="response_table" style="width:100px; margin-left: 32px">
         <thead>
             <br>
             <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Response</h6>
@@ -302,7 +303,7 @@ table {
                 </th>
             </tr>
         </tbody>
-    <table class="table table-bordered" id="response" style="margin-left: 35px; width:957px">
+    <table class="table table-bordered" id="response" style="width:957px; margin-left: 25px"">
         <thead>
             <tr>
                 <th style="width: 9%; font-size:14px; color:white; background-color: #032A37"><center>Key</th>
