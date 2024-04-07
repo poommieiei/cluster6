@@ -5,16 +5,19 @@
     @foreach ($workspaces as $workspace)
         <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
             style="height: 80px; font-size:20px; color:white;">
-            <a href="/workspace/{{$workspace->id}}" class="text-decoration-none text-white">
-                {{ $workspace->workspace_name}}
+            <a href="/workspace/{{ $workspace->id }}" class="text-decoration-none text-white">
+                {{ $workspace->workspace_name }}
             </a>
             <div class="ms-auto">
                 {{-- Edit --}}
-                <a style="cursor: pointer" class="text-decoration-none text-white me-3" onclick="openRenameModal()">
+                <a style="cursor: pointer" class="text-decoration-none text-white me-3"
+                    onclick="openRenameModal('{{ $workspace->id }}', '{{ $workspace->workspace_name }}')">
                     <i class="bi bi-pencil-square"></i>
                 </a>
+
                 {{-- Delete --}}
-                <a style="cursor: pointer" class="text-decoration-none text-white" onclick="openDeleteModal('{{ $workspace->id }}')">
+                <a style="cursor: pointer" class="text-decoration-none text-white"
+                    onclick="openDeleteModal('{{ $workspace->id }}')">
                     <i class="bi bi-trash"></i>
                 </a>
             </div>
@@ -24,42 +27,42 @@
     {{-- Delete workspace --}}
 
     <div class="modal" id="DeleteModal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content" style="background-color: #136885; color: #ffffff;">
-                    <div class="modal-header" style="background-color: #073B4C; color: #ffffff; border-color:#136885;">
-                        <b class="logo-icon me-2" style="display: block; margin-bottom: 5px;">
-                            <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage"
-                                class="light-logo" width="20" style="display: block;" />
-                        </b>
-                        <h5 class="modal-title">Delete Workspace</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Are you sure you want to delete ? -->
-                        <div class="mb-3">
-                            <label for="areyousure" class="form-label">Are you sure you want to delete ?</label>
-                            {{-- <input type="text" class="form-control" id="workspaceName" name="workspaceName"
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: #136885; color: #ffffff;">
+                <div class="modal-header" style="background-color: #073B4C; color: #ffffff; border-color:#136885;">
+                    <b class="logo-icon me-2" style="display: block; margin-bottom: 5px;">
+                        <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage" class="light-logo"
+                            width="20" style="display: block;" />
+                    </b>
+                    <h5 class="modal-title">Delete Workspace</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Are you sure you want to delete ? -->
+                    <div class="mb-3">
+                        <label for="areyousure" class="form-label">Are you sure you want to delete ?</label>
+                        {{-- <input type="text" class="form-control" id="workspaceName" name="workspaceName"
                                 value="#" style="background-color: #0C4F65; color:#ffffff;"> --}}
-                        </div>
-                    </div>
-                    <div class="modal-footer" style="border-color:#136885;">
-                        <!-- button delete-->
-                        <a href="" class="btn btn-danger" id="submitDeleteWorkspaceBtn"
-                            style="background-color: #EF476F; color: #ffffff;">Delete</a>
-                        <!-- Use data-bs-dismiss="modal" to close the modal -->
-                        <button type="button" class="btn" data-bs-dismiss="modal"
-                            style="background-color: #808080; color: #ffffff;">Cancel</button>
                     </div>
                 </div>
+                <div class="modal-footer" style="border-color:#136885;">
+                    <!-- button delete-->
+                    <a href="" class="btn btn-danger" id="submitDeleteWorkspaceBtn"
+                        style="background-color: #EF476F; color: #ffffff;">Delete</a>
+                    <!-- Use data-bs-dismiss="modal" to close the modal -->
+                    <button type="button" class="btn" data-bs-dismiss="modal"
+                        style="background-color: #808080; color: #ffffff;">Cancel</button>
+                </div>
             </div>
+        </div>
     </div>
 
     {{-- ----------------------------------------------------------------------------------------------------------------------- --}}
     <!--Rename workspace-->
-    @foreach ($workspaces as $item)
+
     <div class="modal" id="RenameModal" tabindex="-1">
-        <form id="renameForm" action="/rename/{{$item->id}}" method="POST">
+        <form id="renameForm" action="" method="POST">
             @csrf <!--Route /rename-->
             <div class="modal-dialog">
                 <div class="modal-content" style="background-color: #136885; color: #ffffff;">
@@ -77,7 +80,7 @@
                         <div class="mb-3">
                             <label for="workspaceName" class="form-label">New Workspace name</label>
                             <input type="text" class="form-control" id="workspaceName" name="workspaceName"
-                                value="{{$item->workspace_name}}" style="background-color: #0C4F65; color:#ffffff;">
+                                value="" style="background-color: #0C4F65; color:#ffffff;">
                         </div>
                     </div>
                     <div class="modal-footer" style="border-color:#136885;">
@@ -92,7 +95,7 @@
             </div>
         </form>
     </div>
-    @endforeach
+
     {{-- ----------------------------------------------------------------------------------------------------------------------- --}}
 
     <!-- ปุ่ม Create -->
@@ -113,7 +116,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <form action="/insertWorkspace/ {{ Auth::user()->id}}" method="POST">
+                <form action="/insertWorkspace/ {{ Auth::user()->id }}" method="POST">
                     @csrf
                     <div class="modal-body">
                         <!-- กรอกชื่อ Workspace -->
@@ -137,22 +140,32 @@
 
     <script>
         document.getElementById('submitWorkspaceBtn').addEventListener('click', function() {
-            // Perform form submission here
+
             document.getElementById('renameForm').submit();
         });
+        var RouteURL = '/rename/';
+        var Workspace;
 
-        // Function to show the modal
-        function openRenameModal() {
+        function openRenameModal(workspaceId, workspaceName) {
+            var URL = RouteURL + workspaceId.trim();
+            Workspace = workspaceName;
+            var name = workspaceName.trim();;
+            console.log(URL);
+            console.log(name);
+            document.getElementById('renameForm').action = URL;
+
+            document.getElementById('workspaceName').value = name;
+
             var modal = new bootstrap.Modal(document.getElementById('RenameModal'));
             modal.show();
         }
 
-        // Function to close the modal
         function closeRenameModal() {
             var modal = new bootstrap.Modal(document.getElementById('RenameModal'));
             modal.hide();
         }
     </script>
+
     <script>
         document.getElementById('submitDeleteWorkspaceBtn').addEventListener('click', function() {
             document.getElementById('deleteForm').submit();
@@ -175,7 +188,6 @@
             var modal = new bootstrap.Modal(document.getElementById('DeleteModal'));
             modal.hide();
         }
-
     </script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
