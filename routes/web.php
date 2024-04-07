@@ -14,7 +14,7 @@ use PHPUnit\TestRunner\TestResult\Collector;
         return  view('layouts.layout');
     });
 */
-
+Route::get('/import' , [Importjson::class,'importpage']);
 
 //ห้ามลบ
 Auth::routes();
