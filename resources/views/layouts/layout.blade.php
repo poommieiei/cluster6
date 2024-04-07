@@ -77,10 +77,10 @@
                             </li>
                         </ul>
                     </div>
-                    <div style="position: fixed; top: 5px; left: 685px;  font-size: 36px; color:white; front-weight:bold;">
+                    <div style="position: fixed; top: 1%; left: 45%;  font-size: 36px; color:white; front-weight:bold;">
                         <center> Collection </center>
                     </div>
-                    <div class="btn-group" style="position: fixed; top: 15px; right: 40px;"<button type="button"
+                    <div class="btn-group" style="position: fixed; top: 2%; right: 2%;"<button type="button"
                         class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
                         style="background-color:#0E566E;">
                         <div class="container d-flex justify-content-between align-items-center">
@@ -91,7 +91,7 @@
                             <i class="bi bi-caret-down-fill ms-3" style="color: white"></i>
                         </div>
                         </button>
-                        <ul class="dropdown-menu" style="position: fixed; top: 65px; left: 1315px;">
+                        <ul class="dropdown-menu" style="position: fixed; top: 9%; left: 87%;">
                             <li><a class="dropdown-item" href="#">Action</a></li>   
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
