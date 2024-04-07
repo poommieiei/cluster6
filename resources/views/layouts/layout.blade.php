@@ -80,7 +80,7 @@
                     <div style="position: fixed; top: 1%; left: 45%;  font-size: 36px; color:white; front-weight:bold;">
                         <center> Collection </center>
                     </div>
-                    <div class="btn-group" style="position: fixed; top: 2%; right: 2%;"<button type="button"
+                    <div class="btn-group" style="position: fixed; top: 2%; right: 2%;" <button type="button"
                         class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
                         style="background-color:#0E566E;">
                         <div class="container d-flex justify-content-between align-items-center">
@@ -91,14 +91,25 @@
                             <i class="bi bi-caret-down-fill ms-3" style="color: white"></i>
                         </div>
                         </button>
-                        <ul class="dropdown-menu" style="position: fixed; top: 9%; left: 84%;">
-                            <input type="text" class="form-control" id="collectionName" value="E-mail" 
-                                style="background-color: #118AB2; color: #ffffff; width: 200px;">   
-                            <li>
-                                <hr class="dropdown-divider">
-                            <li style="text-align: center; margin-left: 45px; background-color:#71A4F0; color:#ffffff; width: 100px;"><a class="dropdown-item" href="#" style="background-color: #71A4F0;">Invite</a></li>
-                        </ul>
+                        <div class="dropdown-menu">
+                            <div class="card text-center mb-3" style="width: 18rem;">
+                                <div class="card-body"
+                                    style="position: fixed; top: 9%; left: 80%; background-color:#00000096;">
+                                    <input type="email" name="email" class="form-control" id="email"
+                                        placeholder="Enter email"
+                                        style="background-color: #118AB2; color: #ffffff; border-color:#00000096; width: 230px;">
+                                    <button type="button" class="btn" id="invite"
+                                        style="background-color: #71A4F0; color: #ffffff;">Invite</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <script>
+                        document.getElementById('invite').addEventListener('click', function() {
+                            var email = document.getElementById('email').value;
+                            alert('Invited email: ' + email);
+                        });
+                    </script>
                 </nav>
             </div>
         </header>
