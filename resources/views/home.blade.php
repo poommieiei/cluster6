@@ -7,11 +7,11 @@
             style="height: 80px; font-size:20px; color:white;">{{ $workspace->workspace_name}}
             <div class="ms-auto">
                 {{-- Edit --}}
-                <a href="#" class="text-decoration-none text-white me-3" onclick="openRenameModal()">
+                <a style="cursor: pointer" class="text-decoration-none text-white me-3" onclick="openRenameModal()">
                     <i class="bi bi-pencil-square"></i>
                 </a>
                 {{-- Delete --}}
-                <a href="#" class="text-decoration-none text-white" onclick="openDeleteModal('{{ $workspace->id }}')">
+                <a style="cursor: pointer" class="text-decoration-none text-white" onclick="openDeleteModal('{{ $workspace->id }}')">
                     <i class="bi bi-trash"></i>
                 </a>
             </div>
