@@ -1,6 +1,12 @@
 @extends('table.layouttable')
 @section('content')
 
+<head>
+    <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+
 <style>
     #table-container {
   display: show;
@@ -287,45 +293,46 @@
         <i class="fas fa-download"></i> Save
     </button>
 
-    <!-- Save Alert -->
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-        </symbol>
-    </svg>
-    <div class="modal" id="save" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="alert alert-success d-flex align-items-center" role="alert">
-                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-                    <div> Your work has been saved </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- for save modal -->
+    <!-- sweetalert 2 for save button -->
     <script>
-        // Show Modal
-        document.getElementById("save_btn").addEventListener("click", showModal);
-        function showModal(){
-            var save = new bootstrap.Modal(document.getElementById('save'));
-            save.show();
-        }
-
-        // Hide Modal
-        var modal = document.getElementById('save');
-        modal.addEventListener('click', function(event){
-            if(event.target === modal){
-                var save = new bootstrap.Modal(document.getElementById('save'));
-                save.hide();
-            }
+        $('#save_btn').click(function(){
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Your work has been saved.",
+                showConfirmButton: false,
+                timer: 1500
+            });
         });
     </script>
 
-    <!-- Export Button -->
-    <button type="button" class="btn rounded-pill btn-info" style="position:absolute; bottom: 93.5%; right: 11%; width: 8%">
+      <!-- Export Button -->
+    <button type="button" id="export_button"class="btn rounded-pill btn-info" style="position:absolute; bottom: 93.5%; right: 11%; width: 8%">
         <i class="fas fa-download"></i> Export
     </button>
+
+    <!-- sweetalert 2 for Export button -->
+     <script>
+      $('#export_button').click(function(){
+       Swal.fire({
+        title: "Are you sure you save the changes?",
+        text: "Your changes will not appear if you  don't save them.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Export"
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+            title: "Exported!",
+            text: "Your file has been export.",
+            icon: "success"
+            });
+        }
+        });
+    })
+    </script>
+
 </div>
 @endsection
