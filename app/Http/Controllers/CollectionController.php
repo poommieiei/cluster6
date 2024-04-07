@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Collection;
 use Illuminate\Http\Request;
 
 class CollectionController extends Controller
@@ -12,7 +13,9 @@ class CollectionController extends Controller
 
     public function indexcollection($id)
     {
-        return view('collection.collection' , compact('id'));
+        $collections = Collection::where('workspace_id' , $id)->get();
+        // dd($collections);
+        return view('collection.collection' , compact('id' , 'collections'));
     }
 
     public function renamecollection(){

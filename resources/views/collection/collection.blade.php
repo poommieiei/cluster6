@@ -1,19 +1,22 @@
 @extends('layouts.layout')
 @section('content')
-    <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
-        style="height: 80px; font-size:20px; color:white;">
-        <a href="#" class="text-decoration-none text-white">
-            Collection
-        </a>
-        <div class="ms-auto">
-            <a href="#" class="text-decoration-none text-white me-3">
-                <i class="bi bi-pencil-square"></i>
-            </a>
+    @foreach ($collections as $collection)
+        <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
+            style="height: 80px; font-size:20px; color:white;">
             <a href="#" class="text-decoration-none text-white">
-                <i class="bi bi-trash"></i>
+                {{ $collection->collection_name}}
             </a>
+            <div class="ms-auto">
+                <a href="#" onclick="openRenameModal({{ $collection->collection_name}})" class="text-decoration-none text-white me-3">
+                    <i class="bi bi-pencil-square"></i>
+                </a>
+                <a href="#" class="text-decoration-none text-white">
+                    <i class="bi bi-trash"></i>
+                </a>
+            </div>
         </div>
-    </div>
+    @endforeach
+
     <div class="fixed-bottom d-flex justify-content-end mb-3 me-3">
         <a href="#" id="import" class="btn btn-lg btn-icon"
             style="margin-right: 20px; background-color:#268EB0; color:#ffffff; width: 130px;">
@@ -56,6 +59,9 @@
         // เลือกไอคอน bi-pencil-square
         var pencilIcon = document.querySelector('.bi.bi-pencil-square');
 
+        function openRenameModal(Name){
+            pencilIcon = Name;
+        }
         // เพิ่มการฟังก์ชันเมื่อคลิกที่ไอคอน
         pencilIcon.addEventListener('click', function() {
             // เปิด Modal โดยใช้ Bootstrap JavaScript

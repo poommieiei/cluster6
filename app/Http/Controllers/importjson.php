@@ -16,7 +16,7 @@ class Importjson extends Controller
     }
 
     public function importjson(Request $request ){
-        $id = 24;
+        $id = 31;
         if ($request->hasFile('json_file')) {
             $file = $request->file('json_file');
 
@@ -43,7 +43,7 @@ class Importjson extends Controller
                         $variable = $data['variable'];
                         dd($info , $item , $variable);
                     }
-                    dd($info , $item );
+                    // dd($info , $item );
 
 
                     // dd( count($data));
