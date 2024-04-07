@@ -49,6 +49,25 @@ class WorkspaceController extends Controller
     public function deleteworkspace ($id){
         // dd($id);
         DB::table('workspace')->where('id', $id)->delete();
+        // $workspace = Workspace::findOrFail($id);
+        // if($workspace->id == $id){
+        //     $workspace->delete();
+        // }
         return redirect('/workspace');
     }
+    public function renameworkspace(Request $req , $id){
+        // dd($req , $id);
+        $req->validate([
+            'workspaceName' => 'required|string|max:255'
+        ]);
+        $workspace = $req->input('workspaceName');
+        $inputworkspace = Workspace::findOrFail($id);
+        // dd($workspace );
+        $inputworkspace->workspace_name = $workspace;
+        $inputworkspace->save();
+
+
+        return redirect('/workspace');
+    }
+
 }
