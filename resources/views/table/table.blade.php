@@ -11,6 +11,9 @@
     #table-container {
   display: show;
 }
+table {
+    display: inline-block;
+  }
 </style>
 
 <div class="card-body">
@@ -72,9 +75,21 @@
         </thead>
         <tbody id="my_tbody">
             <tr class="text-left">
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6"><center>1</th>
+                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                    <input type="text" id="no_body" style="background-color: #9DC8D6; width:40%; border: none" style="text-align: center;">
+                    <script>
+                        //ข้อมูล No ของ Body
+                          var data_no_body = "1";
+                          document.getElementById("no_param").value = no_body;
+                    </script>
+                </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
                     <input type="text" id="key_header" style="background-color: #9DC8D6; width:100%; border: none">
+                    <script>
+                        //ข้อมูล Key ของ Header
+                          var data_key_header = "daada";
+                          document.getElementById("key_header").value = data_key_header;
+                    </script>
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
                     <center>
@@ -85,10 +100,20 @@
                     </select>
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" id="key_header" style="background-color: #9DC8D6; width:100%; border: none">
+                    <input type="text" id="exampledata_header" style="background-color: #9DC8D6; width:100%; border: none">
+                    <script>
+                        //ข้อมูล Example data ของ Header
+                          var data_exampledata_header = "adwad";
+                          document.getElementById("exampledata_header").value = data_exampledata_header;
+                    </script>
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" id="key_header" style="background-color: #9DC8D6; width:100%; border: none">
+                    <input type="text" id="description_header" style="background-color: #9DC8D6; width:100%; border: none">
+                    <script>
+                        //ข้อมูล Description ของ Header
+                          var data_description_header = "awdawddddd";
+                          document.getElementById("description_header").value = data_description_header;
+                    </script>
                 </th>
             </tr>
         </tbody>
@@ -114,12 +139,24 @@
         </thead>
         <tbody id="my_tbody">
             <tr>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6"><center>1</th>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" id="key_header" style="background-color: #9DC8D6; width:100%; border: none">
+                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center;">
+                    <input type="text" id="no_param" style="background-color: #9DC8D6; width:40%; border: none" style="text-align: center;">
+                    <script>
+                        //ข้อมูล No ของ Param
+                          var data_no_param = "1";
+                          document.getElementById("no_param").value = data_no_param;
+                    </script>
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <select name="param_type" id="param_type" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
+                    <input type="text" id="key_param" style="background-color: #9DC8D6; width:100%; border: none">
+                    <script>
+                        //ข้อมูล Key ของ Param
+                          var data_key_param = "add";
+                          document.getElementById("key_param").value = data_key_param;
+                    </script>
+                </th>
+                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                    <select name="param_type" id="paramtype_param" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
                         <option value="query">Query</option>
                         <option value="route">Route</option>
                     </select>
@@ -144,10 +181,20 @@
                     </select>
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" id="key_header" style="background-color: #9DC8D6; width:100%; border: none">
+                    <input type="text" id="exampledata_param" style="background-color: #9DC8D6; width:100%; border: none">
+                    <script>
+                        //ข้อมูล Example data ของ Param
+                          var data_exampledata_param = "dddd";
+                          document.getElementById("exampledata_param").value = data_exampledata_param;
+                    </script>
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" id="key_header" style="background-color: #9DC8D6; width:100%; border: none">
+                    <input type="text" id="description_param" style="background-color: #9DC8D6; width:100%; border: none">
+                    <script>
+                        //ข้อมูล Description ของ Param
+                          var data_description_param = "cccc";
+                          document.getElementById("description_param").value = data_description_param;
+                    </script>
                 </th>
             </tr>
         </tbody>
@@ -171,10 +218,22 @@
             </tr>
         </thead>
         <tbody id="my_tbody">
-            <tr style="width: 20%">
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6"><center>1</th>
+            <tr>
+                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                    <input type="text" id="no_body" style="background-color: #9DC8D6; width:40%; border: none" style="text-align: center;">
+                    <script>
+                        //ข้อมูล No ของ Body
+                          var data_no_body = "1";
+                          document.getElementById("no_param").value = no_body;
+                    </script>
+                </th>
                     <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                        <input type="text" id="key_header" style="background-color: #9DC8D6; width:100%; border: none">
+                        <input type="text" id="key_body" style="background-color: #9DC8D6; width:100%; border: none">
+                        <script>
+                            //ข้อมูล Key ของ Body
+                              var data_key_body = "gggg";
+                              document.getElementById("key_body").value = data_key_body;
+                        </script>
                     </th>
                     <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
                         <select name="datatype_body" id="datatype_body" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
@@ -196,10 +255,20 @@
                         </select>
                     </th>
                     <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                        <input type="text" id="key_header" style="background-color: #9DC8D6; width:100%; border: none">
+                        <input type="text" id="exampledata_body" style="background-color: #9DC8D6; width:100%; border: none">
+                        <script>
+                            //ข้อมูล Example data ของ Body
+                              var data_exampledata_body = "lll";
+                              document.getElementById("exampledata_body").value = data_exampledata_body;
+                        </script>
                     </th>
                     <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                        <input type="text" id="key_header" style="background-color: #9DC8D6; width:100%; border: none">
+                        <input type="text" id="description_body" style="background-color: #9DC8D6; width:100%; border: none">
+                        <script>
+                            //ข้อมูล Description ของ Body
+                              var data_description_body = "dvvv";
+                              document.getElementById("description_body").value = data_description_body;
+                        </script>
                     </th>
                 </tr>
             </tbody>
@@ -208,7 +277,7 @@
 
 {{-- Response --}}
 <div class="card-body" id="table-container-response" style="display: none">
-    <table class="table table-bordered" id="response_table" style="margin-left: 35px; width:100px; ">
+    <table class="table table-bordered" id="response_table" style="margin-left: 35px; width:100px">
         <thead>
             <br>
             <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Response</h6>
@@ -217,29 +286,61 @@
             </tr>
         </thead>
         <tbody id="my_tbody">
-            <tr style="width: 20%">
-                <th style="width: 9%; font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">201 &nbsp&nbsp&nbsp&nbsp&nbsp
+            <tr>
+                <th style="width: 9%; font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                    <input type="text" id="statuscode" style="background-color: #9DC8D6; width:55% ; border: none">
+                    <script>
+                        //ข้อมูล Status code ของ Response
+                          var data_statuscode_response= "dvvvdddd";
+                          document.getElementById("statuscode").value = data_statuscode_response;
+                    </script>
                     <a href="#" class="text-decoration-none text-white me-3">
                         <i class="bi bi-pencil-square"></i>
                     </a>
                 </th>
             </tr>
         </tbody>
-    </table>
-    <table class="table table-bordered" id="response" style="margin-left: 35px; width:100px">
+    <table class="table table-bordered" id="response" style="margin-left: 35px; width:957px">
         <thead>
-            <br>
-            <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Response</h6>
             <tr>
-                <th style="width: 9%; font-size:14px; color:white; background-color: #032A37"><center>Status Code</th>
-            </tr>
+                <th style="width: 9%; font-size:14px; color:white; background-color: #032A37"><center>Key</th>
+                <th style="width: 12%; font-size:14px; color:white; background-color: #032A37"><center>Data Type</th>
+                <th style="width: 15%; font-size:14px; color:white; background-color: #032A37"><center>Example Data</th>
+                <th style="font-size:14px; color:white; background-color: #032A37"><center>Description</th>
         </thead>
         <tbody id="my_tbody">
-            <tr style="width: 20%">
-                <th style="width: 9%; font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">201 &nbsp&nbsp&nbsp&nbsp&nbsp
-                    <a href="#" class="text-decoration-none text-white me-3">
-                        <i class="bi bi-pencil-square"></i>
-                    </a>
+            <tr>
+                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                    <input type="text" id="key_response" style="background-color: #9DC8D6; width:100%; border: none">
+                    <script>
+                        //ข้อมูล Key ของ Response
+                          var data_key_response= "dawa";
+                          document.getElementById("key_response").value = data_key_response;
+                    </script>
+                </th>
+                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                    <input type="text" id="datatype_response" style="background-color: #9DC8D6; width:100%; border: none">
+                    <script>
+                        //ข้อมูล Data type ของ Response
+                          var data_datatype_response= "awdawd";
+                          document.getElementById("datatype_response").value = data_datatype_response;
+                    </script>
+                </th>
+                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                    <input type="text" id="exampledata_response" style="background-color: #9DC8D6; width:100%; border: none">
+                    <script>
+                        //ข้อมูล Example data ของ Response
+                          var data_exampladata_response= "awdawd";
+                          document.getElementById("exampledata_response").value = data_exampladata_response;
+                    </script>
+                </th>
+                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                    <input type="text" id="description_response" style="background-color: #9DC8D6; width:100%; border: none">
+                    <script>
+                        //ข้อมูล Description ของ Response
+                          var data_description_response= "awdawd";
+                          document.getElementById("description_response").value = data_description_response;
+                    </script>
                 </th>
             </tr>
         </tbody>

@@ -21,6 +21,4 @@ class CollectionController extends Controller
     public function importcollection(){
         return ;
     }
-
-
 }
