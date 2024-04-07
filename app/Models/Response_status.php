@@ -12,7 +12,8 @@ class Response_status extends Model
     protected $table = 'response_status';
 
     protected $fillable = [
-        'response_code'
+        'response_code',
+        'method_id'
     ];
 
     public function method()

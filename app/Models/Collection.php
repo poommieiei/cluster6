@@ -12,7 +12,8 @@ class Collection extends Model
     protected $table = 'collection';
 
     protected $fillable = [
-        'collection_name'
+        'collection_name',
+        'workspace_id'
     ];
 
     public function workspace()

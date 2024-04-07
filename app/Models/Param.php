@@ -19,6 +19,7 @@ class Param extends Model
         'example_data',
         'description',
         'status',
+        'method_id'
     ];
 
     public function method()
