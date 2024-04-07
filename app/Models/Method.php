@@ -12,7 +12,8 @@ class Method extends Model
     protected $table = 'methods';
 
     protected $fillable = [
-        'method'
+        'method',
+        'collection_id'
     ];
 
     public function collection()

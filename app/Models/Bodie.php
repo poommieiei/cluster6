@@ -16,7 +16,8 @@ class Bodie extends Model
         'require',
         'example_data',
         'description',
-        'status'
+        'status',
+        'method_id'
     ];
 
     public function method()

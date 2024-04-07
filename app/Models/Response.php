@@ -16,6 +16,7 @@ class Response extends Model
         'datatype',
         'example_data',
         'description',
+        'response_status_id'
     ];
 
     public function Response_status()
