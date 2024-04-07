@@ -430,6 +430,11 @@ table {
             text: "Your file has been export.",
             icon: "success"
             });
+        }else{
+            Swal.fire({
+            title: "Cancelled!",
+            icon: "error"
+            });
         }
         });
     })
