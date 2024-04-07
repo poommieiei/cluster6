@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,65 +17,74 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body>
-    <div id="app">
-z            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+<body style="background-color: #2F2C2C">
+    <style>
+        .right-container {
+            background-color: #073B4C;
+            border-radius: 25px;
+            width: 1000px;
+            height: 600px;
+            padding: 0px;
+            margin: 60px;
+        }
 
-                    </ul>
+        .left-container {
+            background-color: #136885;
+            border-radius: 25px;
+            width: 500px;
+            left: 50px;
+            display: flex;
+            justify-content: center;
+        }
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
+        .outer-frame {
+            background-color: #0B5269;
+            border-radius: 25px;
+            width: 400px;
+            height: 500px;
+            margin-top: 50px;
+            transform: translateX(13%);
+        }
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+        .inner-frame {
+            background-color: #136885;
+            border-radius: 25px;
+            width: 400px;
+            height: 450px;
+            margin-top: 50px;
+            right: 0.25%;
+        }
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+        .left-container img {
+            /* Adjust the top margin to move the image vertically */
+            margin-top: 60px;
+            /* Adjust the value as needed */
+        }
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        .left-rectangle {
+            background-color: #136885;
+            width: 70px;
+            height: 16.80px;
+            margin-top: 583px;
+            transform: translateX(100px);
+        }
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+        .right-rectangle {
+            background-color: #d0172a;
+            width: 60px;
+            height: 16.80px;
+            margin-top: 583px;
+            transform: translateX(100px);
+        }
+    </style>
+
+
+
+    <main class="py-4">
+        @yield('content')
+    </main>
     </div>
 </body>
+
 </html>
-
-
