@@ -77,37 +77,43 @@
                             </li>
                         </ul>
                     </div>
-                    <div style="position: fixed; top: 1%; left: 45%;  font-size: 36px; color:white; front-weight:bold;">
+                    <div style="position: fixed; top: 1%; left: 46%;  font-size: 36px; color:white; front-weight:bold;">
                         <center> Collection </center>
                     </div>
-                    <div class="btn-group" style="position: fixed; top: 2%; right: 2%;" <button type="button"
-                        class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
-                        style="background-color:#0E566E;">
+                    <!-- ปุ่ม Invite -->
+                    <div class="btn-group" style="position: fixed; top: 2%; right: 2%;">
                         <div class="container d-flex justify-content-between align-items-center">
                             <div class="rounded-circle bg-light d-flex justify-content-center align-items-center"
                                 style="width: 40px; height: 40px;">
                                 <i class="bi bi-person-plus-fill ms-1" style="color: #073B4C; font-size: 25px;"></i>
                             </div>
-                            <i class="bi bi-caret-down-fill ms-3" style="color: white"></i>
+                            <i class="bi bi-caret-down-fill ms-3" id="inviteIcon"
+                                style="color: white; cursor: pointer;"></i>
                         </div>
-                        </button>
-                        <div class="dropdown-menu">
-                            <div class="card text-center mb-3" style="width: 18rem;">
-                                <div class="card-body"
-                                    style="position: fixed; top: 9%; left: 80%; background-color:#00000096;">
-                                    <input type="email" name="email" class="form-control" id="email"
-                                        placeholder="Enter email"
-                                        style="background-color: #118AB2; color: #ffffff; border-color:#00000096; width: 230px;">
-                                    <button type="button" class="btn" id="invite"
-                                        style="background-color: #71A4F0; color: #ffffff;">Invite</button>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="card text-center" id="inviteCard"
+                        style="position: fixed; top: 9%; left: 80%;background-color:#000000c9; display: none;">
+                        <div class="card-body" style="position: fixed; top: 9%; left: 80%; background-color:#000000c9;">
+                            <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                style="background-color: #118AB2; color: #ffffff; border-color:#000000c9; width: 230px;">
+                            <button type="button" class="btn" id="inviteBtn"
+                                style="background-color: #71A4F0; color: #ffffff;">Invite</button>
+                            <style>
+                                #email::placeholder {
+                                    color: #e0e0e0;
+                                }
+                            </style>
                         </div>
                     </div>
                     <script>
-                        document.getElementById('invite').addEventListener('click', function() {
-                            var email = document.getElementById('email').value;
-                            alert('Invited email: ' + email);
+                        // ฟังก์ชันเปิด-ปิดการ์ด Invite
+                        const inviteIcon = document.getElementById('inviteIcon');
+                        const inviteCard = document.getElementById('inviteCard');
+                        let isOpen = false;
+
+                        inviteIcon.addEventListener('click', () => {
+                            isOpen = !isOpen;
+                            inviteCard.style.display = isOpen ? 'block' : 'none';
                         });
                     </script>
                 </nav>
