@@ -108,7 +108,9 @@ table {
                     </script>
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" id="description_header" style="background-color: #9DC8D6; width:100%; border: none">
+                    <div class="mb-3">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" style="border:none; background:#9DC8D6"></textarea>
+                    </div>
                     <script>
                         //ข้อมูล Description ของ Header
                           var data_description_header = "awdawddddd";
