@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Collection;
 use Error;
 use Exception;
 use Illuminate\Http\Request;
@@ -22,7 +23,7 @@ class Importjson extends Controller
             if ($file->getClientOriginalExtension() === 'json') {
                 try {
                     $workspace = Workspace::findOrFail($id)->first();
-                    dd($workspace);
+
 
                     $data = json_decode(file_get_contents($file->path()), true);
 
@@ -31,6 +32,10 @@ class Importjson extends Controller
                     }
 
                     $info = $data['info']['name']; // *
+                    $collection = Collection::Create([
+                        'collection_name' => $info,
+                        'workspace_id' => $id,
+                    ]);
 
                     $item = $data['item'];
 
