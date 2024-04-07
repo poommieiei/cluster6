@@ -77,28 +77,29 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                            aria-expanded="false" style="background-color:#0E566E; border-color:#0E566E;">
-                            <div class="container d-flex justify-content-between align-items-center me-3">
-                                <div class="rounded-circle bg-light d-flex justify-content-center align-items-center"
-                                    style="width: 40px; height: 40px;">
-                                    <i class="bi bi-person-plus-fill" style="color: #073B4C; font-size: 25px;"></i>
-                                </div>
-                                <i class="bi bi-caret-down-fill"></i>
+                    <div style="position: fixed; top: 5px; left: 685px;  font-size: 36px; color:white; front-weight:bold;">
+                        <center> Collection </center>
+                    </div>
+                    <div class="btn-group" style="position: fixed; top: 15px; right: 40px;"<button type="button"
+                        class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="background-color:#0E566E;">
+                        <div class="container d-flex justify-content-between align-items-center">
+                            <div class="rounded-circle bg-light d-flex justify-content-center align-items-center"
+                                style="width: 40px; height: 40px;">
+                                <i class="bi bi-person-plus-fill ms-1" style="color: #073B4C; font-size: 25px;"></i>
                             </div>
+                            <i class="bi bi-caret-down-fill ms-3" style="color: white"></i>
+                        </div>
                         </button>
-                        <!---
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                        -->
+                        <ul class="dropdown-menu" style="position: fixed; top: 65px; left: 1315px;">
+                            <li><a class="dropdown-item" href="#">Action</a></li>   
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
                     </div>
                 </nav>
             </div>
