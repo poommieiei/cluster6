@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 
 class CollectionController extends Controller
 {
+    public function indexEmptyCollection(){
+        return view('collection.emptyCollection');
+    }
+
     public function indexcollection(){
-        
-        return view('collection');
+        return view('collection.collection');
     }
 
     public function renamecollection(){
@@ -20,6 +23,7 @@ class CollectionController extends Controller
     }
 
     public function importcollection(){
+        
         return ;
     }
 

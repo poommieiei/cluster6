@@ -4,14 +4,17 @@
     {{-- Workspace --}}
     @foreach ($workspaces as $workspace)
         <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
-            style="height: 80px; font-size:20px; color:white;">{{ $workspace->workspace_name}}
+            style="height: 80px; font-size:20px; color:white;">
+            <a href="/workspace/{{$workspace->id}}" class="text-decoration-none text-white">
+                {{ $workspace->workspace_name}}
+            </a>
             <div class="ms-auto">
                 {{-- Edit --}}
-                <a href="#" class="text-decoration-none text-white me-3" onclick="openRenameModal()">
+                <a style="cursor: pointer" class="text-decoration-none text-white me-3" onclick="openRenameModal()">
                     <i class="bi bi-pencil-square"></i>
                 </a>
                 {{-- Delete --}}
-                <a href="#" class="text-decoration-none text-white" onclick="openDeleteModal('{{ $workspace->id }}')">
+                <a style="cursor: pointer" class="text-decoration-none text-white" onclick="openDeleteModal('{{ $workspace->id }}')">
                     <i class="bi bi-trash"></i>
                 </a>
             </div>
