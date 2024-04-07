@@ -13,11 +13,13 @@
         </div>
     </div>
     <div class="fixed-bottom d-flex justify-content-end mb-3 me-3">
-        <a href="#" id="import" class="btn btn-lg btn-icon"
-            style="margin-right: 20px; background-color:#268EB0; color:#ffffff; width: 130px;">
-            <i class="fas fa-download mr-2 me-3"></i>
-            Import
-        </a>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <div class="f"></div>
+            <label for="fileUpload" class="btn btn-lg btn-icon" style="margin-right:20px; background-color:#268EB0; color:#ffffff; width: 160px;">
+                <i class="fas fa-download mr-2 me-3"></i> Choose file
+            </label>
+            <input id="fileUpload" type="file" name="file" style="display: none;">
+        </form>
     </div>
 
     <!-- Rename Collection -->
