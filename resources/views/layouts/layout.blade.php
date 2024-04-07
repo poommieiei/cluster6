@@ -91,14 +91,12 @@
                             <i class="bi bi-caret-down-fill ms-3" style="color: white"></i>
                         </div>
                         </button>
-                        <ul class="dropdown-menu" style="position: fixed; top: 9%; left: 87%;">
-                            <li><a class="dropdown-item" href="#">Action</a></li>   
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <ul class="dropdown-menu" style="position: fixed; top: 9%; left: 84%;">
+                            <input type="text" class="form-control" id="collectionName" value="E-mail" 
+                                style="background-color: #118AB2; color: #ffffff; width: 200px;">   
                             <li>
                                 <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                            <li style="text-align: center; margin-left: 45px; background-color:#71A4F0; color:#ffffff; width: 100px;"><a class="dropdown-item" href="#" style="background-color: #71A4F0;">Invite</a></li>
                         </ul>
                     </div>
                 </nav>
