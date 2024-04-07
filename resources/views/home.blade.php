@@ -11,7 +11,7 @@
                     <i class="bi bi-pencil-square"></i>
                 </a>
                 {{-- Delete --}}
-                <a href="#" class="text-decoration-none text-white" onclick="openDeleteModal()">
+                <a href="#" class="text-decoration-none text-white" onclick="openDeleteModal('{{ $workspace->id }}')">
                     <i class="bi bi-trash"></i>
                 </a>
             </div>
@@ -19,7 +19,7 @@
     @endforeach
 
     {{-- Delete workspace --}}
-    @foreach ($workspaces as $item)
+
     <div class="modal" id="DeleteModal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content" style="background-color: #136885; color: #ffffff;">
@@ -36,13 +36,13 @@
                         <!-- Are you sure you want to delete ? -->
                         <div class="mb-3">
                             <label for="areyousure" class="form-label">Are you sure you want to delete ?</label>
-                            <input type="text" class="form-control" id="workspaceName" name="workspaceName"
-                                value="{{$item->workspace_name}}" style="background-color: #0C4F65; color:#ffffff;">
+                            {{-- <input type="text" class="form-control" id="workspaceName" name="workspaceName"
+                                value="#" style="background-color: #0C4F65; color:#ffffff;"> --}}
                         </div>
                     </div>
                     <div class="modal-footer" style="border-color:#136885;">
                         <!-- button delete-->
-                        <a href="{{ route('deleteworkspace', $item->id) }} " class="btn btn-danger" id="submitDeleteWorkspaceBtn"
+                        <a href="" class="btn btn-danger" id="submitDeleteWorkspaceBtn"
                             style="background-color: #EF476F; color: #ffffff;">Delete</a>
                         <!-- Use data-bs-dismiss="modal" to close the modal -->
                         <button type="button" class="btn" data-bs-dismiss="modal"
@@ -51,7 +51,7 @@
                 </div>
             </div>
     </div>
-    @endforeach
+
     {{-- ----------------------------------------------------------------------------------------------------------------------- --}}
     <!--Rename workspace-->
     @foreach ($workspaces as $item)
@@ -152,12 +152,17 @@
     </script>
     <script>
         document.getElementById('submitDeleteWorkspaceBtn').addEventListener('click', function() {
-            // Perform form submission here
             document.getElementById('deleteForm').submit();
         });
+        var URL = '/deleteworkspace/';
 
         // Function to show the modal
-        function openDeleteModal() {
+        function openDeleteModal(workspaceId) {
+
+            var deleteURL = URL += workspaceId;
+            console.log(deleteURL);
+
+            document.getElementById('submitDeleteWorkspaceBtn').href = deleteURL;
             var modal = new bootstrap.Modal(document.getElementById('DeleteModal'));
             modal.show();
         }
@@ -167,6 +172,7 @@
             var modal = new bootstrap.Modal(document.getElementById('DeleteModal'));
             modal.hide();
         }
+
     </script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
