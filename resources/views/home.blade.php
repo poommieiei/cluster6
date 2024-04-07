@@ -38,7 +38,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="height: 20px">
                     <!-- Are you sure you want to delete ? -->
                     <div class="mb-3">
                         <label for="areyousure" class="form-label">Are you sure you want to delete ?</label>
