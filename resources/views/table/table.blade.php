@@ -78,11 +78,11 @@ table {
         <tbody id="my_tbody">
             <tr class="text-left">
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
-                    <input type="text" id="no_body" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width:25px; border: none; text-align: center">
+                    <input type="text" id="no_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width:25px; border: none; text-align: center">
                     <script>
                         //ข้อมูล No ของ Body
-                          var data_no_body = "1";
-                          document.getElementById("no_body").value = data_no_body;
+                          var data_no_header = "1";
+                          document.getElementById("no_header").value = data_no_header;
                     </script>
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
@@ -183,7 +183,7 @@ table {
                     </select>
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" id="exampledata_param" style="background-color: #9DC8D6; width:100%; border: none">
+                    <input type="text" id="exampledata_param" style="background-color: #9DC8D6; width: 80px; border: none">
                     <script>
                         //ข้อมูล Example data ของ Param
                           var data_exampledata_param = "dddd";
@@ -211,7 +211,7 @@ table {
             <br>
             <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Body</h6>
             <tr>
-                <th style="width: 50px; font-size:14px; color:white; background-color: #032A37"><center>No</th>
+                <th style="width: 40px; font-size:14px; color:white; background-color: #032A37"><center>No</th>
                 <th style="width: 130px; font-size:14px; color:white; background-color: #032A37;"><center>Key</th>
                 <th style="width: 130px; font-size:14px; color:white; background-color: #032A37;"><center>Data Type</th>
                 <th style="width: 130px; font-size:14px; color:white; background-color: #032A37"><center>Required</th>
@@ -222,15 +222,15 @@ table {
         <tbody id="my_tbody">
             <tr>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
-                    <input type="text" id="no_body" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width: 15px; border: none; text-align: center">
+                    <input type="text" id="no_body" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width: 25px; border: none; text-align: center">
                     <script>
-                        //ข้อมูล No ของ body
+                        //ข้อมูล No ของ Param
                           var data_no_body = "1";
                           document.getElementById("no_body").value = data_no_body;
                     </script>
                 </th>
                     <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                        <input type="text" id="key_body" style="background-color: #9DC8D6; width:100%; border: none">
+                        <input type="text" id="key_body" style="background-color: #9DC8D6; width: 80px; border: none">
                         <script>
                             //ข้อมูล Key ของ Body
                               var data_key_body = "gggg";
@@ -257,7 +257,7 @@ table {
                         </select>
                     </th>
                     <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                        <input type="text" id="exampledata_body" style="background-color: #9DC8D6; width:100%; border: none">
+                        <input type="text" id="exampledata_body" style="background-color: #9DC8D6; width: 80px; border: none">
                         <script>
                             //ข้อมูล Example data ของ Body
                               var data_exampledata_body = "lll";
@@ -280,7 +280,7 @@ table {
 
 {{-- Response --}}
 <div class="card-body" id="table-container-response" style="display: none">
-    <table class="table table-bordered" id="response_table" style="width:100px; margin-left: 32px">
+    <table class="table table-bordered" id="response_table" style="width:100px; margin-left: 32px; border:dimgray">
         <thead>
             <br>
             <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Response</h6>
@@ -303,7 +303,7 @@ table {
                 </th>
             </tr>
         </tbody>
-    <table class="table table-bordered" id="response" style="width:957px; margin-left: 25px"">
+    <table class="table table-bordered" id="response" style="width:957px; margin-left: 25px; border:dimgray">
         <thead>
             <tr>
                 <th style="width: 9%; font-size:14px; color:white; background-color: #032A37"><center>Key</th>
