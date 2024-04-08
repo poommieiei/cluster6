@@ -42,7 +42,7 @@ Route::get('workspace/{id}/collection' , [CollectionController::class , 'indexco
 Route::get('/emptyCollection' , [CollectionController::class , 'indexEmptyCollection']);
 Route::post('/renamecollection/{id}' , [CollectionController::class , 'renamecollection']);
 Route::get('/deletecollection/{id}' , [CollectionController::class , 'deletecollection']);
-// Route::get('' , [CollectionController::class , 'importcollection']);
+Route::post('importcollection' , [CollectionController::class , 'importcollection']);
 
 // Route ของ Collection (ยังไม่ได้ทำ)
 

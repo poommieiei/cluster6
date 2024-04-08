@@ -27,7 +27,6 @@ class CollectionController extends Controller
             'collectionName' => 'required|string|max:40'
         ]);
         $collection = $req->input('collectionName');
-        // dd($collection);
         $inputcollection = Collection::findOrFail($id);
         $inputcollection->collection_name = $collection;
         $inputcollection->save();
@@ -40,9 +39,9 @@ class CollectionController extends Controller
         return redirect()->back();
     }
 
-    public function importcollection(Request $request , $id)
+    public function importcollection(Request $request)
     {
-
+        $id = DB::table('workspace')->max('id');
         if ($request->hasFile('json_file')) {
             $file = $request->file('json_file');
 
@@ -67,7 +66,6 @@ class CollectionController extends Controller
 
                     if(array_key_exists('variable' , $data)){
                         $variable = $data['variable'];
-                        dd($info , $item , $variable);
                     }
                     // dd($info , $item );
 
@@ -99,7 +97,7 @@ class CollectionController extends Controller
             }
         } else {
             return back()->with('error', 'No file was uploaded.');
-        }
+        }return redirect()->back();
     }
 
 
