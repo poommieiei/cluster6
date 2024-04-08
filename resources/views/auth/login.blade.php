@@ -13,17 +13,19 @@
                         @csrf
                         <div class="row mb-3">
                             <label for="email"
-                                class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                                class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
                             <div class="col-md-8">
-                                <!-- Adjusted column size to fit the form -->
-                                <input id="email" type="email"
-                                    class="form-control @error('email') is-invalid @enderror" name="email"
-                                    value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <div class="input-field">
+                                    <input id="email" type="email" style="width: 300px; height: 40px;"
+                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                    <i class='bx bx-user' style='color:#ffd166'  ></i>
+                                </div>
                             </div>
                         </div>
 
@@ -39,6 +41,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                <i class='bx bx-lock-alt' style='color:#ffd166' ></i>
                             </div>
                         </div>
 
@@ -56,19 +59,14 @@
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    {{ __('Sign in') }}
                                 </button>
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="right-rectangle"></div>
             </div>
+            <div class="right-rectangle"></div>
         </div>
     </div>
 @endsection

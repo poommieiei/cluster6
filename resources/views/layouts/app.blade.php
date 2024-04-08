@@ -8,16 +8,17 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>API Documentation & Tools</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-
+{{-- 65160218 css --}}
 <body style="background-color: #2F2C2C">
     <style>
         .right-container {
@@ -53,7 +54,8 @@
             width: 400px;
             height: 450px;
             margin-top: 50px;
-            right: 0.25%;
+            right: 5%;
+            justify-content: center;
         }
 
         .left-container img {
@@ -65,17 +67,22 @@
         .left-rectangle {
             background-color: #136885;
             width: 70px;
-            height: 16.80px;
-            margin-top: 583px;
+            height: 25px;
+            margin-top: 575px;
             transform: translateX(100px);
         }
 
         .right-rectangle {
-            background-color: #d0172a;
-            width: 60px;
-            height: 16.80px;
-            margin-top: 583px;
-            transform: translateX(100px);
+            background-color: #073B4C;
+            width: 55px;
+            height: 80px;
+            border-radius: 25px;
+            margin-top: 520px;
+            transform: translateX(-400px);
+        }
+
+        .input-field [type=text] {
+            color: rgb(118, 234, 9);
         }
     </style>
 
