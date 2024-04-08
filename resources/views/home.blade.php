@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.collectionLayout')
 @section('title', 'API Documentation & Design Tools')
 @section('content')
     {{-- <div class="container">
