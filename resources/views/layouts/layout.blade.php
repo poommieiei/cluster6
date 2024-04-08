@@ -76,6 +76,8 @@
                             </li>
                         </ul>
                     </div>
+                    <div style="width:200px;">
+                    </div>
                     <div style="position: fixed; top: 1%; left: 45%;  font-size: 36px; color:white; front-weight:bold;">
                         <center> Workspace </center>
                     </div>
@@ -91,32 +93,31 @@
                     <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/workspace"
-                                aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu"
-                                    style="font-size:20px">Workspace</span></a>
+                                aria-expanded="false">
+                                <i class="mdi mdi-view-dashboard"></i>
+                                <span class="hide-menu" style="font-size:20px">Workspace</span>
+                            </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/account"
-                                aria-expanded="false"><i class="fa fa-user" style="font-size:20px"></i>
-                                <span class="hide-menu" style="font-size:20px">Account</span></a>
+                                aria-expanded="false">
+                                <i class="fa fa-user" style="font-size:20px"></i>
+                                <span class="hide-menu" style="font-size:20px">Account</span>
+                            </a>
                         </li>
-                        </head>
-
-                        <body>
-
-                            <li class="sidebar-item" style="position: absolute; bottom: 15px;">
-                                <a class="sidebar-link sidebar-link" href="#"
-                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();"
-                                    aria-expanded="false">
-                                    <i class="fa fa-sign-out"></i>
-                                    <span class="hide-menu" style="font-size:20px">Sign out</span>
-                                </a>
-                            </li>
-
+                        <li class="sidebar-item" style="position: fixed; bottom: 1%">
+                            <a class="sidebar-link sidebar-link" href="#"
+                                onclick="event.preventDefault();document.getElementById('logout-form').submit();"
+                                aria-expanded="false">
+                                <i class="fa fa-sign-out"></i>
+                                <span class="hide-menu" style="font-size:20px">Sign out</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
-
             </div>
         </aside>
+
 
 
         <div class="page-wrapper" style="background-color: #073B4C;">
