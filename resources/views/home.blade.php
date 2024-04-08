@@ -96,7 +96,7 @@
     <!-- ปุ่ม Create -->
     <div style="position: fixed; bottom: 2%; right: 2%;">
         <a id="create" class="btn btn-lg"
-            style="background-color: #268EB0; color: #ffffff; width: 160px; font-size: 20px; font-weight: bold;">{{ __('Create') }}</a>
+            style="background-color: #268EB0; color: #ffffff; width: 140px; font-weight: bold;">{{ __('Create') }}</a>
     </div>
     <!-- Modal Create Workspace -->
     <div class="modal" id="createWorkspaceModal" tabindex="-1">
