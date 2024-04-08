@@ -1,6 +1,6 @@
 @extends('layouts.collectionLayout')
 @section('content')
-    <div class="border border-white d-flex border-2 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
+    <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
         style="height: 80px; font-size:20px; color:white;">
         Collection
         <div class="ms-auto">
@@ -12,7 +12,7 @@
             </a>
         </div>
     </div>
-    <div class="fixed-bottom d-flex justify-content-end mb-3 me-3">
+    <div style="position: fixed; bottom: 2%; right: 2%;">
         <form action="#" method="post" enctype="multipart/form-data">
             <!-- ปุ่ม Import -->
             <button type="submit" class="btn btn-lg"
@@ -20,8 +20,8 @@
                 <i class="fas fa-download " style="margin-right: 10px;"></i> Import
             </button>
             <!-- ปุ่ม Choose file -->
-            <label for="fileUpload" class="btn btn-lg mb-0"
-                style="margin-right:20px; background-color:#268EB0; color:#ffffff; width: 160px;">
+            <label for="fileUpload" class="btn btn-lg"
+                style="background-color:#268EB0; color:#ffffff; width: 160px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="currentColor"
                     class="bi bi-filetype-json" viewBox="0 0 16 16" style="margin-right: 5px;">
                     <path fill-rule="evenodd"

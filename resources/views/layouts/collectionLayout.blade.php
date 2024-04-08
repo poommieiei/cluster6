@@ -76,8 +76,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div style="width:400px;">
-                    </div>
+                    <div style="width:400px;"></div>
+                    <!-------------------------------------  Layout only collection ------------------------------->
                     <div style="position: fixed; top: 1%; left: 46%;  font-size: 36px; color:white; front-weight:bold;">
                         <center> Collection </center>
                     </div>
@@ -117,7 +117,15 @@
                             isOpen = !isOpen;
                             inviteCard.style.display = isOpen ? 'block' : 'none';
                         });
+
+                        window.addEventListener('click', (e) => {
+                            if (!inviteCard.contains(e.target) && e.target !== inviteIcon) {
+                                inviteCard.style.display = 'none';
+                                isOpen = false;
+                            }
+                        });
                     </script>
+                    <!------------------------------ End layout of collection ------------------------------->
                 </nav>
             </div>
         </header>
