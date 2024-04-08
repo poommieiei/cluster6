@@ -47,8 +47,8 @@ class CollectionController extends Controller
     public function importcollection(Request $request)
     {
 
-        $id = DB::table('workspace')->max('id');
-        // dd($id);
+        $id = DB::table('workspace')->get('id');
+        dd($id);
         if ($request->hasFile('json_file')) {
             $file = $request->file('json_file');
 
