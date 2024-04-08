@@ -76,7 +76,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div style="width:200px;">
+                    <div style="width:400px;">
                     </div>
                     <div style="position: fixed; top: 1%; left: 45%;  font-size: 36px; color:white; front-weight:bold;">
                         <center> Workspace </center>
