@@ -1,11 +1,10 @@
 @extends('layouts.layout')
-@section('title', 'API Documentation & Design Tools')
 @section('content')
     {{-- Workspace --}}
     @foreach ($workspaces as $workspace)
         <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
             style="height: 80px; font-size:20px; color:white;">
-            <a href="/workspace/{{ $workspace->id }}" class="text-decoration-none text-white">
+            <a href="/workspace/{{ $workspace->id }}/collection" class="text-decoration-none text-white">
                 {{ $workspace->workspace_name }}
             </a>
             <div class="ms-auto">
@@ -48,7 +47,7 @@
                 </div>
                 <div class="modal-footer" style="border-color:#136885;">
                     <!-- button delete-->
-                    <a href="" class="btn btn-danger" id="submitDeleteWorkspaceBtn"
+                    <a href="#" class="btn btn-danger" id="submitDeleteWorkspaceBtn"
                         style="background-color: #EF476F; color: #ffffff;">Delete</a>
                     <!-- Use data-bs-dismiss="modal" to close the modal -->
                     <button type="button" class="btn" data-bs-dismiss="modal"
@@ -168,7 +167,6 @@
 
     <script>
         document.getElementById('submitDeleteWorkspaceBtn').addEventListener('click', function() {
-            document.getElementById('deleteForm').submit();
         });
         var URL = '/deleteworkspace/';
 

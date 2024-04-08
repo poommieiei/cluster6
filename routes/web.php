@@ -38,9 +38,10 @@ Route::get('/account',function(){ //show user info
 Route::post('rename/{id}', [WorkspaceController::class, 'renameworkspace']);
 
 // Route ของ Collection (ทำได้เลย)
-Route::get('workspace/{id}' , [CollectionController::class , 'indexcollection']);
+Route::get('workspace/{id}/collection' , [CollectionController::class , 'indexcollection']);
 Route::get('/emptyCollection' , [CollectionController::class , 'indexEmptyCollection']);
-// Route::get('' , [CollectionController::class , 'renamecollection']);
+Route::post('/renamecollection/{id}' , [CollectionController::class , 'renamecollection']);
+Route::get('/deletecollection/{id}' , [CollectionController::class , 'deletecollection']);
 // Route::get('' , [CollectionController::class , 'importcollection']);
 
 // Route ของ Collection (ยังไม่ได้ทำ)
