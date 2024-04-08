@@ -33,13 +33,13 @@
         </form>
     </div>
     {{-- แสดงชื่อไฟล์ที่เลือก --}}
-    {{-- <span class="text" style="position:fixed; bottom: 10%; right:2.5%; color:#ffffff"></span>
+    <span class="text" style="position:fixed; bottom: 10%; right:2.5%; color:#ffffff"></span>
     <script>
         document.getElementById('fileUpload').addEventListener('change', function() {
             var fileName = this.files[0].name;
             document.querySelector('.text').innerHTML = fileName;
         });
-    </script> --}}
+    </script>
 
     <!-- Rename Collection -->
     <div class="modal" id="reCollecModal" tabindex="-1">
