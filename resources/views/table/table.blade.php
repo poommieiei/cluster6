@@ -121,15 +121,15 @@ table {
         {{-- สำหรับให้คลิกเพื่อเลือกว่าจะเอาหรือไม่ตอน Export --}}
         <input type="checkbox" name="checkHeader" id="checkHeader" style="margin-left: 18px; margin-top: 80px">
     </table>
-    <br>
+        <br>
         <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
-    <a class="btn " style="width:1049px;background-color:#073B4C;margin-left: ;"href="javascript:void(0)" data-filter="4"></a>
+    <a class="btn " style="width:1050px;background-color:#073B4C;margin-left: ;"href="javascript:void(0)" data-filter="4"></a>
 
     <button type="button" id="add_row_response" style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
         <i class="bi bi-plus-lg"></i>
     </button>
 </th>
-</div>
+                </div>
 
 {{-- Params --}}
 <div class="card-body" id="table-container-param" style="display: none">
@@ -210,6 +210,14 @@ table {
         </tbody>
         <input type="checkbox" name="checkParam" id="checkParam" style="margin-left: 18px; margin-top: 80px">
     </table>
+    <br>
+        <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
+    <a class="btn " style="width:1050px;background-color:#073B4C;margin-left: ;"href="javascript:void(0)" data-filter="4"></a>
+
+    <button type="button" id="add_row_response" style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
+        <i class="bi bi-plus-lg"></i>
+    </button>
+</th>
 </div>
 
 {{-- Body --}}
@@ -284,6 +292,14 @@ table {
             </tbody>
             <input type="checkbox" name="checkParam" id="checkParam" style="margin-left: 18px; margin-top: 80px">
         </table>
+        <br>
+        <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
+    <a class="btn " style="width:1050px;background-color:#073B4C;margin-left: ;"href="javascript:void(0)" data-filter="4"></a>
+
+    <button type="button" id="add_row_response" style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
+        <i class="bi bi-plus-lg"></i>
+    </button>
+</th>
 </div>
 
 {{-- Response --}}
