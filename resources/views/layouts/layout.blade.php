@@ -97,10 +97,6 @@
                                 aria-expanded="false"><i class="fa fa-user" style="font-size:20px"></i>
                                 <span class="hide-menu" style="font-size:20px">Account</span></a>
                         </li>
-                        </head>
-
-                        <body>
-
                             <li class="sidebar-item" style="position: absolute; bottom: 15px;">
                                 <a class="sidebar-link sidebar-link" href="#"
                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();"

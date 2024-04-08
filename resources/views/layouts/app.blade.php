@@ -14,7 +14,8 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Viga&display=swap">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inder&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -22,24 +23,30 @@
 </head>
 {{-- 65160218 css --}}
 
-<body style="background-color: #ffffff">
+<body style="background-color: #f2f2f2">
     <style>
-
-        .right-container {
+        .container {
             background-color: #073B4C;
             border-radius: 25px;
             width: 1000px;
             height: 600px;
             padding: 0px;
             margin: 60px;
-            transform: translateY(7%);
+            transform: translateY(5%);
         }
 
         .left-container {
             background-color: #136885;
-            border-radius: 25px;
+            border-radius: 25px 25px 0px 25px;
             width: 500px;
-            left: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .right-container {
+            background-color: #073B4C;
+            width: 500px;
+            border-radius: 25px;
             display: flex;
             justify-content: center;
         }
@@ -63,18 +70,13 @@
             justify-content: center;
         }
 
-        .left-container img {
-            /* Adjust the top margin to move the image vertically */
-            margin-top: 60px;
-            /* Adjust the value as needed */
-        }
-
         .left-rectangle {
             background-color: #136885;
             width: 70px;
             height: 25px;
             margin-top: 575px;
-            transform: translateX(100px);
+            transform: translateX(60px);
+
         }
 
         .right-rectangle {
@@ -84,10 +86,6 @@
             border-radius: 25px;
             margin-top: 520px;
             transform: translateX(-400px);
-        }
-
-        .input-field [type=text] {
-            color: rgb(118, 234, 9);
         }
     </style>
 
