@@ -76,7 +76,9 @@
                             </li>
                         </ul>
                     </div>
-                    <div style="width:1000px; font-size: 36px; color:white; font-weight:bold"><center>Workspace</center></div>
+                    <div style="position: fixed; top: 1%; left: 45%;  font-size: 36px; color:white; front-weight:bold;">
+                        <center> Workspace </center>
+                    </div>
                 </nav>
             </div>
         </header>
