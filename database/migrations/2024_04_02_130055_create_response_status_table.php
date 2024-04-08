@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('response_code');
 
             $table->unsignedBigInteger('method_id');
-            $table->foreign('method_id')->references('id')->on('methods')->onDelete('CASCADE');
+            $table->foreign('method_id')->references('id')->on('request')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

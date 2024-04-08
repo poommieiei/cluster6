@@ -5,14 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Method extends Model
+class Request extends Model
 {
     use HasFactory;
 
-    protected $table = 'methods';
+    protected $table = 'request';
 
     protected $fillable = [
-        'method',
+        'request_name',
+        'method_request',
+        'method_url',
         'collection_id'
     ];
 

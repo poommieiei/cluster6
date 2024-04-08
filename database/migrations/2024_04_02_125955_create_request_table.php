@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('methods', function (Blueprint $table) {
+        Schema::create('request', function (Blueprint $table) {
             $table->id();
-            $table->string('method');
-            $table->string('method_route');
+            $table->string('request_name');
+            $table->string('method_request');
+            $table->string('method_url');
 
             $table->unsignedBigInteger('collection_id');
             $table->foreign('collection_id')->references('id')->on('collection')->onDelete('CASCADE');
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('methods');
+        Schema::dropIfExists('request');
     }
 };
