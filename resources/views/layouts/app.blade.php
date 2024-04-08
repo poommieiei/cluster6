@@ -13,14 +13,18 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Viga&display=swap">
+
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 </head>
 {{-- 65160218 css --}}
-<body style="background-color: #2F2C2C">
+
+<body style="background-color: #ffffff">
     <style>
+
         .right-container {
             background-color: #073B4C;
             border-radius: 25px;
@@ -28,6 +32,7 @@
             height: 600px;
             padding: 0px;
             margin: 60px;
+            transform: translateY(7%);
         }
 
         .left-container {
