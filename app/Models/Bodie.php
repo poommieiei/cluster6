@@ -20,8 +20,8 @@ class Bodie extends Model
         'method_id'
     ];
 
-    public function request()
+    public function request_collection()
     {
-        return $this->belongsTo(Request::class);
+        return $this->belongsTo(Request_Collection::class);
     }
 }

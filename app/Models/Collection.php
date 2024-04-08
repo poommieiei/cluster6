@@ -21,9 +21,9 @@ class Collection extends Model
         return $this->belongsTo(Workspace::class);
     }
 
-    public function request()
+    public function request_collection()
     {
-        return $this->hasMany(Request::class);
+        return $this->hasMany(Request_Collection::class);
     }
 
 }
