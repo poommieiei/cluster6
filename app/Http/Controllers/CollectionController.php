@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Log;
 
 class CollectionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function indexEmptyCollection(){
         return view('collection.emptyCollection');
     }
@@ -41,14 +46,15 @@ class CollectionController extends Controller
 
     public function importcollection(Request $request)
     {
+
         $id = DB::table('workspace')->max('id');
+        // dd($id);
         if ($request->hasFile('json_file')) {
             $file = $request->file('json_file');
 
             if ($file->getClientOriginalExtension() === 'json') {
                 try {
-                    $workspace = Workspace::findOrFail($id)->first();
-
+                    // $workspace = Workspace::findOrFail($id)->get();
 
                     $data = json_decode(file_get_contents($file->path()), true);
 
@@ -60,6 +66,7 @@ class CollectionController extends Controller
                     $collection = Collection::Create([
                         'collection_name' => $info,
                         'workspace_id' => $id,
+
                     ]);
 
                     $item = $data['item'];
