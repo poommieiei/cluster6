@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Collection;
 use App\Models\Workspace;
-use App\Models\Request;
+use App\Models\Request_Collection;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -64,13 +64,9 @@ class CollectionController extends Controller
                     if ($data === null && json_last_error() !== JSON_ERROR_NONE) {
                         return back()->with('error', 'Error decoding JSON file.');
                     }
-                    dd($data);
-                    // $variable = [];
-                    // for($index = 0 ; $index < count($data['variable']) ; $index++){
-
-                    // }
+                    // dd($data);
                     $info = $data['info']['name'];
-                    $request = Request::class;
+                    $request_collection = Request_Collection::class;
                     $collection = Collection::Create([
                         'collection_name' => $info,
                         'workspace_id' => $id,
@@ -79,16 +75,24 @@ class CollectionController extends Controller
                     for ($index = 0; $index < count($data['item']); $index++) {
                         $pathURL = $data['item'][$index];
                         if(is_array($data['item'][$index]['request']['url'])){
-                            $request::create([
+                            $request_collection::create([
                                 'request_name' => $pathURL['name'],
                                 'method_request' => $pathURL['request']['method'],
-                                'method_url' => $pathURL['request']['method']['raw'],
+                                'method_url' => $pathURL['request']['url']['raw'],
                                 'collection_id' => $collection->id
                             ]);
 
                         }
                         else{
-                            print_r($pathURL);
+                            $request_collection::create([
+                                'request_name' => $pathURL['name'],
+                                'method_request' => $pathURL['request']['method'],
+                                'method_url' => $pathURL['request']['url'],
+                                'collection_id' => $collection->id
+                            ]);
+                            // print_r($pathURL['name']);
+                            // print_r($pathURL['request']['method']);
+                            // print_r($pathURL['request']['url']);
                         }
 
                     }
@@ -101,7 +105,7 @@ class CollectionController extends Controller
                         $variable = $data['variable'];
                     }
                 } catch (Exception $e) {
-                    // return back()->with('error', 'Error processing JSON file.');
+                    return back()->with('error', 'Error processing JSON file.');
                 }
             } else {
                 return back()->with('error', 'The selected file is not a JSON file.');
@@ -109,6 +113,6 @@ class CollectionController extends Controller
         } else {
             return back()->with('error', 'No file was uploaded.');
         }
-        // return redirect()->back();
+        return redirect()->back();
     }
 }
