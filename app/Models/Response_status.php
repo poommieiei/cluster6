@@ -16,9 +16,9 @@ class Response_status extends Model
         'method_id'
     ];
 
-    public function method()
+    public function request()
     {
-        return $this->belongsTo(Method::class);
+        return $this->belongsTo(Request::class);
     }
 
     public function response()
