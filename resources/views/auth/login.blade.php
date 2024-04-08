@@ -1,20 +1,20 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="d-flex justify-content-center">
         <div class="container d-flex">
             <div class="left-container">
-                <div>
+                <div style="margin-left: 14%;">
                     <center> <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" width="280px" height="300px"
-                            style="margin-top: 60px;" />
+                            style="margin-top: 60px;"/>
                     </center>
                     <center>
                         <H1
                             style="font-family: Viga; color:white; font-size: 80px; margin-top: 8%; display: block; text-shadow: 0 8px 9px #202e41, 0px -2px 1px #fff;">
                             S P E C</H1>
-                        <h4 style="font-family: Inder; color: white">Build your perfect API Specification.</h4>
+                        <h4 style="font-family: Inder; color: white">Build your perfect API Specification</h4>
                     </center>
                 </div>
+                <div class="left-rectangle"></div>
             </div>
             <div class="right-container">
                 <div class="outer-frame ">
@@ -82,6 +82,7 @@
                         </form>
                     </div>
                 </div>
+                <div class="right-rectangle"></div>
             </div>
         </div>
     </div>

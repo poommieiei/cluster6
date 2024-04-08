@@ -37,7 +37,7 @@
 
         .left-container {
             background-color: #136885;
-            border-radius: 25px 25px 0px 25px;
+            border-radius: 25px 27px 0px 25px;
             width: 500px;
             display: flex;
             justify-content: center;
@@ -57,7 +57,7 @@
             width: 400px;
             height: 500px;
             margin-top: 50px;
-            transform: translateX(13%);
+            transform: translateX(7%);
         }
 
         .inner-frame {
@@ -75,8 +75,7 @@
             width: 70px;
             height: 25px;
             margin-top: 575px;
-            transform: translateX(60px);
-
+            transform: translateX(42px);
         }
 
         .right-rectangle {
@@ -85,7 +84,7 @@
             height: 80px;
             border-radius: 25px;
             margin-top: 520px;
-            transform: translateX(-400px);
+            transform: translateX(-422px);
         }
     </style>
 
