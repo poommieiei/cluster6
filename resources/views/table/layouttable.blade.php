@@ -134,7 +134,7 @@
                         <!-- Button Layout -->
                         <div>
                             <!-- Export Button -->
-                            <button type="button" id="export_button"class="btn rounded-pill btn-info" style="position:relative">
+                            <button type="button" id="export_button"class="btn rounded-pill btn-info" style="margin-left: -12%; position:relative">
                                 <i class="fas fa-download"></i> Export
                             </button>
 
@@ -165,7 +165,8 @@
                                 });
                             })
                             </script>
-
+                        </div>
+                        <div>
                             <!-- Save Button -->
                             <button type="button" id="save_btn" class="btn rounded-pill btn-success" style="position:relative">
                                 <i class="fas fa-download"></i> Save
