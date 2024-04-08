@@ -23,7 +23,6 @@ table {
     {{-- Method UR --}}
     <table class="table table-bordered" id="method_table" style="margin-left: 30px; width:1150px; border:dimgray">
         <thead>
-            <br>
             <h6 style="font-size:15px; color:white; margin-left: 30px; width:1150px">Method URL</h6>
             <tr>
                 <th style="width: 9%; font-size:14px; color:white; background-color: #032A37"><center>Method URL</th>
@@ -75,17 +74,18 @@ table {
                 <th style="width: 830px; font-size:14px; color:white; background-color: #032A37"><center>Description</th>
             </tr>
         </thead>
-        <tbody id="my_tbody">
-            <tr class="text-left">
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
+        <tbody>
+            <tr id="tr_header">
+                <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
                     <input type="text" name="no_header" id="no_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width:25px; border: none; text-align: center">
                     <script>
-                        //ข้อมูล No ของ Body
+                        //ข้อมูล No ของ Header
                           var data_no_header = "1";
                           document.getElementById("no_header").value = data_no_header;
                     </script>
                 </th>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+
+                <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
                     <input type="text" name="key_header" id="key_header" style="background-color: #9DC8D6; width:130px; border: none">
                     <script>
                         //ข้อมูล Key ของ Header
@@ -93,14 +93,14 @@ table {
                           document.getElementById("key_header").value = data_key_header;
                     </script>
                 </th>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
+                <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
                     <select name="required_param" id="required_param" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
                         <option value="o">O</option>
                         <option value="m">M</option>
                         <option value="r">R</option>
                     </select>
                 </th>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center"">
+                <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center"">
                     <input type="text" name="exampledata_header" id="exampledata_header" style="background-color: #9DC8D6; width: 130px; border: none">
                     <script>
                         //ข้อมูล Example data ของ Header
@@ -108,7 +108,7 @@ table {
                           document.getElementById("exampledata_header").value = data_exampledata_header;
                     </script>
                 </th>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center"">
+                <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
                     <textarea class="form-control" name="description_header" id="description_header" rows="1" style="font-size:14px; border:none; background:#9DC8D6; width:720px"></textarea>
                     <script>
                         //ข้อมูล Description ของ Header
@@ -116,20 +116,62 @@ table {
                           document.getElementById("description_header").value = data_description_header;
                     </script>
                 </th>
+                <input type="checkbox" name="checkHeader" id="checkHeader" style="margin-left: 18px; margin-top: 80px">
             </tr>
+            {{-- สำหรับให้คลิกเพื่อเลือกว่าจะเอาหรือไม่ตอน Export --}}
         </tbody>
-        {{-- สำหรับให้คลิกเพื่อเลือกว่าจะเอาหรือไม่ตอน Export --}}
-        <input type="checkbox" name="checkHeader" id="checkHeader" style="margin-left: 18px; margin-top: 80px">
     </table>
-        <br>
-        <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
-    <a class="btn " style="width:1050px;background-color:#073B4C;margin-left: ;"href="javascript:void(0)" data-filter="4"></a>
+    <br>
+    <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
+        <a class="btn " style="width:1049px;background-color:#073B4C;margin-left: ;"href="javascript:void(0)" data-filter="4"></a>
+        <button type="button" id="add_row_header" style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
+            <i class="bi bi-plus-lg"></i>
+        </button>
+    </th>
+    <script>
+        function addRowHeader() {
+            // Get the table element
+            const table = document.getElementById("header_table");
 
-    <button type="button" id="add_row_response" style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
-        <i class="bi bi-plus-lg"></i>
-    </button>
-</th>
-                </div>
+            // Create a new row element
+            const newRow = document.createElement("tr");
+
+            // Create a new cell element for each column in the table
+            for (let i = 0; i < table.rows[i].cells.length; i++) {
+                const newCell = document.createElement("th");
+                newRow.innerHTML = '<th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">';
+                newRow.appendChild(newCell);
+            }
+
+            // Append the new row to the table
+            table.appendChild(newRow);
+            }
+
+            // Add an event listener to the "+" button
+        document.getElementById("add_row_header").addEventListener("click", addRowHeader);
+
+        function copyRow(row) {
+            // Create a new row element
+            const newRow = document.createElement("tr");
+
+            // Copy the cells from the old row to the new row
+            for (let i = 0; i < row.cells.length; i++) {
+                const newCell = document.createElement("td");
+                newCell.innerHTML = row.cells[i].innerHTML;
+                newRow.appendChild(newCell);
+            }
+
+            // Append the new row to the table
+            row.parentNode.appendChild(newRow);
+            }
+
+            // Add an event listener to the "Copy" button
+            document.getElementById("add_row_header").addEventListener("click", function() {
+            const row = document.getElementById("tr_header");
+            copyRow(row);
+            });
+    </script>
+</div>
 
 {{-- Params --}}
 <div class="card-body" id="table-container-param" style="display: none">
@@ -211,13 +253,12 @@ table {
         <input type="checkbox" name="checkParam" id="checkParam" style="margin-left: 18px; margin-top: 80px">
     </table>
     <br>
-        <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
-    <a class="btn " style="width:1050px;background-color:#073B4C;margin-left: ;"href="javascript:void(0)" data-filter="4"></a>
-
-    <button type="button" id="add_row_response" style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
-        <i class="bi bi-plus-lg"></i>
-    </button>
-</th>
+    <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
+        <a class="btn " style="width:1050px;background-color:#073B4C;margin-left: ;"href="javascript:void(0)" data-filter="4"></a>
+        <button type="button" id="add_row_response" style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
+            <i class="bi bi-plus-lg"></i>
+        </button>
+    </th>
 </div>
 
 {{-- Body --}}
@@ -291,15 +332,14 @@ table {
                 </tr>
             </tbody>
             <input type="checkbox" name="checkParam" id="checkParam" style="margin-left: 18px; margin-top: 80px">
-        </table>
-        <br>
-        <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
-    <a class="btn " style="width:1050px;background-color:#073B4C;margin-left: ;"href="javascript:void(0)" data-filter="4"></a>
-
-    <button type="button" id="add_row_response" style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
-        <i class="bi bi-plus-lg"></i>
-    </button>
-</th>
+    </table>
+    <br>
+    <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
+        <a class="btn " style="width:1050px;background-color:#073B4C;margin-left: ;"href="javascript:void(0)" data-filter="4"></a>
+        <button type="button" id="add_row_response" style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
+            <i class="bi bi-plus-lg"></i>
+        </button>
+    </th>
 </div>
 
 {{-- Response --}}

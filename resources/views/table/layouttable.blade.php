@@ -192,6 +192,7 @@
             <div class="container-fluid" style="background-color: #073B4C;">
 
                 @yield('content')
+
             </div>
 
         </div>
