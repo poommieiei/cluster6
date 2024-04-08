@@ -33,16 +33,19 @@ table {
         <tbody id="my_tbody">
             <tr>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <center>
-                    <select name="method" id="method" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
-                        <option value="get">GET</option>
-                        <option value="post">POST</option>
-                        <option value="put">PUT</option>
-                        <option value="patch">PATCH</option>
-                        <option value="delete">DELETE</option>
-                        <option value="head">HEAD</option>
-                        <option value="options">OPTIONS</option>
-                      </select>
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" data-bs-toggle="dropdown">
+                            <span style="font-size:14px; color:rgb(0, 0, 0)">Method</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" id="get">GET</a></li>
+                            <li><a class="dropdown-item" id="post">POST</a></li>
+                            <li><a class="dropdown-item" id="put">PUT</a></li>
+                            <li><a class="dropdown-item" id="patch">PATCH</a></li>
+                            <li><a class="dropdown-item" id="delete">DELETE</a></li>
+                            <li><a class="dropdown-item" id="head">HEAD</a></li>
+                            <li><a class="dropdown-item" id="options">OPTIONS</a></li>
+                        </ul>
+                
                 </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">url</th>
             </tr>
@@ -93,15 +96,14 @@ table {
                           document.getElementById("key_header").value = data_key_header;
                     </script>
                 </th>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <center>
+                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center"">
                     <select name="required_header" id="required_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
                         <option value="o">O</option>
                         <option value="m">M</option>
                         <option value="r">R</option>
                     </select>
                 </th>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center"">
                     <input type="text" id="exampledata_header" style="background-color: #9DC8D6; width: 130px; border: none">
                     <script>
                         //ข้อมูล Example data ของ Header
@@ -109,7 +111,7 @@ table {
                           document.getElementById("exampledata_header").value = data_exampledata_header;
                     </script>
                 </th>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center"">
                     <textarea class="form-control" id="description_header" rows="1" style="font-size:14px; border:none; background:#9DC8D6; width:720px"></textarea>
                     <script>
                         //ข้อมูล Description ของ Header
@@ -393,7 +395,7 @@ table {
 
 <div>
     <!-- Save Button -->
-    <button type="button" class="btn rounded-pill btn-success" id="save_btn" style="position:absolute; bottom: 93.5%; right: 2%; width: 8%">
+    <button type="button" class="btn rounded-pill btn-success" id="save_btn" style="bottom: 745px; right: 25px; width: 120px; position:absolute">
         <i class="fas fa-download"></i> Save
     </button>
 
@@ -411,7 +413,7 @@ table {
     </script>
 
       <!-- Export Button -->
-    <button type="button" id="export_button"class="btn rounded-pill btn-info" style="position:absolute; bottom: 93.5%; right: 11%; width: 8%">
+    <button type="button" id="export_button"class="btn rounded-pill btn-info" style="bottom: 745px; right: 175px; width: 120px; position:absolute">
         <i class="fas fa-download"></i> Export
     </button>
 
@@ -442,6 +444,5 @@ table {
         });
     })
     </script>
-
 </div>
 @endsection
