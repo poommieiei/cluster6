@@ -36,6 +36,11 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <!-- Sweetalert 2 -->
+    <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 
 <body style="background-color: #073B4C;">
@@ -124,7 +129,60 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <div class="ms-auto text-end">
+                        <div class="ms-auto text-end"></div>
+
+                        <!-- Button Layout -->
+                        <div>
+                            <!-- Export Button -->
+                            <button type="button" id="export_button"class="btn rounded-pill btn-info" style="position:relative">
+                                <i class="fas fa-download"></i> Export
+                            </button>
+
+                            <!-- sweetalert 2 for Export button -->
+                            <script>
+                            $('#export_button').click(function(){
+                            Swal.fire({
+                                title: "Are you sure you save the changes?",
+                                text: "Your changes will not appear if you  don't save them.",
+                                icon: "warning",
+                                showCancelButton: true,
+                                confirmButtonColor: "#3085d6",
+                                cancelButtonColor: "#d33",
+                                confirmButtonText: "Export"
+                                }).then((result) => {
+                                if (result.isConfirmed) {
+                                    Swal.fire({
+                                    title: "Exported!",
+                                    text: "Your file has been export.",
+                                    icon: "success"
+                                    });
+                                }else{
+                                    Swal.fire({
+                                    title: "Cancelled!",
+                                    icon: "error"
+                                    });
+                                }
+                                });
+                            })
+                            </script>
+
+                            <!-- Save Button -->
+                            <button type="button" id="save_btn" class="btn rounded-pill btn-success" style="position:relative">
+                                <i class="fas fa-download"></i> Save
+                            </button>
+
+                            <!-- sweetalert 2 for save button -->
+                            <script>
+                                $('#save_btn').click(function(){
+                                    Swal.fire({
+                                        position: "top-end",
+                                        icon: "success",
+                                        title: "Your work has been saved.",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
