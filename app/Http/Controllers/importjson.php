@@ -16,6 +16,7 @@ class Importjson extends Controller
     }
 
     public function importjson(Request $request ){
+        dd($request->file('json_file'));
         $id = 43;
         if ($request->hasFile('json_file')) {
             $file = $request->file('json_file');

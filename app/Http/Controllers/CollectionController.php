@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Collection;
+use App\Models\Method;
 use App\Models\Workspace;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -22,7 +24,7 @@ class CollectionController extends Controller
     public function indexcollection($id)
     {
         $collections = Collection::where('workspace_id' , $id)->get();
-        // dd($collections);
+        // dd($id , $collections);
         return view('collection.collection' , compact('id' , 'collections'));
     }
 
@@ -44,11 +46,10 @@ class CollectionController extends Controller
         return redirect()->back();
     }
 
-    public function importcollection(Request $request)
+    public function importcollection(Request $request ,$id)
     {
 
-        $id = DB::table('workspace')->get('id');
-        dd($id);
+        // dd($request);
         if ($request->hasFile('json_file')) {
             $file = $request->file('json_file');
 
@@ -63,48 +64,38 @@ class CollectionController extends Controller
                     }
 
                     $info = $data['info']['name']; // *
+                    $method = Method::class;
+                    for( $index = 0 ; $index < count($data['item']) ; $index++){
+                        dd($data['item']);
+                        // $method = Method::create([
+                        //     '' => ,
+                        // ]);
+                        print_r($data['item'][$index]['name']);
+                        print_r($data['item'][$index]['name']);
+                    }
+
                     $collection = Collection::Create([
                         'collection_name' => $info,
                         'workspace_id' => $id,
-
                     ]);
 
-                    $item = $data['item'];
+                    $item = $data['item']['name'];
 
                     if(array_key_exists('variable' , $data)){
                         $variable = $data['variable'];
                     }
-                    // dd($info , $item );
-
-
-                    // dd( count($data));
-
-                    //ค้นหา ชื่อ รีเควสใน collection
-
-                    // foreach($data['item'] as $index){
-                    //     print_r([$index,'name']);
-                    // }
-                    // for( $index = 0 ; $index < count($data) ; $index++){
-                    //     print_r($data['item'][$index]);
-                    //     print_r('<br>');
-                    // }
-
-                    // if($data['variable'][0]){
-                    //     print_r($data['variable'][0]);
-                    // }
-
-                    // return view('importview', ['jsonData' => $data]);
-
 
                 } catch (Exception $e) {
-                    return back()->with('error', 'Error processing JSON file.');
+                    // return back()->with('error', 'Error processing JSON file.');
                 }
             } else {
                 return back()->with('error', 'The selected file is not a JSON file.');
             }
-        } else {
+        }
+        else {
             return back()->with('error', 'No file was uploaded.');
-        }return redirect()->back();
+        }
+        // return redirect()->back();
     }
 
 
