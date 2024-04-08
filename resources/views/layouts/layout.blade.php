@@ -93,10 +93,11 @@
                     </div>
                     <div class="card text-center" id="inviteCard"
                         style="position: fixed; top: 9%; left: 80%;background-color:#000000c9; display: none;">
-                        <div class="card-body" style="position: fixed; top: 9%; left: 80%; background-color:#000000c9;">
+                        <div class="card-body"
+                            style="position: fixed; top: 9%; left: 78%; border-radius: 14px; background-color:#000000c9;">
                             <input type="email" class="form-control" id="email" placeholder="Enter email"
-                                style="background-color: #118AB2; color: #ffffff; border-color:#000000c9; width: 230px;">
-                            <button type="button" class="btn" id="inviteBtn"
+                                style="background-color: #118AB2; color: #ffffff; border-color:#000000c9; width: 280px;">
+                            <button type="button" class="btn mt-3" id="inviteBtn"
                                 style="background-color: #71A4F0; color: #ffffff;">Invite</button>
                             <style>
                                 #email::placeholder {
