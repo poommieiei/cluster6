@@ -12,10 +12,12 @@
         </div>
         <div class="col-md-6 py-4" style="padding: 10px">
             <div class="row justify-content-end py-2">
-                <span class="username-email border border-2 d-block text-left rounded" style="color:floralwhite; font-size:25px; padding: 10px;">{{ $user->name }}</span>
+                <span class="username-email border border-2 d-block text-left rounded"
+                style="color:floralwhite; font-size:25px; padding: 10px; background-color:rgb(73, 73, 73)">Name : {{ $user->name }}</span>
             </div>
             <div class="row justify-content-end py-4">
-                <span class="username-email border border-2 d-block text-left rounded" style="color:floralwhite; font-size:25px; padding: 10px;">{{ $user->email }}</span>
+                <span class="username-email border border-2 d-block text-left rounded"
+                style="color:floralwhite; font-size:25px; padding: 10px; background-color:rgb(73, 73, 73)">Email : {{ $user->email }}</span>
             </div>
         </div>
     </div>
