@@ -18,7 +18,11 @@ class TableController extends Controller
         return view("table.table");
     }
 
-    public function SaveTable(Request $request,int $id)
+    public function poom()
+    {
+        return view("table.poom");
+    }
+    public function SaveTable()
     {
        //
     }
