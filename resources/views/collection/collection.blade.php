@@ -20,7 +20,7 @@
         </div>
     @endforeach
 
-    <div class="fixed-bottom d-flex justify-content-end mb-3 me-3">
+    <div class="fixed-bottom d-flex justify-content-end mb-3 me-3" style="margin: 130px">
         <form action="/importcollection/{{$id}}" method="post" enctype="multipart/form-data">
             @csrf
             <!-- ปุ่ม Import -->

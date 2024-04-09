@@ -30,12 +30,9 @@ class TableController extends Controller
        //
     }
 
-    public function ExportTable()
+    public function ExportTable(Request $request)
     {
-        return ;
+        dd($request);
+        // return ;
     }
-
-
-
-
 }

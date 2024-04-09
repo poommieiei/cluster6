@@ -98,7 +98,7 @@
     {{-- ----------------------------------------------------------------------------------------------------------------------- --}}
 
     <!-- ปุ่ม Create -->
-    <div class="fixed-bottom d-flex justify-content-end mb-3">
+    <div class="fixed-bottom d-flex justify-content-end mb-3" style="margin-left: 130px">
         <a id="create" class="btn btn-lg"
             style="margin-right: 20px; background-color: #268EB0; color: #ffffff; width: 130px;">{{ __('Create') }}</a>
     </div>

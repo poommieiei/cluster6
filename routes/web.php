@@ -50,5 +50,6 @@ Route::post('/importcollection/{id}' , [CollectionController::class , 'importcol
 Route::get('table' , [TableController::class , 'indexTable']);
 Route::get('poom' , [TableController::class , 'poom']);
 Route::get('/collection/{id}/table' , [TableController::class , 'indexTable']);
+Route::post('/ExportTable' , [TableController::class , 'ExportTable']);
 // Route::get('' , [TableController::class , 'SaveTable']);
 // Route::get('' , [TableController::class , 'ExportTable']);
