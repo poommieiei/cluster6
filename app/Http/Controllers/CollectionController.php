@@ -64,7 +64,7 @@ class CollectionController extends Controller
                     if ($data === null && json_last_error() !== JSON_ERROR_NONE) {
                         return back()->with('error', 'Error decoding JSON file.');
                     }
-                    dd($data);
+                    // dd($data);
                     $info = $data['info']['name'];
                     $request_collection = Request_Collection::class;
                     $collection = Collection::Create([

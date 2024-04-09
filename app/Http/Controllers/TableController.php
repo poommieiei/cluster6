@@ -20,16 +20,17 @@ class TableController extends Controller
     public function indexTable($id)
     {
         $request = Request_Collection::where('collection_id', $id)->get();
-        $request2 = Request_Collection::where('collection_id', $id)->get();
         $collection = Collection::where('id', $id)->firstOrFail();
-
-        return view("table.table", compact('id', 'request', 'request2', 'collection'));
+        $reqIndex = $request[0];
+        // dd($reqIndex);
+        return view("table.table", compact('id', 'request', 'collection' , 'reqIndex'));
     }
 
-    public function indexTable2($id, $method)
+    public function indexTable2($id, $requestId)
     {
+        // dd($id , $requestId);
         $request = Request_Collection::where('collection_id', $id)->get();
-        $request2 = Request_Collection::where('collection_id', $id)->where('method_request', $method)->get();
+        $request2 = Request_Collection::where('collection_id', $id)->where('method_request', $requestId)->get();
 
         $collection = Collection::where('id', $id)->firstOrFail();
 
