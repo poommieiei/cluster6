@@ -90,23 +90,46 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="navbar-nav float-start me-auto">
-                    <div style="position: fixed; top: 1%; left: 45%;  font-size: 36px; color:white; front-weight:bold;">
-                        <center>ชื่อ Collection</center>
-                    </div>
-                </ul>
+                <div style="position: fixed; top: 1%; left: 45%;  font-size: 36px; color:white; front-weight:bold;">
+                    <center>ชื่อ Collection</center>
+                </div>
                 {{-- Invite member --}}
-                <ul class="navbar-nav float-end">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user font-24"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="btn-group" style="position: fixed; top: 2%; right: 2%;">
+                    <div class="container d-flex justify-content-between align-items-center">
+                        <div class="rounded-circle bg-light d-flex justify-content-center align-items-center"
+                            style="width: 40px; height: 40px;">
+                            <i class="bi bi-person-plus-fill ms-1" style="color: #073B4C; font-size: 25px;"></i>
+                        </div>
+                        <i class="bi bi-caret-down-fill ms-3" id="inviteIcon"
+                            style="color: white; cursor: pointer;"></i>
+                    </div>
+                </div>
+                <div class="card text-center" id="inviteCard"
+                    style="position: fixed; top: 9%; left: 80%;background-color:#000000c9; display: none;">
+                    <div class="card-body"
+                        style="position: fixed; top: 9%; left: 78%; border-radius: 14px; background-color:#000000c9;">
+                        <input type="email" class="form-control" id="email" placeholder="Enter email"
+                            style="background-color: #118AB2; color: #ffffff; border-color:#000000c9; width: 280px;">
+                        <button type="button" class="btn mt-3" id="inviteBtn"
+                            style="background-color: #71A4F0; color: #ffffff;">Invite</button>
+                        <style>
+                            #email::placeholder {
+                                color: #e0e0e0;
+                            }
+                        </style>
+                    </div>
+                </div>
+                <script>
+                    // ฟังก์ชันเปิด-ปิดการ์ด Invite
+                    const inviteIcon = document.getElementById('inviteIcon');
+                    const inviteCard = document.getElementById('inviteCard');
+                    let isOpen = false;
 
-                        </ul>
-                    </li>
-                </ul>
+                    inviteIcon.addEventListener('click', () => {
+                        isOpen = !isOpen;
+                        inviteCard.style.display = isOpen ? 'block' : 'none';
+                    });
+                </script>
             </nav>
         </header>
 
@@ -140,10 +163,10 @@
                         <div>
                             <!-- Export Button -->
 
-                                <button type="button" id="export_button"class="btn rounded-pill btn-info"
-                                    style="margin-left: -12%; position:relative">
-                                    <i class="fas fa-download"></i> Export
-                                </button>
+                            <button type="button" id="export_button"class="btn rounded-pill btn-info"
+                                style="margin-left: -12%; position:relative">
+                                <i class="fas fa-download"></i> Export
+                            </button>
 
                             <!-- sweetalert 2 for Export button -->
                             <script>
