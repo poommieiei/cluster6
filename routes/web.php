@@ -48,5 +48,5 @@ Route::post('/importcollection/{id}' , [CollectionController::class , 'importcol
 
 // Route ของ Table (ยังไม่ได้ทำ)
 Route::get('table' , [TableController::class , 'indexTable']);
-// Route::get('' , [TableController::class , 'SaveTable']);
+//Route::get('/save' , [TableController::class , 'SaveTable']);
 // Route::get('' , [TableController::class , 'ExportTable']);
