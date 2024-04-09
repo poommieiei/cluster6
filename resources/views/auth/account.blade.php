@@ -1,4 +1,3 @@
-User Account
 @extends('layouts.layout')
 @section('title', 'Account')
 @section('content')
