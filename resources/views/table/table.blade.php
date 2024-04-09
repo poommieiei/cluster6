@@ -42,7 +42,14 @@ table {
                         <option value="options">OPTIONS</option>
                     </select>
                 </th>
-                <th id="rount" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">url</th>
+                <th id="rount" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                    <input type="text" name="rount" id="rount" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width: 975px; border: none">
+                    <script>
+                        //ข้อมูล Rount
+                          var data_rount = "url";
+                          document.getElementById("rount").value = data_rount;
+                    </script>
+                </th>
             </tr>
         </tbody>
     </table>
@@ -124,7 +131,7 @@ table {
     <br>
    <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
         <div style="display: flex; justify-content: flex-end;">
-            <button type="button" id="add_row_response" style="color: #F0FFFF; background-color: Black; width: 8%;">
+            <button type="button" id="add_row_header" style="color: #F0FFFF; background-color: Black; width: 8%;">
                 <i class="bi bi-plus-lg"></i>
             </button>
         </div>
@@ -156,23 +163,27 @@ table {
                 const newCell = document.createElement("th");
                 newCell.style.backgroundColor = '#9DC8D6';
                 newCell.id = 'th_header';
+                //สร้าง icon ตาม row ที่เพิ่ม
+                if (i === 0) {
+                    const checkboxCell = document.createElement('th'); // Create a new cell for the checkbox
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.name = 'checkHeader'; // Set name attribute as needed
+                    checkbox.style.marginRight = '10px'; // Apply styles as desired
+                    checkboxCell.appendChild(checkbox); // Append checkbox to the new cell
+                    newRow.appendChild(checkboxCell); // Append the checkbox cell to the new row
+                }
                 newCell.innerHTML = row.cells[i].innerHTML;
                 newRow.appendChild(newCell);
-                //สร้าง icon ตาม row ที่เพิ่ม
                 if (i === row.cells.length - 1) {
+                    const iconCell = document.createElement('th'); // Create a new cell for the icon
                     const icon = document.createElement('i');
                     icon.className = 'bi-trash';
                     icon.onclick = function() {
                         deleteRow(newRow); // Call deleteRow function when icon is clicked
                     };
-                    newCell.appendChild(icon);
-                }
-                if (i === row.cells.length - 1) {
-                    const checkbox = document.createElement('input');
-                    checkbox.type = 'checkbox';
-                    checkbox.name = 'checkHeader'; // Set name attribute as needed
-                    checkbox.style.marginLeft = '18px'; // Apply styles as desired
-                    newCell.appendChild(checkbox); // Append checkbox to the new cell
+                    iconCell.appendChild(icon); // Append icon to the new cell
+                    newRow.appendChild(iconCell); // Append the icon cell to the new row
                 }
             }
             // Append the new row to the table
