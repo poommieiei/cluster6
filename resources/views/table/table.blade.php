@@ -79,6 +79,7 @@ table {
                 <th style="width: 100px; font-size:14px; color:white; background-color: #032A37"><center>Required</th>
                 <th style="width: 120px; font-size:14px; color:white; background-color: #032A37"><center>Example data</th>
                 <th style="width: 830px; font-size:14px; color:white; background-color: #032A37"><center>Description</th>
+                <th style="background: #073B4C; border-top: solid #073B4C; border-top: solid #073B4C; border-right: solid #073B4C; border-bottom: solid #073B4C"></th>
             </tr>
         </thead>
         <tbody id="tbody_header">
@@ -123,6 +124,7 @@ table {
                           document.getElementById("description_header").value = data_description_header;
                     </script>
                 </th>
+                <th style="background: #073B4C; border-top: solid #073B4C; border-top: solid #073B4C; border-right: solid #073B4C; border-bottom: solid #073B4C"></th>
             </tr>
         </tbody>
     </table>
@@ -131,7 +133,7 @@ table {
     {{--add_row_button--}}
    <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
         <div style="display: flex; justify-content: flex-end;">
-            <button type="button" id="add_row_header" style="color: #F0FFFF; background-color: Black; width: 8%;">
+            <button type="button" id="add_row_header" style="color: #F0FFFF; background-color: #312C2C; width: 8%;">
                 <i class="bi bi-plus-lg"></i>
             </button>
         </div>
@@ -139,50 +141,55 @@ table {
     <script>
         function addRowHeader() {
             // Get the table element
-            const table = document.getElementById("header_table");
+            const table_header = document.getElementById("header_table");
             const tr_header = document.getElementById("tr_header");
-            const tbody = document.getElementById("tbody_header");
-            table.style.display = 'nline-block';
+            table_header.style.display = 'nline-block';
 
             // Create a new row element
             const newRow = document.createElement("tr");
 
             // Create a new cell element for each column in the table
             for (let i = 0; i < table.rows[0].cells.length; i++) {
-                const newCell = document.createElement("th");
-                newRow.appendChild(newCell);
+                const newCell_header = document.createElement("th");
+                newRow.appendChild(newCell_header);
             }
             // Append the new row to the table
-            table.appendChild(newRow);
+            table_header.appendChild(newRow);
             }
         function copyRow(row) {
             // Create a new row element
-            const newRow = document.createElement("tr");
+            const newRow_header = document.createElement("tr");
             // Copy the cells from the old row to the new row
             for (let i = 0; i < row.cells.length; i++) {
-                const newCell = document.createElement("th");
-                newCell.style.backgroundColor = '#9DC8D6';
-                newCell.id = 'th_header';
-                newCell.innerHTML = row.cells[i].innerHTML;
-                newRow.appendChild(newCell);
+                const newCell_header = document.createElement("th");
+                newCell_header.id = 'th_header';
+                newCell_header.style.backgroundColor = '#9DC8D6';
+                newCell_header.innerHTML = row.cells[i].innerHTML;
+                newRow_header.appendChild(newCell_header);
                 //สร้าง icon ตาม row ที่เพิ่ม
                 if (i === row.cells.length - 1) {
-                    const icon = document.createElement('i');
-                    icon.className = 'bi-trash';
-                    icon.onclick = function() {
-                        deleteRow(newRow); // Call deleteRow function when icon is clicked
+                    const icon_header = document.createElement('i');
+                    icon_header.className = 'bi-trash';
+                    icon_header.style.fontSize = '22px';
+                    icon_header.style.color = '#F0FFFF';
+                    newCell_header.style.backgroundColor = 'transparent';
+                    newCell_header.style.borderTop = 'solid #073B4C';
+                    newCell_header.style.borderRight = 'solid #073B4C';
+                    newCell_header.style.borderBottom = 'solid #073B4C';
+                    icon_header.onclick = function() {
+                        deleteRow(newRow_header);
                     };
-                    newCell.appendChild(icon);
+                    newCell_header.appendChild(icon_header);
                 }
             }
             // Append the new row to the table
-            row.parentNode.appendChild(newRow);
+            row.parentNode.appendChild(newRow_header);
             }
 
             // Add an event listener to the "Copy" button
             document.getElementById("add_row_header").addEventListener("click", function() {
-            const row = document.getElementById("tr_header");
-            copyRow(row);
+            const row_header = document.getElementById("tr_header");
+            copyRow(row_header);
             const target = event.target;
             });
             $("table").on("click", ".bi-trash", function() {
