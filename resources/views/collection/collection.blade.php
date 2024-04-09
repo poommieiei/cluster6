@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('collection.layoutCollection')
 @section('title', 'API Documentation & Design Tools')
 @section('content')
     @foreach ($collections as $collection)
