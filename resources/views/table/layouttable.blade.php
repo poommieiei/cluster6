@@ -28,7 +28,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title></title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -58,10 +58,10 @@
         <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark" style="background-color: #0E566E">
                 <div class="navbar-header" data-logobg="skin5" style="background-color: #136885;">
-                    <a class="navbar-brand" href="workspace" style="height: 65px">
+                    <a class="navbar-brand" href="/workspace" style="height: 65px">
                         <!-- logo program -->
                         <b class="logo-icon" style="display: block; margin-bottom: 10px;">
-                            <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="/workspcae"
+                            <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="workspcae"
                                 class="light-logo" width="35" style="display: block;" />
                         </b>
                         <span class="logo-text ms-2"
@@ -91,9 +91,9 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav float-start me-auto">
-                    <h6 style="font-size: 30px; color:ghostwhite; margin-top:5%;">
-                        <center>ชื่อ Collection
-                    </h6>
+                    <div style="position: fixed; top: 1%; left: 45%;  font-size: 36px; color:white; front-weight:bold;">
+                        <center>ชื่อ Collection</center>
+                    </div>
                 </ul>
                 {{-- Invite member --}}
                 <ul class="navbar-nav float-end">
