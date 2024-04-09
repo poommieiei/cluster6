@@ -74,7 +74,7 @@ table {
                 <th style="width: 830px; font-size:14px; color:white; background-color: #032A37"><center>Description</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tbody_header">
             <tr id="tr_header">
                 <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
                     <input type="text" name="no_header" id="no_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width:25px; border: none; text-align: center">
@@ -93,7 +93,7 @@ table {
                           document.getElementById("key_header").value = data_key_header;
                     </script>
                 </th>
-                <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
+                <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
                     <select name="required_param" id="required_param" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
                         <option value="o">O</option>
                         <option value="m">M</option>
@@ -116,9 +116,9 @@ table {
                           document.getElementById("description_header").value = data_description_header;
                     </script>
                 </th>
+                {{-- สำหรับให้คลิกเพื่อเลือกว่าจะเอาหรือไม่ตอน Export --}}
                 <input type="checkbox" name="checkHeader" id="checkHeader" style="margin-left: 18px; margin-top: 80px">
             </tr>
-            {{-- สำหรับให้คลิกเพื่อเลือกว่าจะเอาหรือไม่ตอน Export --}}
         </tbody>
     </table>
     <br>
@@ -132,35 +132,41 @@ table {
         function addRowHeader() {
             // Get the table element
             const table = document.getElementById("header_table");
+            const tr_header = document.getElementById("tr_header");
+            const tbody = document.getElementById("tbody_header");
 
             // Create a new row element
             const newRow = document.createElement("tr");
 
             // Create a new cell element for each column in the table
-            for (let i = 0; i < table.rows[i].cells.length; i++) {
+            for (let i = 0; i < table.rows[0].cells.length; i++) {
                 const newCell = document.createElement("th");
-                newRow.innerHTML = '<th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">';
                 newRow.appendChild(newCell);
             }
-
             // Append the new row to the table
             table.appendChild(newRow);
             }
 
-            // Add an event listener to the "+" button
-        document.getElementById("add_row_header").addEventListener("click", addRowHeader);
-
         function copyRow(row) {
             // Create a new row element
             const newRow = document.createElement("tr");
-
             // Copy the cells from the old row to the new row
             for (let i = 0; i < row.cells.length; i++) {
-                const newCell = document.createElement("td");
+                const newCell = document.createElement("th");
+                newCell.style.backgroundColor = '#9DC8D6';
+                newCell.id = 'th_header';
                 newCell.innerHTML = row.cells[i].innerHTML;
                 newRow.appendChild(newCell);
+                if (i === row.cells.length - 1) {
+                // Create and append the icon to the last cell of the new row
+                const icon = document.createElement('i');
+                icon.className = 'bi-trash';
+                icon.onclick = function() {
+                    deleteRow(newRow); // Call deleteRow function when icon is clicked
+                 };
+                newCell.appendChild(icon);
+                }
             }
-
             // Append the new row to the table
             row.parentNode.appendChild(newRow);
             }
@@ -169,6 +175,13 @@ table {
             document.getElementById("add_row_header").addEventListener("click", function() {
             const row = document.getElementById("tr_header");
             copyRow(row);
+            const target = event.target;
+            });
+            $("table").on("click", ".bi-trash", function() {
+            const row = $(this).closest("tr"); // ค้นหาแถวที่ไอคอนอยู่
+
+            // ลบแถว
+            row.remove();
             });
     </script>
 </div>
