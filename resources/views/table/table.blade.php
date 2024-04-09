@@ -158,14 +158,21 @@ table {
                 newCell.id = 'th_header';
                 newCell.innerHTML = row.cells[i].innerHTML;
                 newRow.appendChild(newCell);
+                //สร้าง icon ตาม row ที่เพิ่ม
                 if (i === row.cells.length - 1) {
-                // Create and append the icon to the last cell of the new row
-                const icon = document.createElement('i');
-                icon.className = 'bi-trash';
-                icon.onclick = function() {
-                    deleteRow(newRow); // Call deleteRow function when icon is clicked
-                 };
-                newCell.appendChild(icon);
+                    const icon = document.createElement('i');
+                    icon.className = 'bi-trash';
+                    icon.onclick = function() {
+                        deleteRow(newRow); // Call deleteRow function when icon is clicked
+                    };
+                    newCell.appendChild(icon);
+                }
+                if (i === row.cells.length - 1) {
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.name = 'checkHeader'; // Set name attribute as needed
+                    checkbox.style.marginLeft = '18px'; // Apply styles as desired
+                    newCell.appendChild(checkbox); // Append checkbox to the new cell
                 }
             }
             // Append the new row to the table
