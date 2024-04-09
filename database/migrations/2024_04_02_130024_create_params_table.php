@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('description');
             $table->string('status');
 
-            $table->unsignedBigInteger('method_id');
-            $table->foreign('method_id')->references('id')->on('request')->onDelete('CASCADE');
+            $table->unsignedBigInteger('request_id');
+            $table->foreign('request_id')->references('id')->on('request')->onDelete('CASCADE');
 
             $table->timestamps();
         });
