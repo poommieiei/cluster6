@@ -129,6 +129,7 @@ table {
         </tbody>
     </table>
     <br>
+    {{--add_row_button--}}
    <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
         <div style="display: flex; justify-content: flex-end;">
             <button type="button" id="add_row_header" style="color: #F0FFFF; background-color: Black; width: 8%;">
@@ -286,12 +287,14 @@ table {
         <input type="checkbox" name="checkParam" id="checkParam" style="margin-left: 18px; margin-top: 80px">
     </table>
     <br>
-    <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
-        <a class="btn " style="width:1050px;background-color:#073B4C;margin-left: ;"href="javascript:void(0)" data-filter="4"></a>
-        <button type="button" id="add_row_response" style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
-            <i class="bi bi-plus-lg"></i>
-        </button>
-    </th>
+    {{--add_row_button--}}
+    <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
+        <div style="display: flex; justify-content: flex-end;">
+            <button type="button" id="add_row_param" style="color: #F0FFFF; background-color: #312C2C; width: 8%;">
+                <i class="bi bi-plus-lg"></i>
+            </button>
+        </div>
+    </div>
 </div>
 
 {{-- Body --}}
@@ -367,23 +370,38 @@ table {
             <input type="checkbox" name="checkParam" id="checkParam" style="margin-left: 18px; margin-top: 80px">
     </table>
     <br>
-    <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
-        <a class="btn " style="width:1050px;background-color:#073B4C;margin-left: ;"href="javascript:void(0)" data-filter="4"></a>
-        <button type="button" id="add_row_response" style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
-            <i class="bi bi-plus-lg"></i>
-        </button>
-    </th>
+    {{--add_row_button--}}
+    <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
+        <div style="display: flex; justify-content: flex-end;">
+            <button type="button" id="add_row_header" style="color: #F0FFFF; background-color: #312C2C; width: 8%;">
+                <i class="bi bi-plus-lg"></i>
+            </button>
+        </div>
+    </div>
 </div>
 
 {{-- Response --}}
+
 <div class="card-body" id="table-container-response" style="display: none">
+    <br>
     <table class="table table-bordered" name="response_table" id="response_table" style="width:100px; margin-left: 32px; border:dimgray">
         <thead>
-            <br>
-            <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Response</h6>
+
+        <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
+
+        {{--button--}}
+        <div style="display: flex; justify-content: flex-end;">
+        <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Response</h6>
+            <button type="button" id="add_row_header" style="color: #F0FFFF; background-color: #312C2C; width: 200px;">
+                <i class="">Create New Response</i>
+            </button>
+        </div>
+    </div>
+
             <tr>
                 <th style="width: 9%; font-size:14px; color:white; background-color: #032A37"><center>Status Code</th>
             </tr>
+
         </thead>
         <tbody id="my_tbody">
             <tr>
@@ -400,7 +418,7 @@ table {
                 </th>
             </tr>
         </tbody>
-    <table class="table table-bordered" name="response_table" id="response_table" style="width:957px; margin-left: 25px; border:dimgray">
+    <table class="table table-bordered" name="response_table" id="response_table" style="width:1025px; margin-left: 25px; border:dimgray">
         <thead>
             <tr>
                 <th style="width: 9%; font-size:14px; color:white; background-color: #032A37"><center>Key</th>
@@ -448,6 +466,14 @@ table {
             </tr>
         </tbody>
     </table>
+    <br>
+    <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
+        <div style="display: flex; justify-content: flex-end;">
+            <button type="button" id="add_row_header" style="color: #F0FFFF; background-color:#312C2C; width: 8%;">
+                <i class="bi bi-plus-lg"></i>
+            </button>
+        </div>
+    </div>
 </div>
 
 {{-- check box show header table --}}

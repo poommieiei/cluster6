@@ -135,7 +135,7 @@
                         <div>
                             <!-- Export Button -->
                             <button type="button" id="export_button"class="btn rounded-pill btn-info" style="margin-left: -12%; position:relative">
-                                <i class="fas fa-download"></i> Export
+                                <i class="bi bi-file-earmark-arrow-up-fill"></i> Export
                             </button>
 
                             <!-- sweetalert 2 for Export button -->
@@ -168,8 +168,8 @@
                         </div>
                         <div>
                             <!-- Save Button -->
-                            <button type="button" id="save_btn" class="btn rounded-pill btn-success" style="position:relative">
-                                <i class="fas fa-download"></i> Save
+                            <button type="button" id="save_btn" class="btn rounded-pill btn-success" style="position:relative ">
+                                <i class="bi bi-save2-fill"></i> Save
                             </button>
 
                             <!-- sweetalert 2 for save button -->
