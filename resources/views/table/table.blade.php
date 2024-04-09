@@ -65,7 +65,7 @@ table {
     <table class="table table-bordered" name="header_table" id="header_table" style="width:1150px; border:dimgray">
         <thead>
             <br>
-            <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Headers</h6>
+            <h6 style="font-size:15px; color:white; margin-left: auto; width:1150px">Headers</h6>
             <tr>
                 <th style="width: 50px; font-size:14px; color:white; background-color: #032A37"><center>No</th>
                 <th style="width: 100px; font-size:14px; color:white; background-color: #032A37;"><center>Key</th>
@@ -122,12 +122,13 @@ table {
         </tbody>
     </table>
     <br>
-    <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
-        <a class="btn " style="width:1049px;background-color:#073B4C;margin-left: ;"href="javascript:void(0)" data-filter="4"></a>
-        <button type="button" id="add_row_header" style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
-            <i class="bi bi-plus-lg"></i>
-        </button>
-    </th>
+   <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
+        <div style="display: flex; justify-content: flex-end;">
+            <button type="button" id="add_row_response" style="color: #F0FFFF; background-color: Black; width: 8%;">
+                <i class="bi bi-plus-lg"></i>
+            </button>
+        </div>
+    </div>
     <script>
         function addRowHeader() {
             // Get the table element
@@ -185,6 +186,7 @@ table {
             });
     </script>
 </div>
+
 
 {{-- Params --}}
 <div class="card-body" id="table-container-param" style="display: none">
