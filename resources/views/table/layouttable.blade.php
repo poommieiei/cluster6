@@ -111,8 +111,9 @@
             <div class="scroll-sidebar" style="background-color: #0E566E;" >
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav" >
-                    <ul id="sidebarnav" class="pt-4" style="background-color: #0E566E;">
-                        {{-- Method list --}}
+                    @yield('service')
+                    {{-- <ul id="sidebarnav" class="pt-4" style="background-color: #0E566E;">
+
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false">
                                 <i class="hide-menu" style="font-size:20px; color: #54FD46">GET
@@ -120,7 +121,7 @@
                                 </i>
                             </a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </nav>
             </div>
         </aside>
