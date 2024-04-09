@@ -145,16 +145,6 @@
             <label for="response" style="font-size:14px; color:white">Response</label><br>
         </div>
 
-        {{-- <hr style="color: white">
-    @foreach ($request as $requests)
-        <div style="color: white">
-            <p>request_name : {{ $requests->request_name }}</p>
-            <p>method_request : {{ $requests->method_request }}</p>
-            <p>method_url : {{ $requests->method_url }}</p>
-            <hr>
-        </div>
-    @endforeach --}}
-
         {{-- Headers --}}
         <div class="card-body" id="table-container-header" style="display: none">
             <table class="table table-bordered" name="header_table" id="header_table" style="width:1150px; border:dimgray">
