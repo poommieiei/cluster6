@@ -94,12 +94,12 @@
             <tbody id="tbody_header">
                 <tr id="tr_header">
                     <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
-                        <input type="text" name="no_header" id="no_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width:25px; border: none; text-align: center">
+                        <input type="text" name="no_header[]" id="no_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width:25px; border: none; text-align: center">
 
                     </th>
 
                     <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                        <input type="text" name="key_header" id="key_header" style="background-color: #9DC8D6; width:130px; border: none">
+                        <input value="" type="text" name="key_header[]" id="key_header" style="background-color: #9DC8D6; width:130px; border: none">
 
                     </th>
                     <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
@@ -114,7 +114,7 @@
 
                     </th>
                     <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
-                        <textarea class="form-control" name="description_header" id="description_header" rows="1" style="font-size:14px; border:none; background:#9DC8D6; width:720px"></textarea>
+                        <textarea class="form-control" name="description_header[]" id="description_header" rows="1" style="font-size:14px; border:none; background:#9DC8D6; width:720px"></textarea>
 
                     </th>
                     {{-- สำหรับให้คลิกเพื่อเลือกว่าจะเอาหรือไม่ตอน Export --}}
@@ -131,7 +131,7 @@
     </script>
     <script>
         //ข้อมูล Key ของ Header
-          var data_key_header = "daada";
+          var data_key_header = getElementById('key_header');
           document.getElementById("key_header").value = data_key_header;
     </script>
     <script>
