@@ -21,9 +21,9 @@ table {
 
 <div class="card-body">
     {{-- Method UR --}}
-    <table class="table table-bordered" id="method_table" style="margin-left: 30px; width:1150px; border:dimgray">
+    <table class="table table-bordered" id="method_table" style="margin-left: 32px; width:1150px; border:dimgray">
         <thead>
-            <h6 style="font-size:15px; color:white; margin-left: 30px; width:1150px">Method URL</h6>
+            <h6 style="font-size:15px; color:white; margin-left: 32px; width:1150px">Method URL</h6>
             <tr>
                 <th style="width: 9%; font-size:14px; color:white; background-color: #032A37"><center>Method URL</th>
                 <th style="font-size:14px; color:white; background-color: #032A37"><center>Route</th>
@@ -69,10 +69,10 @@ table {
 
 {{-- Headers --}}
 <div class="card-body" id="table-container-header" style="display: none">
-    <table class="table table-bordered" name="header_table" id="header_table" style="width:1150px; border:dimgray">
+    <table class="table table-bordered" name="header_table" id="header_table" style="width:1150px; border:dimgray; margin-left: 34px">
         <thead>
             <br>
-            <h6 style="font-size:15px; color:white; margin-left: auto; width:1150px">Headers</h6>
+            <h6 style="font-size:15px; color:white; margin-left: 34px; width:1150px">Headers</h6>
             <tr>
                 <th style="width: 50px; font-size:14px; color:white; background-color: #032A37"><center>No</th>
                 <th style="width: 100px; font-size:14px; color:white; background-color: #032A37;"><center>Key</th>
@@ -123,12 +123,11 @@ table {
                           document.getElementById("description_header").value = data_description_header;
                     </script>
                 </th>
-                {{-- สำหรับให้คลิกเพื่อเลือกว่าจะเอาหรือไม่ตอน Export --}}
-                <input type="checkbox" name="checkHeader" id="checkHeader" style="margin-left: 18px; margin-top: 80px">
             </tr>
         </tbody>
     </table>
     <br>
+
     {{--add_row_button--}}
    <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
         <div style="display: flex; justify-content: flex-end;">
@@ -143,6 +142,7 @@ table {
             const table = document.getElementById("header_table");
             const tr_header = document.getElementById("tr_header");
             const tbody = document.getElementById("tbody_header");
+            table.style.display = 'nline-block';
 
             // Create a new row element
             const newRow = document.createElement("tr");
@@ -155,7 +155,6 @@ table {
             // Append the new row to the table
             table.appendChild(newRow);
             }
-
         function copyRow(row) {
             // Create a new row element
             const newRow = document.createElement("tr");
@@ -164,27 +163,16 @@ table {
                 const newCell = document.createElement("th");
                 newCell.style.backgroundColor = '#9DC8D6';
                 newCell.id = 'th_header';
-                //สร้าง icon ตาม row ที่เพิ่ม
-                if (i === 0) {
-                    const checkboxCell = document.createElement('th'); // Create a new cell for the checkbox
-                    const checkbox = document.createElement('input');
-                    checkbox.type = 'checkbox';
-                    checkbox.name = 'checkHeader'; // Set name attribute as needed
-                    checkbox.style.marginRight = '10px'; // Apply styles as desired
-                    checkboxCell.appendChild(checkbox); // Append checkbox to the new cell
-                    newRow.appendChild(checkboxCell); // Append the checkbox cell to the new row
-                }
                 newCell.innerHTML = row.cells[i].innerHTML;
                 newRow.appendChild(newCell);
+                //สร้าง icon ตาม row ที่เพิ่ม
                 if (i === row.cells.length - 1) {
-                    const iconCell = document.createElement('th'); // Create a new cell for the icon
                     const icon = document.createElement('i');
                     icon.className = 'bi-trash';
                     icon.onclick = function() {
                         deleteRow(newRow); // Call deleteRow function when icon is clicked
                     };
-                    iconCell.appendChild(icon); // Append icon to the new cell
-                    newRow.appendChild(iconCell); // Append the icon cell to the new row
+                    newCell.appendChild(icon);
                 }
             }
             // Append the new row to the table
@@ -206,13 +194,12 @@ table {
     </script>
 </div>
 
-
 {{-- Params --}}
 <div class="card-body" id="table-container-param" style="display: none">
-    <table class="table table-bordered" name="param_table" id="param_table" style="width:1150px; border:dimgray">
+    <table class="table table-bordered" name="param_table" id="param_table" style="width:1150px; border:dimgray; margin-left: 34px">
         <thead>
             <br>
-            <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Params</h6>
+            <h6 style="font-size:15px; color:white; margin-left: 34px; width:1150px">Params</h6>
             <tr>
                 <th style="width: 40px; font-size:14px; color:white; background-color: #032A37"><center>No</th>
                 <th style="width: 120px; font-size:14px; color:white; background-color: #032A37;"><center>Key</th>
@@ -284,7 +271,6 @@ table {
                 </th>
             </tr>
         </tbody>
-        <input type="checkbox" name="checkParam" id="checkParam" style="margin-left: 18px; margin-top: 80px">
     </table>
     <br>
     {{--add_row_button--}}
@@ -299,10 +285,10 @@ table {
 
 {{-- Body --}}
 <div class="card-body" id="table-container-body" style="display: none">
-    <table class="table table-bordered" name="body_table" id="body_table" style="width:1150px; border:dimgray">
+    <table class="table table-bordered" name="body_table" id="body_table" style="width:1150px; border:dimgray; margin-left: 34px">
         <thead>
             <br>
-            <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Body</h6>
+            <h6 style="font-size:15px; color:white; margin-left: 34px; width:1150px">Body</h6>
             <tr>
                 <th style="width: 40px; font-size:14px; color:white; background-color: #032A37"><center>No</th>
                 <th style="width: 130px; font-size:14px; color:white; background-color: #032A37;"><center>Key</th>
@@ -367,13 +353,12 @@ table {
                     </th>
                 </tr>
             </tbody>
-            <input type="checkbox" name="checkParam" id="checkParam" style="margin-left: 18px; margin-top: 80px">
     </table>
     <br>
     {{--add_row_button--}}
     <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
         <div style="display: flex; justify-content: flex-end;">
-            <button type="button" id="add_row_header" style="color: #F0FFFF; background-color: #312C2C; width: 8%;">
+            <button type="button" id="add_row_body" style="color: #F0FFFF; background-color: #312C2C; width: 8%;">
                 <i class="bi bi-plus-lg"></i>
             </button>
         </div>
@@ -392,7 +377,7 @@ table {
         {{--button--}}
         <div style="display: flex; justify-content: flex-end;">
         <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Response</h6>
-            <button type="button" id="add_row_header" style="color: #F0FFFF; background-color: #312C2C; width: 200px;">
+            <button type="button" id="add_row_statuscode" style="color: #F0FFFF; background-color: #312C2C; width: 200px;">
                 <i class="">Create New Response</i>
             </button>
         </div>
@@ -469,7 +454,7 @@ table {
     <br>
     <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
         <div style="display: flex; justify-content: flex-end;">
-            <button type="button" id="add_row_header" style="color: #F0FFFF; background-color:#312C2C; width: 8%;">
+            <button type="button" id="add_row_response" style="color: #F0FFFF; background-color:#312C2C; width: 8%;">
                 <i class="bi bi-plus-lg"></i>
             </button>
         </div>
