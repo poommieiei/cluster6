@@ -19,7 +19,7 @@
             </div>
         </div>
     @endforeach
-    
+
     <div class="fixed-bottom d-flex justify-content-end mb-3 me-3">
         <form action="/importcollection/{{$id}}" method="post" enctype="multipart/form-data">
             @csrf
@@ -40,6 +40,14 @@
             <input class="form-control-file" type="file" id="json_file" name="json_file" style="display: none;"
                 onchange="showFileName()">
         </form>
+        {{-- แสดงชื่อไฟล์ที่เลือก --}}
+    <span class="text" style="position:fixed; bottom: 10%; right:2.5%; color:#ffffff"></span>
+    <script>
+        document.getElementById('json_file').addEventListener('change', function() {
+            var fileName = this.files[0].name;
+            document.querySelector('.text').innerHTML = fileName;
+        });
+    </script>
         @if (isset($jsonData))
                 {{-- {{ json_encode($jsonData) }} --}}
                 {{-- <h2>JSON Data</h2>
