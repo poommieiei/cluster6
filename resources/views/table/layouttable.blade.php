@@ -56,65 +56,70 @@
         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
 
         <header class="topbar" data-navbarbg="skin5">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <div class="navbar-header" data-logobg="skin5" style="background-color: #0E566E;">
-                    <a class="navbar-brand" href="/workspace" style="height: 65px">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark" style="background-color: #0E566E">
+                <div class="navbar-header" data-logobg="skin5" style="background-color: #136885;">
+                    <a class="navbar-brand" href="workspace" style="height: 65px">
                         <!-- logo program -->
                         <b class="logo-icon" style="display: block; margin-bottom: 10px;">
-                            <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="/workspace" class="light-logo"
-                                width="35" style="display: block;" />
+                            <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="/workspcae"
+                                class="light-logo" width="35" style="display: block;" />
                         </b>
-                        <span class="logo-text ms-2" style="font-family: 'Inter', sans-serif; font-weight: bold; font-size: 24px;">
-                            SPEC
+                        <span class="logo-text ms-2"
+                            style="font-family: 'Inter', sans-serif; font-weight: bold; font-size: 30px;">
+                            S P E C
                         </span>
                     </a>
                     <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
                             class="ti-menu ti-close"></i></a>
                 </div>
-                    {{-- Collection list --}}
-                    <ul class="navbar-nav float-start me-auto">
-                        <li class="nav-item d-none d-lg-block">
-                            <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
-                                data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="d-none d-md-block" style="font-size:18px; color:ghostwhite">Collection<i class="fa fa-angle-down"></i></span>
-                                <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Collection1</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav float-start me-auto">
-                        <h6 style="font-size: 22px; color:ghostwhite"><center>ชื่อ Collection</h6>
-                    </ul>
-                    {{-- Invite member --}}
-                    <ul class="navbar-nav float-end">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user font-24"></i>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {{-- Collection list --}}
+                <ul class="navbar-nav float-start me-auto">
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
+                            data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="d-none d-md-block" style="font-size:20px; color:ghostwhite">Collection <i
+                                    class="fa fa-angle-down"></i></span>
+                            <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Collection1</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav float-start me-auto">
+                    <h6 style="font-size: 30px; color:ghostwhite; margin-top:5%;">
+                        <center>ชื่อ Collection
+                    </h6>
+                </ul>
+                {{-- Invite member --}}
+                <ul class="navbar-nav float-end">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user font-24"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            </ul>
-                        </li>
-                    </ul>
+                        </ul>
+                    </li>
+                </ul>
             </nav>
         </header>
 
-        <aside class="left-sidebar" style="background-color: #0E566E;">
+        <aside class="left-sidebar" style="background-color: #136885;">
             <!-- Sidebar scroll-->
-            <div class="scroll-sidebar" style="background-color: #0E566E;" >
+            <div class="scroll-sidebar" style="background-color: #136885;">
                 <!-- Sidebar navigation-->
-                <nav class="sidebar-nav" >
-                    <ul id="sidebarnav" class="pt-4" style="background-color: #0E566E;">
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="pt-4" style="background-color: #136885;">
                         {{-- Method list --}}
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html"
+                                aria-expanded="false">
                                 <i class="hide-menu" style="font-size:20px; color: #54FD46">GET
                                     <span style="font-size:20px; color:ghostwhite">Service Name</span>
                                 </i>
@@ -134,47 +139,50 @@
                         <!-- Button Layout -->
                         <div>
                             <!-- Export Button -->
-                            <button type="button" id="export_button"class="btn rounded-pill btn-info" style="margin-left: -12%; position:relative">
-                                <i class="fas fa-download"></i> Export
-                            </button>
+
+                                <button type="button" id="export_button"class="btn rounded-pill btn-info"
+                                    style="margin-left: -12%; position:relative">
+                                    <i class="fas fa-download"></i> Export
+                                </button>
 
                             <!-- sweetalert 2 for Export button -->
                             <script>
-                            $('#export_button').click(function(){
-                            Swal.fire({
-                                title: "Are you sure you save the changes?",
-                                text: "Your changes will not appear if you  don't save them.",
-                                icon: "warning",
-                                showCancelButton: true,
-                                confirmButtonColor: "#3085d6",
-                                cancelButtonColor: "#d33",
-                                confirmButtonText: "Export"
-                                }).then((result) => {
-                                if (result.isConfirmed) {
+                                $('#export_button').click(function() {
                                     Swal.fire({
-                                    title: "Exported!",
-                                    text: "Your file has been export.",
-                                    icon: "success"
+                                        title: "Are you sure you save the changes?",
+                                        text: "Your changes will not appear if you  don't save them.",
+                                        icon: "warning",
+                                        showCancelButton: true,
+                                        confirmButtonColor: "#3085d6",
+                                        cancelButtonColor: "#d33",
+                                        confirmButtonText: "Export"
+                                    }).then((result) => {
+                                        if (result.isConfirmed) {
+                                            Swal.fire({
+                                                title: "Exported!",
+                                                text: "Your file has been export.",
+                                                icon: "success"
+                                            });
+                                        } else {
+                                            Swal.fire({
+                                                title: "Cancelled!",
+                                                icon: "error"
+                                            });
+                                        }
                                     });
-                                }else{
-                                    Swal.fire({
-                                    title: "Cancelled!",
-                                    icon: "error"
-                                    });
-                                }
-                                });
-                            })
+                                })
                             </script>
                         </div>
                         <div>
                             <!-- Save Button -->
-                            <button type="button" id="save_btn" class="btn rounded-pill btn-success" style="position:relative">
+                            <button type="button" id="save_btn" class="btn rounded-pill btn-success"
+                                style="position:relative">
                                 <i class="fas fa-download"></i> Save
                             </button>
 
                             <!-- sweetalert 2 for save button -->
                             <script>
-                                $('#save_btn').click(function(){
+                                $('#save_btn').click(function() {
                                     Swal.fire({
                                         position: "top-end",
                                         icon: "success",

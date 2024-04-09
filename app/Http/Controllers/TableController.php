@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Request_Collection;
 use Exception;
 use Illuminate\Support\Facades\DB;
+use App\Models\Collection;
+
 
 class TableController extends Controller
 {
@@ -25,7 +27,7 @@ class TableController extends Controller
     }
     public function SaveTable()
     {
-        return ;
+       //
     }
 
     public function ExportTable()
