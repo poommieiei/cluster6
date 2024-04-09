@@ -99,7 +99,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/account"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('account') }}"
                                 aria-expanded="false">
                                 <i class="fa fa-user" style="font-size:20px"></i>
                                 <span class="hide-menu" style="font-size:20px">Account</span>

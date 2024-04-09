@@ -14,23 +14,26 @@ class WorkspaceController extends Controller
         $this->middleware('auth');
     }
 
-    public function indexworkspace(){
+    public function indexworkspace()
+    {
         $workspaces = Workspace::get();
         // dd($workspaces);
         return view('home', compact('workspaces'));
     }
 
-    public function viewinsert(){
+    public function viewinsert()
+    {
         return view('workspacepage.insertworkspace');
     }
 
-    public function insertworkspace(Request $req , int $id){
+    public function insertworkspace(Request $req, int $id)
+    {
 
         $user = User::findOrFail($id);
         // dd($user);
         $req->validate(
             [
-                'workspace'=>'required | max:40'
+                'workspace' => 'required | max:40'
             ]
         );
         $workspace = $req->input('workspace');
@@ -43,10 +46,10 @@ class WorkspaceController extends Controller
 
         // DB::table('workspace')->insert($data);
         return redirect('/workspace');
-
     }
 
-    public function deleteworkspace ($id){
+    public function deleteworkspace($id)
+    {
         // dd($id);
         DB::table('workspace')->where('id', $id)->delete();
         // $workspace = Workspace::findOrFail($id);
@@ -55,7 +58,8 @@ class WorkspaceController extends Controller
         // }
         return redirect('/workspace');
     }
-    public function renameworkspace(Request $req , $id){
+    public function renameworkspace(Request $req, $id)
+    {
         // dd($req , $id);
         $req->validate([
             'workspaceName' => 'required|string|max:255'
@@ -69,5 +73,4 @@ class WorkspaceController extends Controller
 
         return redirect('/workspace');
     }
-
 }
