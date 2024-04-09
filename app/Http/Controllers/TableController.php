@@ -7,6 +7,11 @@ use App\Models\Request_Collection;
 
 
 use Illuminate\Http\Request;
+use App\Models\Request_Collection;
+use Exception;
+use Illuminate\Support\Facades\DB;
+use App\Models\Collection;
+
 
 class TableController extends Controller
 {
@@ -14,6 +19,7 @@ class TableController extends Controller
     {
         $this->middleware('auth');
     }
+    public function indexTable($id)
     public function indexTable($id)
     {
         $request = Request_Collection::where('collection_id', $id)->get();
@@ -33,6 +39,10 @@ class TableController extends Controller
         return view("table.table", compact('id', 'request', 'request2', 'collection'));
     }
 
+    public function poom()
+    {
+        return view("table.poom");
+    }
     public function SaveTable()
     {
         return;
