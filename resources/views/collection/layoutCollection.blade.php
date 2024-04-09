@@ -28,7 +28,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title')</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -51,57 +51,109 @@
         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
 
         <header class="topbar" data-navbarbg="skin5">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <div class="navbar-header" data-logobg="skin5" style="background-color: #0E566E;">
-                    <a class="navbar-brand" href="index.html" style="height: 65px">
-                        <!-- logo program -->
-                        <b class="logo-icon" style="display: block; margin-bottom: 10px;">
-                            <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage" class="light-logo"
-                                width="35" style="display: block;" />
-                        </b>
+            <div class="navbar top-navbar navbar-expand-md navbar-dark" style="background-color: #0E566E;">
+                <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                    <div class="navbar-header" data-logobg="skin5" style="background-color: #136885;">
+                        <a class="navbar-brand" href="/" style="height: 65px">
+                            <!-- logo program -->
+                            <b class="logo-icon" style="display: block; margin-bottom: 10px;">
+                                <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage"
+                                    class="light-logo" width="35" style="display: block;" />
+                            </b>
+                            <span class="logo-text ms-2"
+                                style="font-family: 'Inter', sans-serif; font-weight: bold; font-size: 30px;">
+                                S P E C
+                            </span>
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse" style="background-color: #0E566E;">
+                        <ul class="navbar-nav float-start me-auto">
+                            <li class="nav-item d-none d-lg-block">
+                                <div style="background-color: #0E566E;">
+                                    <a class="nav-link sidebartoggler waves-effect waves-light"
+                                        href="javascript:void(0)" data-sidebartype="mini-sidebar"><i
+                                            class="mdi mdi-menu font-24"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="width:400px;"></div>
+                    <!-------------------------------------  Layout only collection ------------------------------->
+                    <div style="position: fixed; top: 1%; left: 46%;  font-size: 36px; color:white; front-weight:bold;">
+                        <center> Collection </center>
+                    </div>
+                    <!-- ปุ่ม Invite -->
+                    <div class="btn-group" style="position: fixed; top: 2%; right: 2%;">
+                        <div class="container d-flex justify-content-between align-items-center">
+                            <div class="rounded-circle bg-light d-flex justify-content-center align-items-center"
+                                style="width: 40px; height: 40px;">
+                                <i class="bi bi-person-plus-fill ms-1" style="color: #073B4C; font-size: 25px;"></i>
+                            </div>
+                            <i class="bi bi-caret-down-fill ms-3" id="inviteIcon"
+                                style="color: white; cursor: pointer;"></i>
+                        </div>
+                    </div>
+                    <div class="card text-center" id="inviteCard"
+                        style="position: fixed; top: 9%; left: 80%;background-color:#000000c9; display: none;">
+                        <div class="card-body"
+                            style="position: fixed; top: 9%; left: 78%; border-radius: 14px; background-color:#000000c9;">
+                            <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                style="background-color: #118AB2; color: #ffffff; border-color:#000000c9; width: 280px;">
+                            <button type="button" class="btn mt-3" id="inviteBtn"
+                                style="background-color: #71A4F0; color: #ffffff;">Invite</button>
+                            <style>
+                                #email::placeholder {
+                                    color: #e0e0e0;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                    <script>
+                        // ฟังก์ชันเปิด-ปิดการ์ด Invite
+                        const inviteIcon = document.getElementById('inviteIcon');
+                        const inviteCard = document.getElementById('inviteCard');
+                        let isOpen = false;
 
+                        inviteIcon.addEventListener('click', () => {
+                            isOpen = !isOpen;
+                            inviteCard.style.display = isOpen ? 'block' : 'none';
+                        });
 
-                        <span class="logo-text ms-2" style="font-family: 'Inter', sans-serif; font-weight: bold; font-size: 24px;">
-                            SPEC
-                        </span>
-                    </a>
-
-                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
-                            class="ti-menu ti-close"></i></a>
-                </div>
-
-                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-
-                    <ul class="navbar-nav float-start me-auto">
-                        <li class="nav-item d-none d-lg-block">
-                            <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
-                                data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+                        window.addEventListener('click', (e) => {
+                            if (!inviteCard.contains(e.target) && e.target !== inviteIcon) {
+                                inviteCard.style.display = 'none';
+                                isOpen = false;
+                            }
+                        });
+                    </script>
+                    <!------------------------------ End layout of collection ------------------------------->
+                </nav>
+            </div>
         </header>
 
-        <aside class="left-sidebar" style="background-color: #0E566E;">
+        <aside class="left-sidebar" style="background-color: #136885;">
             <!-- Sidebar scroll-->
-            <div class="scroll-sidebar" style="background-color: #0E566E;" >
+            <div class="scroll-sidebar" style="background-color: #136885;">
                 <!-- Sidebar navigation-->
-                <nav class="sidebar-nav" >
-                    <ul id="sidebarnav" class="pt-4" style="background-color: #0E566E;">
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html"
-                                aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                    class="hide-menu" style="font-size:20px">Workspace</span></a>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/"
+                                aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu"
+                                    style="font-size:20px">Workspace</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/account"
                                 aria-expanded="false"><i class="fa fa-user" style="font-size:20px"></i>
-                                <span class="hide-menu"  style="font-size:20px">Account</span></a>
+                                <span class="hide-menu" style="font-size:20px">Account</span></a>
                         </li>
-                        <li class="sidebar-item" style="position: absolute; bottom: 0px;">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html"
-                                aria-expanded="false"><i class="fa fa-sign-out"></i>
-                                <span class="hide-menu"  style="font-size:20px">Sign out</span></a>
+                        <li class="sidebar-item" style="position: absolute; bottom: 15px;">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                                onclick="event.preventDefault();document.getElementById('logout-form').submit();"
+                                aria-expanded="false">
+                                <i class="fa fa-sign-out"></i>
+                                <span class="hide-menu" style="font-size:20px">Sign out</span>
+                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -111,14 +163,7 @@
         </aside>
 
         <div class="page-wrapper" style="background-color: #073B4C;">
-            <div class="page-breadcrumb">
-                <div class="row">
-                    <div class="col-12 d-flex no-block align-items-center">
-                        <div class="ms-auto text-end">
-                        </div>
-                    </div>
-                </div>
-            </div>
+
 
             <div class="container-fluid" style="background-color: #073B4C;">
 
@@ -126,8 +171,13 @@
             </div>
 
         </div>
+
     </div>
 
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+    </form>
     <script src="{{ url('assets/assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{ url('assets/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
