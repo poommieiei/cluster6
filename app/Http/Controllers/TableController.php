@@ -23,7 +23,8 @@ class TableController extends Controller
         $request2 = Request_Collection::where('collection_id', $id)->get(); // สำหรับแสดง request
         $collection = Collection::where('id', $id)->firstOrFail();
         $reqIndex = $request[0];
-        // dd($reqIndex);
+        // dd($reqIndex->id);
+        // dd($id, $request, $collection, $reqIndex);
         return view("table.table", compact('id', 'request', 'collection' , 'reqIndex'));
     }
 
@@ -33,9 +34,10 @@ class TableController extends Controller
         $request = Request_Collection::where('collection_id', $id)->get();
         $request2 = Request_Collection::where('collection_id', $id)->where('id', $requestId)->get();
 
+        $reqIndex = Request_Collection::findOrFail($requestId);
         $collection = Collection::where('id', $id)->firstOrFail();
-
-        return view("table.table", compact('id', 'request', 'request2', 'collection'));
+        // dd($id, $request, $collection, $reqIndex);
+        return view("table.table", compact('id', 'request', 'collection', 'reqIndex'));
     }
 
     public function poom()

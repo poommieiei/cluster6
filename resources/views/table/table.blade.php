@@ -143,52 +143,42 @@
         <label for="response" style="font-size:14px; color:white; margin-right: 70px;">Response</label><br>
     </div>
 
-    {{-- <hr style="color: white">
-    @foreach ($request as $requests)
-        <div style="color: white">
-            <p>request_name : {{ $requests->request_name }}</p>
-            <p>method_request : {{ $requests->method_request }}</p>
-            <p>method_url : {{ $requests->method_url }}</p>
-            <hr>
-        </div>
-    @endforeach --}}
-
-    {{-- Headers --}}
-    <div class="card-body" id="table-container-header" style="display: none">
-        <table class="table table-bordered" name="header_table" id="header_table" style="width:1150px; border:dimgray">
-            <thead>
-                <br>
-                <h6 style="font-size:15px; color:white; margin-left: auto; width:1150px">Headers</h6>
-                <tr>
-                    <th style="width: 50px; font-size:14px; color:white; background-color: #032A37">
-                        <center>No
-                    </th>
-                    <th style="width: 100px; font-size:14px; color:white; background-color: #032A37;">
-                        <center>Key
-                    </th>
-                    <th style="width: 100px; font-size:14px; color:white; background-color: #032A37">
-                        <center>Required
-                    </th>
-                    <th style="width: 120px; font-size:14px; color:white; background-color: #032A37">
-                        <center>Example data
-                    </th>
-                    <th style="width: 830px; font-size:14px; color:white; background-color: #032A37">
-                        <center>Description
-                    </th>
-                </tr>
-            </thead>
-            <tbody id="tbody_header">
-                <tr id="tr_header">
-                    <th id="th_header"
-                        style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
-                        <input type="text" name="no_header" id="no_header"
-                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width:25px; border: none; text-align: center">
-                        <script>
-                            //ข้อมูล No ของ Header
-                            var data_no_header = "1";
-                            document.getElementById("no_header").value = data_no_header;
-                        </script>
-                    </th>
+        {{-- Headers --}}
+        <div class="card-body" id="table-container-header" style="display: none">
+            <table class="table table-bordered" name="header_table" id="header_table" style="width:1150px; border:dimgray">
+                <thead>
+                    <br>
+                    <h6 style="font-size:15px; color:white; margin-left: auto; width:1150px">Headers</h6>
+                    <tr>
+                        <th style="width: 50px; font-size:14px; color:white; background-color: #032A37">
+                            <center>No
+                        </th>
+                        <th style="width: 100px; font-size:14px; color:white; background-color: #032A37;">
+                            <center>Key
+                        </th>
+                        <th style="width: 100px; font-size:14px; color:white; background-color: #032A37">
+                            <center>Required
+                        </th>
+                        <th style="width: 120px; font-size:14px; color:white; background-color: #032A37">
+                            <center>Example data
+                        </th>
+                        <th style="width: 830px; font-size:14px; color:white; background-color: #032A37">
+                            <center>Description
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_header">
+                    <tr id="tr_header">
+                        <th id="th_header"
+                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
+                            <input type="text" name="no_header" id="no_header"
+                                style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width:25px; border: none; text-align: center">
+                            <script>
+                                //ข้อมูล No ของ Header
+                                var data_no_header = "1";
+                                document.getElementById("no_header").value = data_no_header;
+                            </script>
+                        </th>
 
                     <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
                         <input type="text" name="key_header" id="key_header"
