@@ -141,7 +141,7 @@
                                 <span class="hide-menu" style="font-size:20px">Account</span>
                             </a>
                         </li>
-                        <li class="sidebar-item" style="position: fixed; bottom: 1%">
+                        <li class="sidebar-item" style="position: fixed; bottom: 3%">
                             <a class="sidebar-link sidebar-link" href="#"
                                 onclick="event.preventDefault();document.getElementById('logout-form').submit();"
                                 aria-expanded="false">
