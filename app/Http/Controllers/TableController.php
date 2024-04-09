@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Request_Collection;
+use Exception;
+use Illuminate\Support\Facades\DB;
 use App\Models\Collection;
 
 
@@ -13,9 +15,10 @@ class TableController extends Controller
     {
         $this->middleware('auth');
     }
-    public function indexTable()
+    public function indexTable($id)
     {
-        return view("table.table");
+        $tables = Request_Collection::where('collection_id', $id)->get();
+        return view('table.table', compact('id', 'tables'));
     }
 
     public function poom()
