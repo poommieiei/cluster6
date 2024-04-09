@@ -42,7 +42,14 @@ table {
                         <option value="options">OPTIONS</option>
                     </select>
                 </th>
-                <th id="rount" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">url</th>
+                <th id="rount" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                    <input type="text" name="rount" id="rount" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width: 975px; border: none">
+                    <script>
+                        //ข้อมูล Rount
+                          var data_rount = "url";
+                          document.getElementById("rount").value = data_rount;
+                    </script>
+                </th>
             </tr>
         </tbody>
     </table>
