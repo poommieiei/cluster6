@@ -15,6 +15,10 @@ class TableController extends Controller
         return view("table.table");
     }
 
+    public function poom()
+    {
+        return view("table.poom");
+    }
     public function SaveTable()
     {
         return ;
