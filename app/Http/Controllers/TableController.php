@@ -19,7 +19,8 @@ class TableController extends Controller
 
     public function indexTable($id)
     {
-        $request = Request_Collection::where('collection_id', $id)->get();
+        $request = Request_Collection::where('collection_id', $id)->get(); // สำหรับ side bar
+        $request2 = Request_Collection::where('collection_id', $id)->get(); // สำหรับแสดง request
         $collection = Collection::where('id', $id)->firstOrFail();
         $reqIndex = $request[0];
         // dd($reqIndex->id);
@@ -31,7 +32,7 @@ class TableController extends Controller
     {
         // dd($id , $requestId);
         $request = Request_Collection::where('collection_id', $id)->get();
-        // $request = Request_Collection::findOrFail($requestId);
+        $request2 = Request_Collection::where('collection_id', $id)->where('id', $requestId)->get();
 
         $reqIndex = Request_Collection::findOrFail($requestId);
         $collection = Collection::where('id', $id)->firstOrFail();
