@@ -626,8 +626,9 @@ table {
             // ลบแถว
             row.remove();
             });
-    </script
+    </script>
 </div>
+
 
 {{-- check box show header table --}}
 
@@ -639,6 +640,7 @@ table {
         tableContainer_header.style.display = checkbox_header.checked ? 'block' : 'none';
         });
 </script>
+
 
 {{-- check box show param table --}}
 <script>
