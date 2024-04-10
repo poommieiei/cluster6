@@ -115,7 +115,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <form action="/insertWorkspace/{{ Auth::user()->id }}" method="POST">
+                <form action="{{ url('/insertWorkspace/' . Auth::user()->id) }}" method="POST">
                     @csrf
                     <div class="modal-body">
                         <!-- กรอกชื่อ Workspace -->
