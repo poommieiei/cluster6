@@ -199,7 +199,7 @@ table {
 
 {{-- Param --}}
 <div class="card-body" id="table-container-param" style="display: none">
-    <table class="table table-bordered" name="param_table" id="param_table" style="width:1165px; border:dimgray; margin-left: 32px">
+    <table class="table table-bordered" name="param_table" id="param_table" style="width:1190px; border:dimgray; margin-left: 32px">
         <thead>
             <br>
             <h6 style="font-size:15px; color:white; margin-left: 34px; width:1150px">Params</h6>
@@ -257,7 +257,7 @@ table {
                             <option value="r">R</option>
                         </select>
                 </th>
-                <th id="th_param" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
+                <th id="th_param" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
                     <input type="text" name="exampledata_param" id="exampledata_param" style="background-color: #9DC8D6; width: 80px; border: none">
                     <script>
                         //ข้อมูล Example data ของ Param
@@ -265,8 +265,8 @@ table {
                           document.getElementById("exampledata_param").value = data_exampledata_param;
                     </script>
                 </th>
-                <th id="th_param" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
-                    <textarea class="form-control" name="description_param" id="description_param" rows="1" style="font-size:14px; border:none; background:#9DC8D6; width:600px"></textarea>
+                <th id="th_param" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
+                    <textarea class="form-control" name="description_param" id="description_param" rows="1" style="font-size:14px; border:none; background:#9DC8D6; width: 600px"></textarea>
                     <script>
                         //ข้อมูล Description ของ Param
                           var data_description_param = "cccc";
@@ -350,7 +350,7 @@ table {
 
 {{-- Body --}}
 <div class="card-body" id="table-container-body" style="display: none">
-    <table class="table table-bordered" name="body_table" id="body_table" style="width:1165px; border:dimgray; margin-left: 34px">
+    <table class="table table-bordered" name="body_table" id="body_table" style="width:1190px; border:dimgray; margin-left: 34px">
         <thead>
             <br>
             <h6 style="font-size:15px; color:white; margin-left: 34px; width:1150px">Body</h6>
@@ -494,11 +494,10 @@ table {
 
 {{-- Response --}}
 <br>
-<div class="card-body" id="table-container-response" style="display: none">
+<div class="card-body" id="table-container-statuscode" style="display: none">
     <br>
-    <table class="table table-bordered" name="statuscode_table" id="statuscode_table" style="width:100px; margin-left: 32px; border:dimgray">
+    <table class="table table-bordered" name="response_table" id="response_table" style="width:1190px; margin-left: 32px; border:dimgray">
         <thead>
-
     <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
         {{--button--}}
         <div style="display: flex; justify-content: flex-end;">
@@ -510,149 +509,23 @@ table {
     </div>
             <tr>
                 <th style="width: 100px; font-size:14px; color:white; background-color: #032A37"><center>Status Code</th>
-            </tr>
-        </thead>
-        <tbody id="my_tbody">
-            <tr id="tr_statuscode">
-                <th id="th_statuscode" style="width: 100px; font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <span id="displayText_statuscode"></span>
-                    <a href="#" class="text-decoration-none text-white me-3; margin-left: 50px">
-                        <i class="bi bi-pencil-square" id="edit_statuscode"></i>
-                    </a>
-                    <script>
-                        //ข้อมูล Statuscode ของ Response
-                          var data_statuscode_response = "201";
-                          document.getElementById("displayText_statuscode").value = data_statuscode_response;
-                    </script>
-                </th>
-                <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                        const displayText = document.getElementById("displayText_statuscode");
-                        const editButton = document.getElementById("edit_statuscode");
-                        let isEditing = false;
-
-                        editButton.addEventListener("click", function() {
-                            if (!isEditing) {
-                                // สร้าง input element และให้ค่าเริ่มต้นเป็นข้อความปัจจุบัน
-                                const inputField = document.createElement("input");
-                                inputField.type = "text";
-                                inputField.style.width = '40px';
-                                inputField.style.backgroundColor = '#9DC8D6';
-                                inputField.style.border = 'none';
-                                inputField.value = displayText.innerText;
-
-                                // เปลี่ยนข้อความเป็น input field
-                                displayText.textContent = "";
-                                displayText.appendChild(inputField);
-
-                                isEditing = true;
-
-                                // เมื่อกดปุ่มบันทึก
-                                editButton.addEventListener("click", function() {
-                                    // เปลี่ยนข้อความที่แสดงเป็นค่าใหม่จาก input field
-                                    displayText.textContent = inputField.value;
-
-                                    // เปลี่ยนปุ่มกลับเป็น "แก้ไข"
-                                    editButton.textContent = "แก้ไข";
-
-                                    isEditing = false;
-                                });
-                            }
-                        });
-                    });
-                </script>
-            </tr>
-        </tbody>
-
-    {{-- Create New Statuscode Response --}}
-    <script>
-    function addRow_statuscode() {
-        // Get the table element
-        const table_statuscode = document.getElementById("statuscode_table");
-        const tr_statuscode = document.getElementById("tr_statuscode");
-
-        // Create a new row element
-        const newRow_statuscode = document.createElement("tr");
-
-        // Create a new cell element for each column in the table
-        for (let i = 0; i < table.rows[0].cells.length; i++) {
-            const newCell_statuscode = document.createElement("th");
-            newRow_statuscode.appendChild(newCell_statuscode);
-        }
-        // Append the new row to the table
-        table_statuscode.appendChild(newRow_statuscode);
-        }
-    function copyRow_statuscode(row) {
-        // Create a new row element
-        const newRow_statuscode = document.createElement("tr");
-        // Copy the cells from the old row to the new row
-        for (let i = 0; i < row.cells.length; i++) {
-            const newCell_statuscode = document.createElement("th");
-            newCell_statuscode.id = 'statuscode';
-            newCell_statuscode.style.backgroundColor = '#9DC8D6';
-            newCell_statuscode.innerHTML = row.cells[i].innerHTML;
-            const icon_statuscode = document.createElement('i');
-            newRow_statuscode.appendChild(newCell_statuscode);
-            document.addEventListener("DOMContentLoaded", function() {
-            const displayText = document.getElementById("displayText");
-            const editButton = document.getElementById("editButton");
-            let isEditing = false;
-
-            editButton.addEventListener("click", function() {
-                if (!isEditing) {
-                    // สร้าง input element และให้ค่าเริ่มต้นเป็นข้อความปัจจุบัน
-                    const inputField = document.createElement("input");
-                    inputField.type = "text";
-                    inputField.value = displayText.innerText;
-
-                    // เปลี่ยนข้อความเป็น input field
-                    displayText.textContent = "";
-                    displayText.appendChild(inputField);
-
-                    // เปลี่ยนข้อความบนปุ่มเป็น "บันทึก"
-                    editButton.textContent = "บันทึก  ";
-
-                    isEditing = true;
-
-                    // เมื่อกดปุ่มบันทึก
-                    editButton.addEventListener("click", function() {
-                        // เปลี่ยนข้อความที่แสดงเป็นค่าใหม่จาก input field
-                        displayText.textContent = inputField.value;
-
-                        // เปลี่ยนปุ่มกลับเป็น "แก้ไข"
-                        editButton.textContent = "แก้ไข";
-
-                        isEditing = false;
-                    });
-                }
-            });
-        });
-        }
-        //
-        row.parentNode.appendChild(newRow_statuscode);
-        }
-
-        // Add an event listener to the Copy button
-        document.getElementById("add_row_statuscode").addEventListener("click", function() {
-        const row_statuscode = document.getElementById("tr_statuscode");
-        copyRow_statuscode(row_statuscode);
-        const target = event.target;
-        });
-    </script>
-</div>
-
-<div class="card-body" id="table-container-response" style="display: none">
-    <table class="table table-bordered" name="response_table" id="response_table" style="width:1110px; margin-left: 25px; border:dimgray">
-        <thead>
-            <tr>
-                <th style="width: 50px; font-size:14px; color:white; background-color: #032A37"><center>Key</th>
+                <th style="width: px; font-size:14px; color:white; background-color: #032A37"><center>Key</th>
                 <th style="width: 120px; font-size:14px; color:white; background-color: #032A37"><center>Data Type</th>
                 <th style="width: 150px; font-size:14px; color:white; background-color: #032A37"><center>Example Data</th>
-                <th style="width: 700px; font-size:14px; color:white; background-color: #032A37"><center>Description</th>
+                <th style="width: 600px; font-size:14px; color:white; background-color: #032A37"><center>Description</th>
                 <th style="background: #073B4C; border-top: solid #073B4C; border-top: solid #073B4C; border-right: solid #073B4C; border-bottom: solid #073B4C"></th>
+            </tr>
         </thead>
         <tbody id="my_tbody">
             <tr id="tr_response">
+                <th id="th_statuscode" style="width: 100px; font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center; height: 54px">
+                    <input type="text" name="statuscode" id="statuscode" style="background-color: #9DC8D6; width: 60px; border: none">
+                    <script>
+                        //ข้อมูล Statuscode ของ Response
+                          var data_statuscode_response = "201";
+                          document.getElementById("statuscode").value = data_statuscode_response;
+                    </script>
+                </th>
                 <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
                     <input type="text" name="key_response" id="key_response" style="background-color: #9DC8D6; width:100%; border: none">
                     <script>
@@ -690,17 +563,9 @@ table {
                 </th>
                 <th style="background: #073B4C; border-top: solid #073B4C; border-top: solid #073B4C; border-right: solid #073B4C; border-bottom: solid #073B4C"></th>
             </tr>
+            </tr>
         </tbody>
-    </table>
-    <br>
-    <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
-        <div style="display: flex; justify-content: flex-end;">
-            <button type="button" id="add_row_response" style="color: #F0FFFF; background-color:#312C2C; font-size: 10px;">
-                <i class="bi bi-plus-lg"></i>
-            </button>
-        </div>
-    </div>
-
+</div>
     {{-- Add Row Response --}}
     <script>
         function addRow() {
@@ -750,7 +615,7 @@ table {
             }
 
             // Add an event listener to the Copy button
-            document.getElementById("add_row_response").addEventListener("click", function() {
+            document.getElementById("add_row_statuscode").addEventListener("click", function() {
             const row = document.getElementById("tr_response");
             copyRow(row);
             const target = event.target;
@@ -761,7 +626,7 @@ table {
             // ลบแถว
             row.remove();
             });
-    </script>
+    </script
 </div>
 
 {{-- check box show header table --}}
@@ -796,6 +661,15 @@ table {
 </script>
 
 {{-- check box show response table --}}
+<script>
+    const checkbox_response = document.getElementById('cb_response');
+    const tableContainer_response = document.getElementById('table-container-statuscode');
+
+    checkbox_response.addEventListener('change', () => {
+        tableContainer_response.style.display = checkbox_response.checked ? 'block' : 'none';
+        });
+</script>
+
 <script>
     const checkbox_response = document.getElementById('cb_response');
     const tableContainer_response = document.getElementById('table-container-response');
