@@ -579,10 +579,11 @@ table {
     <table class="table table-bordered" name="response_table" id="response_table" style="width:1025px; margin-left: 25px; border:dimgray">
         <thead>
             <tr>
-                <th style="width: 9%; font-size:14px; color:white; background-color: #032A37"><center>Key</th>
-                <th style="width: 12%; font-size:14px; color:white; background-color: #032A37"><center>Data Type</th>
-                <th style="width: 15%; font-size:14px; color:white; background-color: #032A37"><center>Example Data</th>
-                <th style="font-size:14px; color:white; background-color: #032A37"><center>Description</th>
+                <th style="width: 50px; font-size:14px; color:white; background-color: #032A37"><center>Key</th>
+                <th style="width: 120px; font-size:14px; color:white; background-color: #032A37"><center>Data Type</th>
+                <th style="width: 150px; font-size:14px; color:white; background-color: #032A37"><center>Example Data</th>
+                <th style="width: 600px; font-size:14px; color:white; background-color: #032A37"><center>Description</th>
+                <th style="background: #073B4C; border-top: solid #073B4C; border-top: solid #073B4C; border-right: solid #073B4C; border-bottom: solid #073B4C"></th>
         </thead>
         <tbody id="my_tbody">
             <tr id="tr_response">
@@ -621,97 +622,7 @@ table {
                             document.getElementById("description_response").value = data_description_response;
                     </script>
                 </th>
-            </tr>
-        </tbody>
-    </table>
-    <br>
-    <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
-        <div style="display: flex; justify-content: flex-end;">
-            <button type="button" id="add_row_response" style="color: #F0FFFF; background-color:#312C2C; font-size: 10px;">
-                <i class="bi bi-plus-lg"></i>
-            </button>
-        </div>
-    </div>
-</div>
-
-<div class="card-body" id="table-container-response" style="display: none">
-    <br>
-    <table class="table table-bordered" name="statuscode_table" id="statuscode_table" style="width:100px; margin-left: 32px; border:dimgray">
-        <thead>
-
-    <div class="custom-div" style="width: 1180px; border: 1px solid dimgray; border:none">
-        {{--button--}}
-        <div style="display: flex; justify-content: flex-end;">
-            <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Response</h6>
-            <button type="button" id="add_row_statuscode" style="color: #F0FFFF; background-color: #312C2C; width: 200px;">
-                <i class="">Create New Response</i>
-            </button>
-        </div>
-    </div>
-            <tr id="tr_statuscode">
-                <th style="width: 100px; font-size:14px; color:white; background-color: #032A37"><center>Status Code</th>
-            </tr>
-        </thead>
-        <tbody id="my_tbody">
-            <tr>
-                <th style="width: 100px; font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" name="statuscode" id="statuscode" style="background-color: #9DC8D6; width:40px ; border: none">
-                    <script>
-                        //ข้อมูล Status code ของ Response
-                          var data_statuscode_response= "dvvvdddd";
-                          document.getElementById("statuscode").value = data_statuscode_response;
-                    </script>
-                    <a href="#" class="text-decoration-none text-white me-3">
-                        <i class="bi bi-pencil-square"></i>
-                    </a>
-                </th>
-            </tr>
-        </tbody>
-    <table class="table table-bordered" name="response_table" id="response_table" style="width:1025px; margin-left: 25px; border:dimgray">
-        <thead>
-            <tr>
-                <th style="width: 9%; font-size:14px; color:white; background-color: #032A37"><center>Key</th>
-                <th style="width: 12%; font-size:14px; color:white; background-color: #032A37"><center>Data Type</th>
-                <th style="width: 15%; font-size:14px; color:white; background-color: #032A37"><center>Example Data</th>
-                <th style="font-size:14px; color:white; background-color: #032A37"><center>Description</th>
-        </thead>
-        <tbody id="my_tbody">
-            <tr>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" name="key_response" id="key_response" style="background-color: #9DC8D6; width:100%; border: none">
-                    <script>
-                        //ข้อมูล Key ของ Response
-                          var data_key_response= "dawa";
-                          document.getElementById("key_response").value = data_key_response;
-                    </script>
-                </th>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <select name="datatype_body" id="datatype_response" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
-                        <option value="boolean">Boolean</option>
-                        <option value="integer">Integer</option>
-                        <option value="number">Number</option>
-                        <option value="string">String</option>
-                        <option value="enum">Enum</option>
-                        <option value="object">Object</option>
-                        <option value="array">Array</option>
-                    </select>
-                </th>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <input type="text" name="exampledata_response" id="exampledata_response" style="background-color: #9DC8D6; width:100%; border: none">
-                    <script>
-                        //ข้อมูล Example data ของ Response
-                          var data_exampladata_response= "awdawd";
-                          document.getElementById("exampledata_response").value = data_exampladata_response;
-                    </script>
-                </th>
-                <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                    <textarea class="form-control" name="description_response" id="description_response" rows="1" style="font-size:14px; border:none; background:#9DC8D6; width:650px"></textarea>
-                     <script>
-                        //ข้อมูล Description ของ Response
-                            var data_description_response = "dvvv";
-                            document.getElementById("description_response").value = data_description_response;
-                    </script>
-                </th>
+                <th style="background: #073B4C; border-top: solid #073B4C; border-top: solid #073B4C; border-right: solid #073B4C; border-bottom: solid #073B4C"></th>
             </tr>
         </tbody>
     </table>
@@ -726,43 +637,64 @@ table {
 
     {{-- Add Row Response --}}
     <script>
-    function addRow_response() {
-        // Get the table element
-        const table_response = document.getElementById("response_table");
-        const tr_response = document.getElementById("tr_response");
+        function addRow() {
+            // Get the table element
+            const table = document.getElementById("response_table");
+            const tr = document.getElementById("tr_response");
 
-        // Create a new row element
-        const newRow_response = document.createElement("tr");
+            // Create a new row element
+            const newRow = document.createElement("tr");
 
-        // Create a new cell element for each column in the table
-        for (let i = 0; i < table.rows[0].cells.length; i++) {
-            const newCell_response = document.createElement("th");
-            newRow_response.appendChild(newCell_response);
-        }
-        // Append the new row to the table
-        table_response.appendChild(newRow_response);
-        }
-    function copyRow_response(row) {
-        // Create a new row element
-        const newRow_response = document.createElement("tr");
-        // Copy the cells from the old row to the new row
-        for (let i = 0; i < row.cells.length; i++) {
-            const newCell_response = document.createElement("th");
-            newCell_response.id = 'statuscode';
-            newCell_response.style.backgroundColor = '#9DC8D6';
-            newCell_response.innerHTML = row.cells[i].innerHTML;
-            newRow_response.appendChild(newCell_response);
-        }
-        //
-        row.parentNode.appendChild(newRow_response);
-        }
+            // Create a new cell element for each column in the table
+            for (let i = 0; i < table.rows[0].cells.length; i++) {
+                const newCell = document.createElement("th");
+                newRow.appendChild(newCell);
+            }
+            // Append the new row to the table
+            table.appendChild(newRow);
+            }
+        function copyRow(row) {
+            // Create a new row element
+            const newRow = document.createElement("tr");
+            // Copy the cells from the old row to the new row
+            for (let i = 0; i < row.cells.length; i++) {
+                const newCell = document.createElement("th");
+                newCell.id = 'th_header';
+                newCell.style.backgroundColor = '#9DC8D6';
+                newCell.innerHTML = row.cells[i].innerHTML;
+                newRow.appendChild(newCell);
+                //สร้าง icon ตาม row ที่เพิ่ม
+                if (i === row.cells.length - 1) {
+                    const icon = document.createElement('i');
+                    icon.className = 'bi-trash';
+                    icon.style.fontSize = '22px';
+                    icon.style.color = '#F0FFFF';
+                    newCell.style.backgroundColor = 'transparent';
+                    newCell.style.borderTop = 'solid #073B4C';
+                    newCell.style.borderRight = 'solid #073B4C';
+                    newCell.style.borderBottom = 'solid #073B4C';
+                    icon.onclick = function() {
+                        deleteRow(newRow);
+                    };
+                    newCell.appendChild(icon);
+                }
+            }
+            //
+            row.parentNode.appendChild(newRow);
+            }
 
-        // Add an event listener to the Copy button
-        document.getElementById("add_row_response").addEventListener("click", function() {
-        const row_response = document.getElementById("tr_response");
-        copyRow_response(row_response);
-        const target = event.target;
-        });
+            // Add an event listener to the Copy button
+            document.getElementById("add_row_response").addEventListener("click", function() {
+            const row = document.getElementById("tr_response");
+            copyRow(row);
+            const target = event.target;
+            });
+            $("table").on("click", ".bi-trash", function() {
+            const row = $(this).closest("tr"); // ค้นหาแถวที่ไอคอนอยู่
+
+            // ลบแถว
+            row.remove();
+            });
     </script>
 </div>
 
