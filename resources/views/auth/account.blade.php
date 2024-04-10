@@ -28,10 +28,13 @@
         </div>
         <div class="col-md-6 py-4" style="padding: 10px">
             <div class="row justify-content-end py-2">
-                <span class="custom-text" value="name">Username</span>
+                <span class="custom-text" value="name">
+                    {{ Auth::user()->name }}</span>
             </div>
             <div class="row justify-content-end py-4">
-                <span class="custom-text" value="email">Email@gmail.com</span>
+                <span class="custom-text" value="email">
+                    {{ Auth::user()->email }} </span>
+                
             </div>
         </div>
     </div>
