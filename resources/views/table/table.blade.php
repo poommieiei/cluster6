@@ -205,7 +205,7 @@
                                 style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
                                 <option value="o">O</option>
                                 <option value="m">M</option>
-                                <option value="r">R</option>
+                                <option value="r">C</option>
                             </select>
                         </th>
                         <th id="th_header"
@@ -292,7 +292,7 @@
                                     style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
                                     <option value="o">O</option>
                                     <option value="m">M</option>
-                                    <option value="r">R</option>
+                                    <option value="r">C</option>
                                 </select>
                         </th>
                         <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
