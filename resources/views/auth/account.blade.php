@@ -28,10 +28,10 @@
         </div>
         <div class="col-md-6 py-4" style="padding: 10px">
             <div class="row justify-content-end py-2">
-                <span class="custom-text" value="name">Username</span>
+                <span class="border border-2 d-block text-left rounded custom-text" value="name">Username</span>
             </div>
             <div class="row justify-content-end py-4">
-                <span class="custom-text" value="email">Email@gmail.com</span>
+                <span class="border border-2 d-block text-left rounded custom-text" value="email">Email@gmail.com</span>
             </div>
         </div>
     </div>
