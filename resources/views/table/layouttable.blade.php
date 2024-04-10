@@ -137,7 +137,7 @@
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar" style="background-color: #136885;">
                 <!-- Sidebar navigation-->
-                <nav class="sidebar-nav" >
+                <nav class="sidebar-nav">
                     @yield('service')
                     {{-- <ul id="sidebarnav" class="pt-4" style="background-color: #0E566E;">
 
@@ -155,72 +155,7 @@
         </aside>
 
         <div class="page-wrapper" style="background-color: #073B4C;">
-            <div class="page-breadcrumb">
-                <div class="row">
-                    <div class="col-12 d-flex no-block align-items-center">
-                        <div class="ms-auto text-end"></div>
-
-                        <!-- Button Layout -->
-                        <div>
-                            <!-- Export Button -->
-
-                            <button type="button" id="export_button"class="btn rounded-pill btn-info"
-                                style="margin-left: -12%; position:relative">
-                                <i class="fas fa-download"></i> Export
-                            </button>
-
-                            <!-- sweetalert 2 for Export button -->
-                            <script>
-                                $('#export_button').click(function() {
-                                    Swal.fire({
-                                        title: "Are you sure you save the changes?",
-                                        text: "Your changes will not appear if you  don't save them.",
-                                        icon: "warning",
-                                        showCancelButton: true,
-                                        confirmButtonColor: "#3085d6",
-                                        cancelButtonColor: "#d33",
-                                        confirmButtonText: "Export"
-                                    }).then((result) => {
-                                        if (result.isConfirmed) {
-                                            Swal.fire({
-                                                title: "Exported!",
-                                                text: "Your file has been export.",
-                                                icon: "success"
-                                            });
-                                        } else {
-                                            Swal.fire({
-                                                title: "Cancelled!",
-                                                icon: "error"
-                                            });
-                                        }
-                                    });
-                                })
-                            </script>
-                        </div>
-                        <div>
-                            <!-- Save Button -->
-                            <button type="button" id="save_btn" class="btn rounded-pill btn-success"
-                                style="position:relative">
-                                <i class="fas fa-download"></i> Save
-                            </button>
-
-                            <!-- sweetalert 2 for save button -->
-                            <script>
-                                $('#save_btn').click(function() {
-                                    Swal.fire({
-                                        position: "top-end",
-                                        icon: "success",
-                                        title: "Your work has been saved.",
-                                        showConfirmButton: false,
-                                        timer: 1500
-                                    });
-                                });
-                            </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            
             <div class="container-fluid" style="background-color: #073B4C;">
 
                 @yield('content')
