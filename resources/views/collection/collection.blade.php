@@ -137,11 +137,11 @@
 
             document.getElementById('renameForm').submit();
         });
-        var RouteURL = '/renamecollection/';
+        var RouteURL = "{{url('/renamecollection/')}}";
         var Collection;
 
         function openRenameModal(collectionId, collectionName) {
-            var URL = RouteURL + collectionId.trim();
+            var URL = RouteURL +'/'+ collectionId.trim();
             Collection = collectionName;
             var name = collectionName.trim();;
             console.log(URL);
@@ -193,11 +193,11 @@
         document.getElementById('delCollecBtn').addEventListener('click', function() {
             // เรียกใช้ฟังก์ชันลบ โดยการโดยรับตัวแปรไอดีของคอลเลคชันที่ต้องการลบ
         });
-        var URL = '/deletecollection/';
+        var URL = "{{url('/deletecollection/')}}";
 
         // เปิด Modal สำหรับการลบคอลเลคชัน
-        function openDelCollecModal(collectionId,workspaceId) {
-            var deleteURL = URL += collectionId;
+        function openDelCollecModal(collectionId) {
+            var deleteURL = URL += '/'+collectionId;
             console.log(deleteURL);
 
             document.getElementById('delCollecBtn').href = deleteURL;

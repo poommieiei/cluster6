@@ -142,11 +142,11 @@
 
             document.getElementById('renameForm').submit();
         });
-        var RouteURL = '/rename/';
+        var RouteURL = "{{url('/rename/')}}";
         var Workspace;
 
         function openRenameModal(workspaceId, workspaceName) {
-            var URL = RouteURL + workspaceId.trim();
+            var URL = RouteURL +'/'+ workspaceId.trim();
             Workspace = workspaceName;
             var name = workspaceName.trim();;
             console.log(URL);
@@ -168,15 +168,16 @@
     <script>
         document.getElementById('submitDeleteWorkspaceBtn').addEventListener('click', function() {
         });
-        var URL = '{{ url('/deleteworkspace/' . ';
+        var URL = "{{url('/deleteworkspace')}}";
+        // {{ url('/insertWorkspace/' . Auth::user()->id) }}
 
         // Function to show the modal
         function openDeleteModal(workspaceId) {
 
             // console.log(workspaceId);
-            var deleteURL = URL += workspaceId;
-            deleteURL = deleteURL += ')}}'
+            var deleteURL = URL +'/'+ workspaceId;
             console.log(deleteURL);
+            console.log(workspaceId);
 
             document.getElementById('submitDeleteWorkspaceBtn').href = deleteURL;
             var modal = new bootstrap.Modal(document.getElementById('DeleteModal'));
