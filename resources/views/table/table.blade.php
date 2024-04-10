@@ -5,8 +5,8 @@
         @foreach ($request as $req)
             <li class="sidebar-item">
                 <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                    href="/collection/{{ $id }}/request/{{ $req->id }}" aria-expanded="false"
-                    style="text-decoration: none">
+                href="{{ url('/collection/' . $id . '/request/' . $req->id) }}" aria-expanded="false"
+                style="text-decoration: none">
                     <?php
                     if($req->method_request == "GET"){
                     ?>
