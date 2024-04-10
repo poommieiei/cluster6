@@ -53,7 +53,7 @@
             <div class="navbar top-navbar navbar-expand-md navbar-dark" style="background-color: #0E566E;">
                 <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                     <div class="navbar-header" data-logobg="skin5" style="background-color: #136885;">
-                        <a class="navbar-brand" href="/workspace" style="height: 65px">
+                        <a class="navbar-brand" href="{{ url('/workspace')}}" style="height: 65px">
                             <!-- logo program -->
                             <b class="logo-icon" style="display: block; margin-bottom: 10px;">
                                 <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="homepage"
@@ -92,14 +92,14 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/workspace"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/workspace') }}"
                                 aria-expanded="false">
                                 <i class="mdi mdi-view-dashboard"></i>
                                 <span class="hide-menu" style="font-size:20px">Workspace</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/account"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/account')}}"
                                 aria-expanded="false">
                                 <i class="fa fa-user" style="font-size:20px"></i>
                                 <span class="hide-menu" style="font-size:20px">Account</span>

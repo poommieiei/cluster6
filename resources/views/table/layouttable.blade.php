@@ -58,7 +58,7 @@
         <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark" style="background-color: #0E566E">
                 <div class="navbar-header" data-logobg="skin5" style="background-color: #136885;">
-                    <a class="navbar-brand" href="/workspace" style="height: 65px">
+                    <a class="navbar-brand" href="{{ url('/workspace')}}" style="height: 65px">
                         <!-- logo program -->
                         <b class="logo-icon" style="display: block; margin-bottom: 10px;">
                             <img src="{{ url('assets/assets/for-cluster6/LOGO API.png') }}" alt="workspcae"
@@ -155,7 +155,7 @@
         </aside>
 
         <div class="page-wrapper" style="background-color: #073B4C;">
-            
+
             <div class="container-fluid" style="background-color: #073B4C;">
 
                 @yield('content')
