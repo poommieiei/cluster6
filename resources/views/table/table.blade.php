@@ -87,7 +87,7 @@
         }
     </style>
 
-    <form action="/ExportTable" method="POST">
+    <form action="{{ url('/ExportTable') }}" method="POST">
         @csrf
         <div class="page-breadcrumb">
             <div class="row">
@@ -124,8 +124,7 @@
                 <tbody>
                     <tr>
                         <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                            <select name="required_param" id="required_param"
-                                style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
+                            <select name="required_param"                                style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
                                 <option value="{{ $reqIndex->method_request }}" @required(true)>
                                     {{ $reqIndex->method_request }}</option>
                                 <option value="get">GET</option>
@@ -165,10 +164,12 @@
 
         {{-- HEADERS --}}
         <div class="card-body" id="table-container-header" style="display: none">
-            <table class="table table-bordered" name="header_table" id="header_table" style="width:1150px; border:dimgray ; margin-left: 32px">
+            <table class="table table-bordered" name="header_table" id="header_table"
+                style="width:1150px; border:dimgray ; margin-left: 32px">
                 <thead>
                     <br>
-                    <h6 style="font-size:15px; color:white; margin-left: auto; width:1150px ; margin-left: 32px">Headers</h6>
+                    <h6 style="font-size:15px; color:white; margin-left: auto; width:1150px ; margin-left: 32px">Headers
+                    </h6>
                     <tr>
                         <th style="width: 50px; font-size:14px; color:white; background-color: #032A37">
                             <center>No
@@ -231,188 +232,13 @@
             </th>
         </div>
 
-        {{-- Param --}}
-        <div class="card-body" id="table-container-param" style="display: none">
-            <table class="table table-bordered" name="param_table" id="param_table"
-                style="width:1165px; border:dimgray; margin-left: 32px">
-                <thead>
-                    <br>
-                    <h6 style="font-size:15px; color:white; margin-left: 34px; width:1150px">Params</h6>
-                    <tr>
-                        <th style="width: 50px; font-size:14px; color:white; background-color: #032A37">
-                            <center>No
-                        </th>
-                        <th style="width: 100px; font-size:14px; color:white; background-color: #032A37;">
-                            <center>Key
-                        </th>
-                        <th style="width: 200px; font-size:14px; color:white; background-color: #032A37;">
-                            <center>Param Type
-                        </th>
-                        <th style="width: 120px; font-size:14px; color:white; background-color: #032A37;">
-                            <center>Data Type
-                        </th>
-                        <th style="width: 100px; font-size:14px; color:white; background-color: #032A37">
-                            <center>Required
-                        </th>
-                        <th style="width: 160px; font-size:14px; color:white; background-color: #032A37">
-                            <center>Example data
-                        </th>
-                        <th style="font-size:14px; color:white; background-color: #032A37">
-                            <center>Description
-                        </th>
-                        <th
-                            style="background: #073B4C; border-top: solid #073B4C; border-top: solid #073B4C; border-right: solid #073B4C; border-bottom: solid #073B4C">
-                        </th>
-                    </tr>
-                </thead>
-                <tbody id="tbody_param">
-                    <tr id="tr_param">
-                        <th id="th_param"
-                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
-                            <input type="text" name="no_param[]" id="no_param"
-                                style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width:25px; border: none; text-align: center">
-
-                        </th>
-                        <th id="th_param" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                            <input type="text" name="key_param[]" id="key_param"
-                                style="background-color: #9DC8D6;
-                             width:80px; border: none">
-
-                        </th>
-                        <th id="th_param" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                            <select name="paramtype_param[]" id="paramtype_param"
-                                style="font-size:14px; color:rgb(0, 0, 0);
-                            background-color: #9DC8D6; border: none">
-                                <option value="query">Query</option>
-                                <option value="route">Route</option>
-                            </select>
-                        </th>
-                        <th id="th_param"
-                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center"">
-                            <select name="datatype_param[]" id="datatype_param"
-                                style="font-size:14px; color:rgb(0, 0, 0);
-                            background-color: #9DC8D6; border: none">
-                                <option value="boolean">Boolean</option>
-                                <option value="integer">Integer</option>
-                                <option value="number">Number</option>
-                                <option value="string">String</option>
-                                <option value="enum">Enum</option>
-                                <option value="object">Object</option>
-                                <option value="array">Array</option>
-                            </select>
-                        </th>
-                        <th id="th_param"
-                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
-                            <center>
-                                <select name="required_param[]" id="required_param"
-                                    style="font-size:14px; color:rgb(0, 0, 0);
-                                    background-color: #9DC8D6; border: none">
-                                    <option value="o">O</option>
-                                    <option value="m">M</option>
-                                    <option value="r">R</option>
-                                </select>
-                        </th>
-                        <th id="th_param"
-                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
-                            <input type="text" name="exampledata_param[]" id="exampledata_param"
-                                style="background-color: #9DC8D6;
-                            width: 80px; border: none">
-
-                        </th>
-                        <th id="th_param"
-                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
-                            <textarea class="form-control" name="description_param[]" id="description_param" rows="1"
-                                style="font-size:14px; border:none; background:#9DC8D6; width:600px"></textarea>
-
-                        </th>
-                        <th
-                            style="background: #073B4C; border-top: solid #073B4C; border-top: solid #073B4C; border-right: solid #073B4C; border-bottom: solid #073B4C">
-                        </th>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-            <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
-                <div style="padding-left: 800px">
-                    <button type="button" onclick="addRowParams()"
-                        style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
-                        <i class="bi bi-plus-lg"></i>
-                    </button>
-                </div>
-            </th>
-        </div>
-
-
-        <script>
-            function addRowParams() {
-                const table = document.getElementById("param_table");
-                const tr_param = document.getElementById("tr_param");
-                const tbody = document.getElementById("my_tparam");
-
-                const index = table.rows.length;
-                console.log(index);
-
-                $('#param_table tr:last').after(`
-                        <tr id="tr_param">
-                            <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
-                                <input type="text" name="no_param[]" id="no_param" value="${index}" readonly
-                                    style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width: 25px; border: none; text-align: center">
-
-                            </th>
-                            <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                                <input type="text" name="key_param[]" id="key_param"
-                                    style="background-color: #9DC8D6; width: 80px; border: none">
-
-                            </th>
-                            <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                                <select name="paramtype_param[]" id="paramtype_param"
-                                    style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
-                                    <option value="boolean">Query</option>
-                                    <option value="route">Route</option>
-
-                                </select>
-                            </th>
-                            <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                                <select name="datatype_param[]" id="datatype_param"
-                                    style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
-                                    <option value="boolean">Boolean</option>
-                                    <option value="integer">Integer</option>
-                                    <option value="number">Number</option>
-                                    <option value="string">String</option>
-                                    <option value="enum">Enum</option>
-                                    <option value="object">Object</option>
-                                    <option value="array">Array</option>
-                                </select>
-                            </th>
-                            <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                                <center>
-                                    <select name="required_param[]" id="required_param"
-                                        style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
-                                        <option value="o">O</option>
-                                        <option value="m">M</option>
-                                        <option value="r">R</option>
-                                    </select>
-                            </th>
-                            <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                                <input type="text" name="exampledata_body[]" id="exampledata_param "
-                                    style="background-color: #9DC8D6; width: 80px; border: none">
-
-                            </th>
-                            <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                                <textarea class="form-control" name="description_body[]" id="description_param" rows="1"
-                                    style="font-size:14px; border:none; background:#9DC8D6; width:600px"></textarea>
-
-                            </th>
-                        </tr>
-                    `)
-            }
-        </script>
 
 
 
         {{-- Body --}}
         <div class="card-body" id="table-container-body" style="display: none">
-            <table class="table table-bordered" name="body_table" id="body_table" style="width:1150px; border:dimgray; margin-left: 32px">
+            <table class="table table-bordered" name="body_table" id="body_table"
+                style="width:1150px; border:dimgray; margin-left: 32px">
                 <thead>
                     <br>
                     <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Body</h6>

@@ -56,7 +56,7 @@ class TableController extends Controller
         // dd($request->input('no_body3'));
         $num = count($request->all());
         $requestArray = array_values($request->all());
-        dd($request);
+        // dd($request);
         // dd($request->no_body [2]);
         // echo $request->input('no_body1');
 
