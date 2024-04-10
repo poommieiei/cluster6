@@ -4,7 +4,7 @@
     @foreach ($workspaces as $workspace)
         <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
             style="height: 80px; font-size:20px; color:white;">
-            <a href="/workspace/{{ $workspace->id }}/collection" class="text-decoration-none text-white">
+            <a href="{{url('/workspace')}}/{{ $workspace->id }}/collection" class="text-decoration-none text-white">
                 {{ $workspace->workspace_name }}
             </a>
             <div class="ms-auto">
@@ -115,7 +115,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <form action="/insertWorkspace/ {{ Auth::user()->id }}" method="POST">
+                <form action="{{ url('/insertWorkspace/' . Auth::user()->id) }}" method="POST">
                     @csrf
                     <div class="modal-body">
                         <!-- กรอกชื่อ Workspace -->
@@ -142,11 +142,11 @@
 
             document.getElementById('renameForm').submit();
         });
-        var RouteURL = '/rename/';
+        var RouteURL = "{{url('/rename/')}}";
         var Workspace;
 
         function openRenameModal(workspaceId, workspaceName) {
-            var URL = RouteURL + workspaceId.trim();
+            var URL = RouteURL +'/'+ workspaceId.trim();
             Workspace = workspaceName;
             var name = workspaceName.trim();;
             console.log(URL);
@@ -168,13 +168,16 @@
     <script>
         document.getElementById('submitDeleteWorkspaceBtn').addEventListener('click', function() {
         });
-        var URL = '/deleteworkspace/';
+        var URL = "{{url('/deleteworkspace')}}";
+        // {{ url('/insertWorkspace/' . Auth::user()->id) }}
 
         // Function to show the modal
         function openDeleteModal(workspaceId) {
 
-            var deleteURL = URL += workspaceId;
+            // console.log(workspaceId);
+            var deleteURL = URL +'/'+ workspaceId;
             console.log(deleteURL);
+            console.log(workspaceId);
 
             document.getElementById('submitDeleteWorkspaceBtn').href = deleteURL;
             var modal = new bootstrap.Modal(document.getElementById('DeleteModal'));

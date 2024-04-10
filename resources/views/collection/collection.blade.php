@@ -4,7 +4,7 @@
     @foreach ($collections as $collection)
         <div class="border border-#A19D9D border-3 d-flex align-items-center justify-content-left px-3 mt-3 mb-4 ms-5 me-5"
             style="height: 80px; font-size:20px; color:white;">
-            <a href="/collection/{{ $collection->id }}/table" class="text-decoration-none text-white">
+            <a href="{{ url('/collection/' . $collection->id . '/table') }}" class="text-decoration-none text-white">
                 {{ $collection->collection_name }}
             </a>
             <div class="ms-auto">
@@ -21,7 +21,7 @@
     @endforeach
 
     <div class="fixed-bottom d-flex justify-content-end mb-3 me-3" style="margin: 130px">
-        <form action="/importcollection/{{$id}}" method="post" enctype="multipart/form-data">
+        <form action="{{ url('/importcollection/' . $id) }}" method="post" enctype="multipart/form-data">
             @csrf
             <!-- ปุ่ม Import -->
             <button type="submit" class="btn btn-lg"
@@ -137,11 +137,11 @@
 
             document.getElementById('renameForm').submit();
         });
-        var RouteURL = '/renamecollection/';
+        var RouteURL = "{{url('/renamecollection/')}}";
         var Collection;
 
         function openRenameModal(collectionId, collectionName) {
-            var URL = RouteURL + collectionId.trim();
+            var URL = RouteURL +'/'+ collectionId.trim();
             Collection = collectionName;
             var name = collectionName.trim();;
             console.log(URL);
@@ -193,11 +193,11 @@
         document.getElementById('delCollecBtn').addEventListener('click', function() {
             // เรียกใช้ฟังก์ชันลบ โดยการโดยรับตัวแปรไอดีของคอลเลคชันที่ต้องการลบ
         });
-        var URL = '/deletecollection/';
+        var URL = "{{url('/deletecollection/')}}";
 
         // เปิด Modal สำหรับการลบคอลเลคชัน
-        function openDelCollecModal(collectionId,workspaceId) {
-            var deleteURL = URL += collectionId;
+        function openDelCollecModal(collectionId) {
+            var deleteURL = URL += '/'+collectionId;
             console.log(deleteURL);
 
             document.getElementById('delCollecBtn').href = deleteURL;
