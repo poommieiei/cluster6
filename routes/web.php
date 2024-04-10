@@ -31,7 +31,7 @@ Route::get('/viewinsert', [WorkspaceController::class , 'viewinsert']);
 Route::get('/workspace', [WorkspaceController::class , 'indexworkspace']);
 Route::post('/insertWorkspace/{id}', [WorkspaceController::class, 'insertworkspace']);
 Route::post('/insertWrokspace', [WorkspaceController::class, 'insertworkspace']);
-Route::get('/cluster6/deleteworkspace/{id}', [WorkspaceController::class, 'deleteworkspace'])->name('deleteworkspace');
+Route::get('/deleteworkspace/{id}', [WorkspaceController::class, 'deleteworkspace'])->name('deleteworkspace');
 Route::get('/account',function(){ //show user info
     return view('auth.account');
 });

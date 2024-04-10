@@ -168,12 +168,14 @@
     <script>
         document.getElementById('submitDeleteWorkspaceBtn').addEventListener('click', function() {
         });
-        var URL = '/cluster6/deleteworkspace/';
+        var URL = '{{ url('/deleteworkspace/' . ';
 
         // Function to show the modal
         function openDeleteModal(workspaceId) {
 
+            // console.log(workspaceId);
             var deleteURL = URL += workspaceId;
+            deleteURL = deleteURL += ')}}'
             console.log(deleteURL);
 
             document.getElementById('submitDeleteWorkspaceBtn').href = deleteURL;
