@@ -102,55 +102,8 @@
                             style="margin-left: -12%; position:relative">
                             <i class="fas fa-download"></i> Export
                         </button>
-
-
-                        {{-- <script>
-                        $('#export_button').click(function() {
-                            Swal.fire({
-                                title: "Are you sure you save the changes?",
-                                text: "Your changes will not appear if you  don't save them.",
-                                icon: "warning",
-                                showCancelButton: true,
-                                confirmButtonColor: "#3085d6",
-                                cancelButtonColor: "#d33",
-                                confirmButtonText: "Export"
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    Swal.fire({
-                                        title: "Exported!",
-                                        text: "Your file has been export.",
-                                        icon: "success"
-                                    });
-                                } else {
-                                    Swal.fire({
-                                        title: "Cancelled!",
-                                        icon: "error"
-                                    });
-                                }
-                            });
-                        })
-                    </script> --}}
                     </div>
-                    {{-- <div>
-                    <!-- Save Button -->
-                    <button type="button" id="save_btn" class="btn rounded-pill btn-success"
-                        style="position:relative">
-                        <i class="fas fa-download"></i> Save
-                    </button>
 
-                    <!-- sweetalert 2 for save button -->
-                    <script>
-                        $('#save_btn').click(function() {
-                            Swal.fire({
-                                position: "top-end",
-                                icon: "success",
-                                title: "Your work has been saved.",
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                        });
-                    </script>
-                </div> --}}
                 </div>
             </div>
         </div>
@@ -168,8 +121,7 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody id="my_tbody">
-
+                <tbody>
                     <tr>
                         <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
                             <select name="required_param" id="required_param"
@@ -185,8 +137,10 @@
                                 <option value="options">OPTIONS</option>
                             </select>
                         </th>
-                        <th id="rount" name="test" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                            <input type="text" name="Route" value="{{ $reqIndex->method_url }}" style="background-color: transparent;border: none;width: 1000px" readonly>
+                        <th id="rount" name="test"
+                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                            <input type="text" name="Route" value="{{ $reqIndex->method_url }}"
+                                style="background-color: transparent;border: none;width: 1000px" readonly>
                         </th>
                     </tr>
 
@@ -207,12 +161,258 @@
             <input type="checkbox" id="cb_response" name="cb_response">
             <label for="response" style="font-size:14px; color:white; margin-right: 70px;">Response</label><br>
         </div>
+
+
+        {{-- HEADERS --}}
+        <div class="card-body" id="table-container-header" style="display: none">
+            <table class="table table-bordered" name="header_table" id="header_table" style="width:1150px; border:dimgray ; margin-left: 32px">
+                <thead>
+                    <br>
+                    <h6 style="font-size:15px; color:white; margin-left: auto; width:1150px ; margin-left: 32px">Headers</h6>
+                    <tr>
+                        <th style="width: 50px; font-size:14px; color:white; background-color: #032A37">
+                            <center>No
+                        </th>
+                        <th style="width: 100px; font-size:14px; color:white; background-color: #032A37;">
+                            <center>Key
+                        </th>
+                        <th style="width: 100px; font-size:14px; color:white; background-color: #032A37">
+                            <center>Required
+                        </th>
+                        <th style="width: 120px; font-size:14px; color:white; background-color: #032A37">
+                            <center>Example data
+                        </th>
+                        <th style="width: 830px; font-size:14px; color:white; background-color: #032A37">
+                            <center>Description
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_header">
+                    <tr id="tr_header">
+                        <th id="th_header"
+                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
+                            <input type="text" name="no_header[]" id="no_header" value="1" readonly
+                                style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width:25px; border: none; text-align: center">
+                        </th>
+
+                        <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                            <input type="text" name="key_header[]" id="key_header"
+                                style="background-color: #9DC8D6; width:130px; border: none">
+                        </th>
+                        <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                            <select name="required_header[]" id="required_header"
+                                style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
+                                <option value="o">O</option>
+                                <option value="m">M</option>
+                                <option value="r">R</option>
+                            </select>
+                        </th>
+                        <th id="th_header"
+                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
+                            <input type="text" name="exampledata_header[]" id="exampledata_header"
+                                style="background-color: #9DC8D6; width: 130px; border: none">
+                        </th>
+                        <th id="th_header"
+                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
+                            <textarea class="form-control" name="description_header[]" id="description_header" rows="1"
+                                style="font-size:14px; border:none; background:#9DC8D6; width:720px"></textarea>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
+                <div style="padding-left: 800px">
+                    <button type="button" onclick="addRowHeader()"
+                        style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
+                        <i class="bi bi-plus-lg"></i>
+                    </button>
+                </div>
+            </th>
+        </div>
+
         {{-- Param --}}
-        
+        <div class="card-body" id="table-container-param" style="display: none">
+            <table class="table table-bordered" name="param_table" id="param_table"
+                style="width:1165px; border:dimgray; margin-left: 32px">
+                <thead>
+                    <br>
+                    <h6 style="font-size:15px; color:white; margin-left: 34px; width:1150px">Params</h6>
+                    <tr>
+                        <th style="width: 50px; font-size:14px; color:white; background-color: #032A37">
+                            <center>No
+                        </th>
+                        <th style="width: 100px; font-size:14px; color:white; background-color: #032A37;">
+                            <center>Key
+                        </th>
+                        <th style="width: 200px; font-size:14px; color:white; background-color: #032A37;">
+                            <center>Param Type
+                        </th>
+                        <th style="width: 120px; font-size:14px; color:white; background-color: #032A37;">
+                            <center>Data Type
+                        </th>
+                        <th style="width: 100px; font-size:14px; color:white; background-color: #032A37">
+                            <center>Required
+                        </th>
+                        <th style="width: 160px; font-size:14px; color:white; background-color: #032A37">
+                            <center>Example data
+                        </th>
+                        <th style="font-size:14px; color:white; background-color: #032A37">
+                            <center>Description
+                        </th>
+                        <th
+                            style="background: #073B4C; border-top: solid #073B4C; border-top: solid #073B4C; border-right: solid #073B4C; border-bottom: solid #073B4C">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_param">
+                    <tr id="tr_param">
+                        <th id="th_param"
+                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
+                            <input type="text" name="no_param[]" id="no_param"
+                                style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width:25px; border: none; text-align: center">
+
+                        </th>
+                        <th id="th_param" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                            <input type="text" name="key_param[]" id="key_param"
+                                style="background-color: #9DC8D6;
+                             width:80px; border: none">
+
+                        </th>
+                        <th id="th_param" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                            <select name="paramtype_param[]" id="paramtype_param"
+                                style="font-size:14px; color:rgb(0, 0, 0);
+                            background-color: #9DC8D6; border: none">
+                                <option value="query">Query</option>
+                                <option value="route">Route</option>
+                            </select>
+                        </th>
+                        <th id="th_param"
+                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center"">
+                            <select name="datatype_param[]" id="datatype_param"
+                                style="font-size:14px; color:rgb(0, 0, 0);
+                            background-color: #9DC8D6; border: none">
+                                <option value="boolean">Boolean</option>
+                                <option value="integer">Integer</option>
+                                <option value="number">Number</option>
+                                <option value="string">String</option>
+                                <option value="enum">Enum</option>
+                                <option value="object">Object</option>
+                                <option value="array">Array</option>
+                            </select>
+                        </th>
+                        <th id="th_param"
+                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
+                            <center>
+                                <select name="required_param[]" id="required_param"
+                                    style="font-size:14px; color:rgb(0, 0, 0);
+                                    background-color: #9DC8D6; border: none">
+                                    <option value="o">O</option>
+                                    <option value="m">M</option>
+                                    <option value="r">R</option>
+                                </select>
+                        </th>
+                        <th id="th_param"
+                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
+                            <input type="text" name="exampledata_param[]" id="exampledata_param"
+                                style="background-color: #9DC8D6;
+                            width: 80px; border: none">
+
+                        </th>
+                        <th id="th_param"
+                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
+                            <textarea class="form-control" name="description_param[]" id="description_param" rows="1"
+                                style="font-size:14px; border:none; background:#9DC8D6; width:600px"></textarea>
+
+                        </th>
+                        <th
+                            style="background: #073B4C; border-top: solid #073B4C; border-top: solid #073B4C; border-right: solid #073B4C; border-bottom: solid #073B4C">
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <th style="font-size:14px; border-color:#073B4C; background-color: #073B4C; text-align: center">
+                <div style="padding-left: 800px">
+                    <button type="button" onclick="addRowParams()"
+                        style="color: #F0FFFF; background-color: Black; width: 8%; margin-left:auto;">
+                        <i class="bi bi-plus-lg"></i>
+                    </button>
+                </div>
+            </th>
+        </div>
+
+
+        <script>
+            function addRowParams() {
+                const table = document.getElementById("param_table");
+                const tr_param = document.getElementById("tr_param");
+                const tbody = document.getElementById("my_tparam");
+
+                const index = table.rows.length;
+                console.log(index);
+
+                $('#param_table tr:last').after(`
+                        <tr id="tr_param">
+                            <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
+                                <input type="text" name="no_param[]" id="no_param" value="${index}" readonly
+                                    style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width: 25px; border: none; text-align: center">
+
+                            </th>
+                            <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                                <input type="text" name="key_param[]" id="key_param"
+                                    style="background-color: #9DC8D6; width: 80px; border: none">
+
+                            </th>
+                            <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                                <select name="paramtype_param[]" id="paramtype_param"
+                                    style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
+                                    <option value="boolean">Query</option>
+                                    <option value="route">Route</option>
+
+                                </select>
+                            </th>
+                            <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                                <select name="datatype_param[]" id="datatype_param"
+                                    style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
+                                    <option value="boolean">Boolean</option>
+                                    <option value="integer">Integer</option>
+                                    <option value="number">Number</option>
+                                    <option value="string">String</option>
+                                    <option value="enum">Enum</option>
+                                    <option value="object">Object</option>
+                                    <option value="array">Array</option>
+                                </select>
+                            </th>
+                            <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                                <center>
+                                    <select name="required_param[]" id="required_param"
+                                        style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
+                                        <option value="o">O</option>
+                                        <option value="m">M</option>
+                                        <option value="r">R</option>
+                                    </select>
+                            </th>
+                            <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                                <input type="text" name="exampledata_body[]" id="exampledata_param "
+                                    style="background-color: #9DC8D6; width: 80px; border: none">
+
+                            </th>
+                            <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                                <textarea class="form-control" name="description_body[]" id="description_param" rows="1"
+                                    style="font-size:14px; border:none; background:#9DC8D6; width:600px"></textarea>
+
+                            </th>
+                        </tr>
+                    `)
+            }
+        </script>
+
+
 
         {{-- Body --}}
         <div class="card-body" id="table-container-body" style="display: none">
-            <table class="table table-bordered" name="body_table" id="body_table" style="width:1150px; border:dimgray">
+            <table class="table table-bordered" name="body_table" id="body_table" style="width:1150px; border:dimgray; margin-left: 32px">
                 <thead>
                     <br>
                     <h6 style="font-size:15px; color:white; margin-left: 35px; width:1150px">Body</h6>
@@ -237,11 +437,11 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody id="my_tbody">
+                <tbody id="body_tbody">
                     <tr id="tr_body">
                         <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
                             <input type="text" name="no_body[]" id="no_body" value="1" readonly
-                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width: 25px; border: none; text-align: center">
+                                style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width: 25px; border: none; text-align: center">
                         </th>
                         <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
                             <input type="text" name="key_body[]" id="key_body"
@@ -290,71 +490,125 @@
                         <i class="bi bi-plus-lg"></i>
                     </button>
                 </div>
-
             </th>
         </div>
 
-        <script>
-            function addRowBody() {
-                const table = document.getElementById("body_table");
-                const tr_body = document.getElementById("tr_body");
-                const tbody = document.getElementById("my_tbody");
-
-                const index = table.rows.length;
-                console.log(index);
-
-                $('#body_table tr:last').after(`
-                    <tr id="tr_body">
-                        <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
-                            <input type="text" name="no_body[]" id="no_body" value="${index}" readonly
-                                style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width: 25px; border: none; text-align: center">
-
-                        </th>
-                        <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                            <input type="text" name="key_body[]" id="key_body"
-                                style="background-color: #9DC8D6; width: 80px; border: none">
-
-                        </th>
-                        <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                            <select name="datatype_body[]" id="datatype_body"
-                                style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
-                                <option value="boolean">Boolean</option>
-                                <option value="integer">Integer</option>
-                                <option value="number">Number</option>
-                                <option value="string">String</option>
-                                <option value="enum">Enum</option>
-                                <option value="object">Object</option>
-                                <option value="array">Array</option>
-                            </select>
-                        </th>
-                        <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                            <center>
-                                <select name="required_body[]" id="required_body"
-                                    style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
-                                    <option value="o">O</option>
-                                    <option value="m">M</option>
-                                    <option value="r">R</option>
-                                </select>
-                        </th>
-                        <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                            <input type="text" name="exampledata_body[]" id="exampledata_body"
-                                style="background-color: #9DC8D6; width: 80px; border: none">
-
-                        </th>
-                        <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
-                            <textarea class="form-control" name="description_body[]" id="description_body" rows="1"
-                                style="font-size:14px; border:none; background:#9DC8D6; width:650px"></textarea>
-
-                        </th>
-                    </tr>
-                `)
-            }
-        </script>
 
     </form>
-    {{-- checkbox_header.addEventListener('change', () => {
-    tableContainer_header.style.display = checkbox_header.checked ? 'block' : 'none';
-    }); --}}
+
+
+    <script>
+        function addRowHeader() {
+            const table = document.getElementById('header_table');
+            const tr_body = document.getElementById('tr_header');
+            const tbody = document.getElementById('header_tbody');
+
+            const index = table.rows.length;
+
+            console.log(index);
+
+            $('#header_table tr:last').after(`
+                <tr id="tr_header">
+                    <th id="th_header"
+                        style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
+                        <input type="text" name="no_header[]" id="no_header"  value="${index}" readonly
+                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width:25px; border: none; text-align: center">
+                    </th>
+
+                    <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                        <input type="text" name="key_header[]" id="key_header"
+                            style="background-color: #9DC8D6; width:130px; border: none">
+                    </th>
+                    <th id="th_header" style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                        <select name="required_header[]" id="required_header"
+                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
+                            <option value="o">O</option>
+                            <option value="m">M</option>
+                            <option value="r">R</option>
+                        </select>
+                    </th>
+                    <th id="th_header"
+                        style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center"">
+                        <input type="text" name="exampledata_header[]" id="exampledata_header"
+                            style="background-color: #9DC8D6; width: 130px; border: none">
+                    </th>
+                    <th id="th_header"
+                        style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6;  text-align: center">
+                        <textarea class="form-control" name="description_header[]" id="description_header" rows="1"
+                            style="font-size:14px; border:none; background:#9DC8D6; width:720px"></textarea>
+                    </th>
+                </tr>
+
+            `)
+        }
+    </script>
+
+
+    <script>
+        function addRowBody() {
+            const table = document.getElementById("body_table");
+            const tr_body = document.getElementById("tr_body");
+            const tbody = document.getElementById("body_tbody");
+
+            const index = table.rows.length;
+            console.log(index);
+
+            $('#body_table tr:last').after(`
+                <tr id="tr_body">
+                    <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; text-align: center">
+                        <input type="text" name="no_body[]" id="no_body" value="${index}" readonly
+                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; width: 25px; border: none; text-align: center">
+
+                    </th>
+                    <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                        <input type="text" name="key_body[]" id="key_body"
+                            style="background-color: #9DC8D6; width: 80px; border: none">
+
+                    </th>
+                    <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                        <select name="datatype_body[]" id="datatype_body"
+                            style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
+                            <option value="boolean">Boolean</option>
+                            <option value="integer">Integer</option>
+                            <option value="number">Number</option>
+                            <option value="string">String</option>
+                            <option value="enum">Enum</option>
+                            <option value="object">Object</option>
+                            <option value="array">Array</option>
+                        </select>
+                    </th>
+                    <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                        <center>
+                            <select name="required_body[]" id="required_body"
+                                style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6; border: none">
+                                <option value="o">O</option>
+                                <option value="m">M</option>
+                                <option value="r">R</option>
+                            </select>
+                    </th>
+                    <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                        <input type="text" name="exampledata_body[]" id="exampledata_body"
+                            style="background-color: #9DC8D6; width: 80px; border: none">
+
+                    </th>
+                    <th style="font-size:14px; color:rgb(0, 0, 0); background-color: #9DC8D6">
+                        <textarea class="form-control" name="description_body[]" id="description_body" rows="1"
+                            style="font-size:14px; border:none; background:#9DC8D6; width:650px"></textarea>
+
+                    </th>
+                </tr>
+            `)
+        }
+    </script>
+
+    <script>
+        const checkbox_hearder = document.getElementById('cb_header');
+        const tableContainer_header = document.getElementById('table-container-header');
+
+        checkbox_hearder.addEventListener('change', () => {
+            tableContainer_header.style.display = checkbox_hearder.checked ? 'block' : 'none';
+        });
+    </script>
 
     {{-- check box show param table --}}
     <script>

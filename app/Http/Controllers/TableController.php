@@ -56,7 +56,7 @@ class TableController extends Controller
         // dd($request->input('no_body3'));
         $num = count($request->all());
         $requestArray = array_values($request->all());
-        // dd($request);
+        dd($request);
         // dd($request->no_body [2]);
         // echo $request->input('no_body1');
 
@@ -75,7 +75,32 @@ class TableController extends Controller
         // ตรวจสอบว่ามีการส่งค่าจากฟอร์มหรือไม่
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // ตรวจสอบว่า checkbox ถูกเลือกหรือไม่
-            if (isset($_POST["cb_body"])) {
+            if (isset($_POST["cb_header"])) {
+                $section->addText('HEADER');
+                $Table = $section->addTable();
+                $Table->addRow();
+                $Table->addCell(700)->addText('NO');
+                $Table->addCell(700)->addText('Key');
+                $Table->addCell(1000)->addText('Required');
+                $Table->addCell(1200)->addText('Example data');
+                $Table->addCell(3000)->addText('Description');
+                for ($index = 0; $index < count($request->no_header); $index++) {
+                    $Table->addRow();
+                    $Table->addCell(700)->addText($request->no_header[$index]);
+                    $Table->addCell(1000)->addText($request->key_header[$index]);
+                    $Table->addCell(1200)->addText($request->required_header[$index]);
+                    $Table->addCell(1500)->addText($request->exampledata_header[$index]);
+                    $Table->addCell(3000)->addText($request->description_header[$index]);
+                }
+                foreach ($Table->getRows() as $row) {
+                    foreach ($row->getCells() as $cell) {
+                        $cell->getStyle()->setBorderSize(6);
+                    }
+                }
+                $section->addTextBreak();
+            }
+            if(isset($_POST["cb_body"])){
+                $section->addText('BODY');
                 $Table = $section->addTable();
                 $Table->addRow();
                 $Table->addCell(700)->addText('NO');
