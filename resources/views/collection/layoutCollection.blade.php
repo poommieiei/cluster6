@@ -138,12 +138,12 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/')}}"
                                 aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu"
                                     style="font-size:20px">Workspace</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/account"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/account') }}"
                                 aria-expanded="false"><i class="fa fa-user" style="font-size:20px"></i>
                                 <span class="hide-menu" style="font-size:20px">Account</span></a>
                         </li>
