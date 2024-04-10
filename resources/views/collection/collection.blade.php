@@ -21,7 +21,7 @@
     @endforeach
 
     <div class="fixed-bottom d-flex justify-content-end mb-3 me-3" style="margin: 130px">
-        <form action="/importcollection/{{$id}}" method="post" enctype="multipart/form-data">
+        <form action="{{ url('/importcollection/' . $id) }}" method="post" enctype="multipart/form-data">
             @csrf
             <!-- ปุ่ม Import -->
             <button type="submit" class="btn btn-lg"
